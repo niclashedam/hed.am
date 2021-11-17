@@ -1,5 +1,7 @@
 ---
-type: "progress"
+type: "conf"
 title:  "DAPHNE: An Open and Extensible System Infrastructure for Integrated Data Analysis Pipelines"
-date: "2022-01-12"
+authors:  "Damme, P. et al."
+date: "2022-01-09"
+journal: "CIDR"
 ---
