@@ -25,6 +25,11 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://hed.am/papers/2022-CIDR.pdf</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://hed.am/talks/2020-ADMS.pdf</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
