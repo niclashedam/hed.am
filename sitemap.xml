@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://hed.am/</loc>
+	</url>
+	<url>
+		<loc>https://hed.am/papers/2020-ADMS.pdf</loc>
+		<lastmod>2024-05-10T21:25:22+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://hed.am/papers/2020-CIDR.pdf</loc>
+		<lastmod>2024-05-10T21:25:22+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://hed.am/papers/2021-EBPF.pdf</loc>
+		<lastmod>2024-05-10T21:25:22+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://hed.am/papers/2022-CIDR.pdf</loc>
+		<lastmod>2024-05-10T21:25:22+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://hed.am/papers/2022-DAPHNE.pdf</loc>
+		<lastmod>2024-05-10T21:25:22+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://hed.am/papers/2023-DAPHNE.pdf</loc>
+		<lastmod>2024-05-10T21:25:22+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://hed.am/papers/2023-DaMoN.pdf</loc>
+		<lastmod>2024-05-10T21:25:22+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://hed.am/talks/2020-ADMS.pdf</loc>
+		<lastmod>2024-05-10T21:25:22+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://hed.am/talks/2021-Samsung.pdf</loc>
+		<lastmod>2024-05-10T21:25:22+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://hed.am/talks/2022-Luncheon.pdf</loc>
+		<lastmod>2024-05-10T21:25:22+00:00</lastmod>
+	</url>
+	<url>
+		<loc>https://hed.am/talks/2023-DaMoN.pdf</loc>
+		<lastmod>2024-05-10T21:25:22+00:00</lastmod>
+	</url>
+</urlset>

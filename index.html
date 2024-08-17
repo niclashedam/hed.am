@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Niclas Hedam | Security Advisor</title>
+    <style>
+      [x-cloak] {
+        display: none;
+      }
+    </style>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <link href="css/dist.css" rel="stylesheet" />
+  </head>
+  <body class="items-start justify-center h-full bg-white">
+    <section
+      id="home"
+      class="w-full px-3 antialiased bg-gradient-to-br from-gray-900 via-black to-gray-800 lg:px-6">
+      <div class="mx-auto max-w-7xl">
+        <nav
+          class="flex items-center w-full h-24 select-none"
+          x-data="{ showMenu: false }">
+          <div
+            class="relative flex flex-wrap items-start justify-between w-full mx-auto font-medium md:items-center md:h-24 md:justify-between">
+            <a
+              href="#_"
+              class="flex items-center w-1/4 py-4 pl-6 pr-4 space-x-2 font-extrabold text-white md:py-0">
+              <span
+                class="flex items-center justify-center flex-shrink-0 w-8 h-8 text-gray-900 rounded-full bg-gradient-to-br from-white via-gray-200 to-white">
+                <i class="fa-solid fa-unlock"></i>
+              </span>
+              <span>Niclas Hedam</span>
+            </a>
+            <div
+              :class="{'flex': showMenu, 'hidden md:flex': !showMenu }"
+              class="absolute z-50 flex-col items-center justify-center w-full h-auto px-2 text-center text-gray-400 -translate-x-1/2 border-0 border-gray-700 rounded-full md:border md:w-auto md:h-10 left-1/2 md:flex-row md:items-center">
+              <a
+                href="#home"
+                class="relative inline-block w-full h-full px-4 py-5 mx-2 font-medium leading-tight text-center text-white md:py-2 group md:w-auto md:px-2 lg:mx-3 md:text-center">
+                <span>Home</span>
+                <span
+                  class="absolute bottom-0 left-0 w-full h-px duration-300 ease-out translate-y-px bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900"></span>
+              </a>
+              <a
+                href="#about"
+                class="relative inline-block w-full h-full px-4 py-5 mx-2 font-medium leading-tight text-center duration-300 ease-out md:py-2 group hover:text-white md:w-auto md:px-2 lg:mx-3 md:text-center">
+                <span>About Me</span>
+                <span
+                  class="absolute bottom-0 w-0 h-px duration-300 ease-out translate-y-px group-hover:left-0 left-1/2 group-hover:w-full bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900"></span>
+              </a>
+              <a
+                href="#experience"
+                class="relative inline-block w-full h-full px-4 py-5 mx-2 font-medium leading-tight text-center duration-300 ease-out md:py-2 group hover:text-white md:w-auto md:px-2 lg:mx-3 md:text-center">
+                <span>Experience</span>
+                <span
+                  class="absolute bottom-0 w-0 h-px duration-300 ease-out translate-y-px group-hover:left-0 left-1/2 group-hover:w-full bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900"></span>
+              </a>
+              <a
+                href="#skillset"
+                class="relative inline-block w-full h-full px-4 py-5 mx-2 font-medium leading-tight text-center duration-300 ease-out md:py-2 group hover:text-white md:w-auto md:px-2 lg:mx-3 md:text-center">
+                <span>Skillset</span>
+                <span
+                  class="absolute bottom-0 w-0 h-px duration-300 ease-out translate-y-px group-hover:left-0 left-1/2 group-hover:w-full bg-gradient-to-r md:from-gray-700 md:via-gray-400 md:to-gray-700 from-gray-900 via-gray-600 to-gray-900"></span>
+              </a>
+            </div>
+            <div
+              class="fixed top-0 left-0 z-40 items-center hidden w-full h-full p-3 text-sm bg-gray-900 bg-opacity-50 md:w-auto md:bg-transparent md:p-0 md:relative md:flex"
+              :class="{'flex': showMenu, 'hidden': !showMenu }">
+              <div
+                class="flex-col items-center w-full h-full p-3 overflow-hidden bg-black bg-opacity-50 rounded-lg select-none md:p-0 backdrop-blur-lg md:h-auto md:bg-transparent md:rounded-none md:relative md:flex md:flex-row md:overflow-auto">
+                <div
+                  class="flex flex-col items-center justify-end w-full h-full pt-2 md:w-full md:flex-row md:py-0">
+                  <!-- mobile menu -->
+                </div>
+              </div>
+            </div>
+            <div
+              @click="showMenu = !showMenu"
+              class="absolute right-0 z-50 flex flex-col items-end translate-y-1.5 w-10 h-10 p-2 mr-4 rounded-full cursor-pointer md:hidden hover:bg-gray-200/10 hover:bg-opacity-10"
+              :class="{ 'text-gray-400': showMenu, 'text-gray-100': !showMenu }">
+              <svg
+                class="w-6 h-6"
+                x-show="!showMenu"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                x-cloak>
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+              <svg
+                class="w-6 h-6"
+                x-show="showMenu"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+                x-cloak>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </div>
+          </div>
+        </nav>
+        <div class="container px-6 py-32 mx-auto md:text-center md:px-4">
+          <h1
+            class="text-4xl font-extrabold leading-none leading-10 tracking-tight text-white sm:text-5xl md:text-6xl xl:text-7xl">
+            <span class="block">Hello, I'm</span>
+            <span class="relative inline-block mt-3 text-indigo-600"
+              >Niclas Hedam</span
+            >
+          </h1>
+          <p
+            class="mx-auto mt-6 text-sm text-left text-gray-200 md:text-center md:mt-12 sm:text-base md:max-w-xl md:text-lg xl:text-xl">
+            I'm a <span class="text-indigo-600">Security Advisor</span> at
+            <a
+              href="https://itm8.com"
+              target="_blank"
+              class="text-indigo-600 underline">
+              itm8 A/S</a
+            >, dedicated to protecting information, systems, and people from
+            evolving threats.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section id="about">
+      <div class="overflow-hidden bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div
+            class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+            <div class="lg:pr-8 lg:pt-4">
+              <div class="lg:max-w-lg">
+                <h2 class="text-base font-semibold leading-7 text-indigo-600">
+                  Passionate about Crafting a Safer Tomorrow
+                </h2>
+                <p
+                  class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                  A few paragraphs about me
+                </p>
+                <p class="mt-6 text-lg leading-8 text-gray-600">
+                  With over a decade of technical expertise and a solid
+                  commitment to security and privacy, I focus on ensuring
+                  critical infrastructure’s confidentiality, integrity, and
+                  availability. I hold a
+                  <span class="text-indigo-600 font-semibold"
+                    >Bachelor’s degree in Software Development</span
+                  >, a
+                  <span class="text-indigo-600 font-semibold"
+                    >Master’s degree in Computer Science</span
+                  >
+                  specialising in information security, and a
+                  <span class="text-indigo-600 font-semibold"
+                    >PhD in Computer Science</span
+                  >
+                  from the IT University of Copenhagen. My research focused on
+                  optimising data movement and offloading functionality to
+                  hardware. This work led to significant advancements in modern
+                  experimental data systems, including the creation of Delilah —
+                  the first storage device to run eBPF.
+                </p>
+                <p class="mt-6 text-lg leading-8 text-gray-600">
+                  Beyond academia, I’ve accumulated diverse experience working
+                  with a
+                  <span class="text-indigo-600 font-semibold"
+                    >dozen companies and taking on various roles across multiple
+                    industries</span
+                  >. My entrepreneurial spirit also led me to establish my first
+                  company at 16.
+                </p>
+                <p class="mt-6 text-lg leading-8 text-gray-600">
+                  Driven by a passion for creating a safer digital society, I am
+                  committed to defending data against emerging threats and
+                  safeguarding privacy in an increasingly complex digital
+                  landscape.
+                </p>
+              </div>
+            </div>
+            <img
+              src="assets/niclas.jpeg"
+              alt="Niclas Hedam"
+              class="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
+              width="2432"
+              height="1442" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="experience">
+      <div class="bg-gray-900 py-24 sm:py-32 text-gray-200">
+        <div
+          class="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+          <div class="max-w-2xl">
+            <h2
+              class="text-3xl font-bold tracking-tight text-gray-200 sm:text-4xl">
+              Experience
+            </h2>
+            <p class="mt-6 text-lg leading-8 text-gray-400">
+              Over the past decade, I have had the chance to work with around a
+              dozen differnet companies. This is just a few of them.
+            </p>
+          </div>
+          <ul
+            role="list"
+            class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+            <li>
+              <div class="flex items-center gap-x-6">
+                <img
+                  class="h-16 w-16 rounded-full"
+                  src="assets/itm8.jpg"
+                  alt="itm8 A/S" />
+                <div>
+                  <h3 class="text-base font-semibold leading-7 tracking-tight">
+                    itm8
+                  </h3>
+                  <p class="text-sm font-semibold leading-6 text-indigo-600">
+                    Security Advisor
+                  </p>
+                  <p class="text-sm font leading-6 text-gray-600">
+                    2024 - Present
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="flex items-center gap-x-6">
+                <img
+                  class="h-16 w-16 rounded-full"
+                  src="assets/siteimprove.jpg"
+                  alt="Siteimprove" />
+                <div>
+                  <h3 class="text-base font-semibold leading-7 tracking-tight">
+                    Siteimprove
+                  </h3>
+                  <p class="text-sm font-semibold leading-6 text-indigo-600">
+                    Student Developer
+                  </p>
+                  <p class="text-sm font leading-6 text-gray-600">
+                    2018 - 2019
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="flex items-center gap-x-6">
+                <img
+                  class="h-16 w-16 rounded-full"
+                  src="assets/samsung.jpg"
+                  alt="Samsung" />
+                <div>
+                  <h3 class="text-base font-semibold leading-7 tracking-tight">
+                    Samsung
+                  </h3>
+                  <p class="text-sm font-semibold leading-6 text-indigo-600">
+                    Intern
+                  </p>
+                  <p class="text-sm font leading-6 text-gray-600">2020</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="flex items-center gap-x-6">
+                <img
+                  class="h-16 w-16 rounded-full"
+                  src="assets/trifork.jpg"
+                  alt="Trifork" />
+                <div>
+                  <h3 class="text-base font-semibold leading-7 tracking-tight">
+                    Trifork
+                  </h3>
+                  <p class="text-sm font-semibold leading-6 text-indigo-600">
+                    Junior Software Pilot
+                  </p>
+                  <p class="text-sm font leading-6 text-gray-600">2015</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="flex items-center gap-x-6">
+                <img
+                  class="h-16 w-16 rounded-full"
+                  src="assets/pairy.jpg"
+                  alt="Pairy" />
+                <div>
+                  <h3 class="text-base font-semibold leading-7 tracking-tight">
+                    Pairy
+                  </h3>
+                  <p class="text-sm font-semibold leading-6 text-indigo-600">
+                    Lead Developer
+                  </p>
+                  <p class="text-sm font leading-6 text-gray-600">
+                    2016 - 2018
+                  </p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="flex items-center gap-x-6">
+                <img
+                  class="h-16 w-16 rounded-full"
+                  src="assets/bello.jpg"
+                  alt="Bello" />
+                <div>
+                  <h3 class="text-base font-semibold leading-7 tracking-tight">
+                    Newsio | Bello
+                  </h3>
+                  <p class="text-sm font-semibold leading-6 text-indigo-600">
+                    Software Developer
+                  </p>
+                  <p class="text-sm font leading-6 text-gray-600">2016</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section id="skillset">
+      <div class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:text-center">
+            <h2 class="text-base font-semibold leading-7 text-indigo-600">
+              Wideranging skillset
+            </h2>
+            <p
+              class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              Diverse Experience and Key Strengths
+            </p>
+            <p class="mt-6 text-lg leading-8 text-gray-600">
+              Over the years, I've developed a wide range of skills and
+              competencies. Here are a few of my key strengths.
+            </p>
+          </div>
+          <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <dl
+              class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+              <div class="relative pl-16">
+                <dt class="text-base font-semibold leading-7 text-gray-900">
+                  <div
+                    class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+                    <i class="fa-regular fa-eye"></i>
+                  </div>
+                  In-depth understanding of privacy
+                </dt>
+                <dd class="mt-2 text-base leading-7 text-gray-600">
+                  Privacy has always been a strong interest of mine. Over the
+                  past decade, I've explored best practices like
+                  privacy-by-design, end-to-end encryption, and data
+                  minimisation.
+                </dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base font-semibold leading-7 text-gray-900">
+                  <div
+                    class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+                    <i class="fa-solid fa-code"></i>
+                  </div>
+                  Strong coding skills
+                </dt>
+                <dd class="mt-2 text-base leading-7 text-gray-600">
+                  I have a solid background in programming and software
+                  development, with experience in a variety of languages such as
+                  C, C++, Python, Java and JavaScript.
+                </dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base font-semibold leading-7 text-gray-900">
+                  <div
+                    class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+                    <i class="fa-solid fa-person-chalkboard"></i>
+                  </div>
+                  University teaching experience
+                </dt>
+                <dd class="mt-2 text-base leading-7 text-gray-600">
+                  With experience teaching a university classes of over 190
+                  students, I have a strong ability to simplify complex topics,
+                  making them accessible and understandable for a wide range of
+                  different personalities and backgrounds.
+                </dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base font-semibold leading-7 text-gray-900">
+                  <div
+                    class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+                    <i class="fa-solid fa-money-bill-trend-up"></i>
+                  </div>
+                  Entrepreneurial insight
+                </dt>
+                <dd class="mt-2 text-base leading-7 text-gray-600">
+                  As an entrepreneur, I developed a strong ability to translate
+                  technical requirements into business value. This experience
+                  has taught me how to effectively balance technical investments
+                  with cost considerations.
+                </dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base font-semibold leading-7 text-gray-900">
+                  <div
+                    class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+                    <i class="fa-solid fa-microscope"></i>
+                  </div>
+                  Research experience
+                </dt>
+                <dd class="mt-2 text-base leading-7 text-gray-600">
+                  With a PhD in Computer Science, I have a strong background in
+                  research and a solid understanding of the scientific method. I
+                  have published several papers in top-tier conferences and
+                  workshops. Furthermore, I have attended and presented at
+                  several international events.
+                </dd>
+              </div>
+              <div class="relative pl-16">
+                <dt class="text-base font-semibold leading-7 text-gray-900">
+                  <div
+                    class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+                    <i class="fa-solid fa-server"></i>
+                  </div>
+                  Practical experience
+                </dt>
+                <dd class="mt-2 text-base leading-7 text-gray-600">
+                  Besides my academic background, I have hands-on experience
+                  with hardware, infrastructure and data centers. I have
+                  installed and maintained several types of servers, storage
+                  devices and network equipment.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-gray-900 text-gray-200 body-font">
+      <div
+        class="container flex flex-col items-center px-8 py-8 mx-auto max-w-7xl sm:flex-row">
+        <p class="mt-4 text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:mt-0">
+          &copy; 2024 Niclas Hedam
+        </p>
+        <span
+          class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
+          <a
+            href="https://linkedin.com/in/hedam"
+            target="_blank"
+            class="text-gray-400 hover:text-gray-500 text-2xl">
+            <span class="sr-only">LinkedIn</span>
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            href="https://www.researchgate.net/profile/Niclas-Hedam"
+            target="_blank"
+            class="text-gray-400 hover:text-gray-500 text-2xl">
+            <span class="sr-only">ResearchGate</span>
+            <i class="fa-brands fa-researchgate"></i>
+          </a>
+          <a
+            href="https://orcid.org/0000-0001-5847-8419"
+            target="_blank"
+            class="text-gray-400 hover:text-gray-500 text-2xl">
+            <span class="sr-only">ORCID</span>
+            <i class="fa-brands fa-orcid"></i>
+          </a>
+          <a
+            href="https://github.com/niclashedam"
+            target="_blank"
+            class="text-gray-400 hover:text-gray-500 text-2xl">
+            <span class="sr-only">GitHub</span>
+            <i class="fa-brands fa-square-github"></i>
+          </a>
+          <a
+            href="https://itm8.com/cybersecurity"
+            target="_blank"
+            class="text-gray-400 hover:text-gray-500 text-2xl">
+            <span class="sr-only">itm8</span>
+            <i class="fa-solid fa-globe"></i>
+          </a>
+        </span>
+      </div>
+    </section>
+    <script type="application/ld+json">
+      {
+        "author": {
+          "@type": "Person",
+          "name": "Niclas Hedam"
+        },
+        "url": "https://hed.am/",
+        "@type": "WebSite",
+        "description": "",
+        "headline": "about",
+        "sameAs": [
+          "https://orcid.org/0000-0001-5847-8419",
+          "https://scholar.google.com/citations?user=DdLrWgwAAAAJ",
+          "https://www.researchgate.net/profile/Niclas-Hedam",
+          "https://github.com/niclashedam",
+          "https://www.linkedin.com/in/hedam",
+          "https://dblp.uni-trier.de/pid/257/5600.html"
+        ],
+        "name": "Niclas Hedam",
+        "@context": "https://schema.org"
+      }
+    </script>
+  </body>
+</html>
