@@ -176,4 +176,4 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/node,macos
 
-css/dist.css
+public/css/dist.css
