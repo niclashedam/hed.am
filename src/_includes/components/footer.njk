@@ -1,0 +1,75 @@
+<footer class="antialiased bg-black text-gray-200 body-font">
+  <div
+    class="container flex flex-col items-center px-8 py-8 mx-auto max-w-7xl sm:flex-row">
+    <p class="mt-4 text-sm text-gray-300 sm:ml-4 sm:pl-4 sm:mt-0">&copy; 2025 Niclas Hedam</p>
+    <span
+      class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
+      {% for item in footer %}
+        <a
+          href="{{ item.href }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-gray-300 hover:text-gray-500 text-2xl">
+          <span class="sr-only">{{ item.sr }}</span>
+          <i class="{{ item.icon }}"></i>
+        </a>
+      {% endfor %}
+    </span>
+  </div>
+</footer>
+<script type="application/ld+json">
+  {% if type == "article" %}
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "{{ title }}",
+    "description": "{{ (description or excerpt or '') | striptags | trim }}",
+    "image": "https://hed.am{{ image | url }}",
+    "url": "https://hed.am{{ page.url }}",
+    "datePublished": "{{ date | machineDate }}",
+    {% if keywords %}
+    "keywords": "{{ keywords | join(', ') }}",
+    {% endif %}
+    "author": {
+      "@type": "Person",
+      "name": "Niclas Hedam",
+      "url": "https://hed.am/",
+      "image": "https://hed.am/assets/images/niclas.jpeg",
+      "jobTitle": "Security Advisor",
+      "worksFor": { "@type": "Organization", "name": "itm8" },
+      "sameAs": [
+        "https://orcid.org/0000-0001-5847-8419",
+        "https://scholar.google.com/citations?user=DdLrWgwAAAAJ",
+        "https://www.researchgate.net/profile/Niclas-Hedam",
+        "https://github.com/niclashedam",
+        "https://www.linkedin.com/in/hedam",
+        "https://dblp.uni-trier.de/pid/257/5600.html"
+      ]
+    }
+  }
+  {% else %}
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://hed.am/",
+    "name": "{{ title }}",
+    "description": "{{ description }}",
+    "author": {
+      "@type": "Person",
+      "name": "Niclas Hedam",
+      "url": "https://hed.am/",
+      "image": "https://hed.am/assets/images/niclas.jpeg",
+      "jobTitle": "Security Advisor",
+      "worksFor": { "@type": "Organization", "name": "itm8" },
+      "sameAs": [
+        "https://orcid.org/0000-0001-5847-8419",
+        "https://scholar.google.com/citations?user=DdLrWgwAAAAJ",
+        "https://www.researchgate.net/profile/Niclas-Hedam",
+        "https://github.com/niclashedam",
+        "https://www.linkedin.com/in/hedam",
+        "https://dblp.uni-trier.de/pid/257/5600.html"
+      ]
+    }
+  }
+  {% endif %}
+</script>

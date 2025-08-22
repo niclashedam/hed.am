@@ -1,0 +1,38 @@
+[
+  {
+    "logo": "/assets/images/employer/itm8.jpg",
+    "company": "itm8",
+    "title": "Security Advisor",
+    "dates": "2024 - Present"
+  },
+  {
+    "logo": "/assets/images/employer/siteimprove.jpg",
+    "company": "Siteimprove",
+    "title": "Student Developer",
+    "dates": "2018 - 2019"
+  },
+  {
+    "logo": "/assets/images/employer/samsung.jpg",
+    "company": "Samsung",
+    "title": "Intern",
+    "dates": "2020"
+  },
+  {
+    "logo": "/assets/images/employer/trifork.jpg",
+    "company": "Trifork",
+    "title": "Junior Software Pilot",
+    "dates": "2015"
+  },
+  {
+    "logo": "/assets/images/employer/pairy.jpg",
+    "company": "Pairy",
+    "title": "Lead Developer",
+    "dates": "2016 - 2018"
+  },
+  {
+    "logo": "/assets/images/employer/bello.jpg",
+    "company": "Newsio | Bello",
+    "title": "Software Developer",
+    "dates": "2016"
+  }
+]

@@ -1,0 +1,36 @@
+<section>
+  <div class="bg-white py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:text-center">
+        <h2 class="text-base font-semibold leading-7 text-indigo-600">Wide-ranging skill-set</h2>
+        <p
+          class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Diverse Experience and Key Strengths
+        </p>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          With a deep technical foundation and awareness of strategic considerations, I'm well-equipped to advise
+          organisations from multiple angles. Some key strengths include:
+        </p>
+      </div>
+      <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+        <dl
+          class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+          {% for skill in skills %}
+            <div class="relative pl-16">
+              <dt class="text-base font-semibold leading-7 text-gray-900">
+                <div
+                  class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600 text-white">
+                  <i class="{{ skill.icon }}"></i>
+                </div>
+                {{ skill.title }}
+              </dt>
+              <dd class="mt-2 text-base leading-7 text-gray-600">
+                {{ skill.text }}
+              </dd>
+            </div>
+          {% endfor %}
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>

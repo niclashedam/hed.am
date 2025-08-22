@@ -1,0 +1,60 @@
+---
+layout: layouts/base.njk
+title: Blog
+description: "Latest posts and updates from Niclas Hedam's blog, covering cyber security topics, insights, and personal reflections."
+---
+{% include 'components/header.njk' %}
+
+<main>
+  <section>
+    <div class="bg-white py-8 lg:py-16">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <nav
+          class="mb-8 max-w-2xl mx-auto lg:mx-0 text-sm text-gray-500"
+          aria-label="Breadcrumb">
+          <ol class="flex items-center space-x-2">
+            <li><a href="/" class="text-indigo-600 hover:underline">Home</a></li>
+            <li>/</li>
+            <li aria-current="page" class="text-gray-700">Blog</li>
+          </ol>
+        </nav>
+        <div class="mx-auto max-w-2xl lg:mx-0">
+          <h2 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Niclas' blog</h2>
+          <p class="mt-2 text-lg leading-8 text-gray-600">
+            Latest posts and updates from Niclas Hedam's blog, covering cyber security topics, insights, and personal
+            reflections.
+          </p>
+        </div>
+        <div
+          class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+          {% for post in collections.blog %}
+            <article class="overflow-hidden rounded-lg shadow-lg">
+              <a href="{{ post.url }}">
+                <img
+                  width="400"
+                  alt="{{ post.data.title }}"
+                  src="{{ post.data.image | url }}"
+                  class="h-56 w-full object-cover">
+
+                <div class="bg-white p-4 sm:p-6">
+                  <p class="block text-xs text-gray-500">
+                    <time datetime="{{ post.date | machineDate }}">{{ post.date | readableDate }}</time>
+                    · {{ post.templateContent | readingTime }}
+                  </p>
+
+                  <h3 class="mt-0.5 text-lg text-gray-900">
+                    {{ post.data.title }}
+                  </h3>
+
+                  <div class="mt-2 line-clamp-3 text-sm text-gray-500">
+                    {{ post.data.excerpt | safe }}
+                  </div>
+                </div>
+              </a>
+            </article>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

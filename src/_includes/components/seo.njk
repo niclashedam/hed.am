@@ -1,0 +1,28 @@
+<!-- prettier-ignore -->
+{% set seoTitle = title %}
+{% if page.url != '/' %}
+  {% set seoTitle = title + ' - Niclas Hedam' %}
+{% endif %}
+<title>{{ seoTitle }}</title>
+<meta name="description" content="{{ excerpt or description or '' }}">
+{% if author %}
+  <meta name="author" content="{{ author }}">
+{% endif %}
+{% if keywords %}
+  <meta name="keywords" content="{{ keywords | join(', ') }}">
+{% endif %}
+<link rel="canonical" href="https://hed.am{{ page.url }}">
+<meta property="og:type" content="{{ type | default('website') }}">
+<meta property="og:title" content="{{ seoTitle }}">
+<meta property="og:description" content="{{ excerpt or description or '' }}">
+<meta property="og:url" content="https://hed.am{{ page.url }}">
+{% if image %}
+  <meta property="og:image" content="https://hed.am{{ image | url }}">
+  <meta property="og:image:alt" content="{{ imageAlt or title }}">
+{% endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ seoTitle }}">
+<meta name="twitter:description" content="{{ excerpt or description or '' }}">
+{% if image %}
+  <meta name="twitter:image" content="https://hed.am{{ image | url }}">
+{% endif %}

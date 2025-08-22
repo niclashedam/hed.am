@@ -1,0 +1,40 @@
+<section>
+  <div
+    class="antialiased bg-gradient-to-br from-gray-900 via-black to-gray-800 py-24 sm:py-32 text-gray-200">
+    <div
+      class="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+      <div class="max-w-2xl">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-200 sm:text-4xl">Experience</h2>
+        <p class="mt-6 text-lg leading-8 text-gray-400">
+          Over the past decade I have worked with organisations of all sizes. Here are a few of them.
+        </p>
+      </div>
+      <ul
+        role="list"
+        class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+        {% for job in experience %}
+          <li>
+            <div class="flex items-center gap-x-6">
+              <img
+                width="64"
+                class="h-16 w-16 rounded-full"
+                src="{{ job.logo }}"
+                alt="{{ job.company }}">
+              <div>
+                <h3 class="text-base font-semibold leading-7 tracking-tight">
+                  {{ job.company }}
+                </h3>
+                <p class="text-sm font-bold leading-6 text-indigo-400">
+                  {{ job.title }}
+                </p>
+                <p class="text-sm font leading-6 text-gray-500">
+                  {{ job.dates }}
+                </p>
+              </div>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

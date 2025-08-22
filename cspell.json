@@ -1,0 +1,20 @@
+{
+  "version": "0.2",
+  "language": "en-GB",
+  "dictionaries": ["en-gb", "html", "css", "softwareTerms", "misc"],
+  "useGitignore": false,
+  "ignorePaths": [],
+  "ignoreRegExpList": ["<[^>]*>"],
+  "words": [
+    "Niclas",
+    "Hedam",
+    "Siteimprove",
+    "Trifork",
+    "Pairy",
+    "Bello",
+    "Newsio",
+    "ORCID",
+    "Kagi",
+    "CCPA"
+  ]
+}

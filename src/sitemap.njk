@@ -1,0 +1,30 @@
+---
+permalink: sitemap.xml
+eleventyExcludeFromCollections: true
+layout: null
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://hed.am/</loc>
+  </url>
+  {% for pdf in papers %}
+  <url>
+    <loc>https://hed.am/papers/{{ pdf.file }}</loc>
+    <lastmod>{{ pdf.lastmod }}</lastmod>
+  </url>
+  {% endfor %}
+  <url>
+    <loc>https://hed.am/blog/</loc>
+  </url>
+  {% for post in collections.blog %}
+  <url>
+    <loc>https://hed.am{{ post.url }}</loc>
+    <lastmod>{{ post.date.toISOString() }}</lastmod>
+  </url>
+  {% endfor %}
+</urlset>

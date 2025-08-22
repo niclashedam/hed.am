@@ -1,0 +1,117 @@
+---
+layout: layouts/base.njk
+type: article
+author: Niclas Hedam
+authorPic: /assets/images/niclas.jpeg
+authorTitle: PhD, Computer Science
+authorDescription: "Niclas Hedam holds a PhD in Computer Science. He is passionate about educating others on the importance of safeguarding personal information online."
+---
+{% include 'components/header.njk' %}
+
+<main class="pt-8 pb-8 lg:pt-16 antialiased px-4 sm:px-6 lg:px-8">
+  <div class="mx-auto w-full max-w-2xl">
+    <nav class="mb-2 text-sm text-gray-500" aria-label="Breadcrumb">
+      <ol class="flex items-center space-x-2">
+        <li><a href="/" class="text-indigo-600 hover:underline">Home</a></li>
+        <li>/</li>
+        <li>
+          <a href="/blog" class="text-indigo-600 hover:underline">Blog</a>
+        </li>
+        <li>/</li>
+        <li aria-current="page" class="text-gray-700">{{ title }}</li>
+      </ol>
+    </nav>
+    <article
+      class="mx-auto w-full max-w-2xl prose prose-sm sm:prose-base lg:prose-lg prose-indigo">
+      <header class="mb-4 lg:mb-6 not-prose">
+        <figure>
+          <img
+            width="672"
+            src="{{ image | url }}"
+            alt="{{ imageAlt }}"
+            class="rounded-lg">
+        </figure>
+        <h1
+          class="mb-6 text-4xl font-extrabold leading-tight text-gray-900 lg:mb-8 lg:text-5xl">
+          {{ title }}
+        </h1>
+        <address class="flex items-center my-6 not-italic">
+          <div class="inline-flex items-center mr-3 text-gray-900">
+            <img
+              width="128"
+              class="object-cover mr-4 w-16 h-16 rounded-full"
+              src="{{ authorPic | url }}"
+              alt="{{ author }}">
+            <div>
+              <a href="/" rel="author" class="text-lg font-bold">{{ author }}</a>
+              <p class="text-base text-gray-500">{{ authorTitle }}</p>
+              <p class="text-base text-gray-500">
+                <time
+                  pubdate
+                  datetime="{{ date | machineDate }}"
+                  title="{{ date | machineDate }}">
+                  {{- date | readableDate -}}
+                </time>
+                · {{ content | readingTime }}
+              </p>
+            </div>
+          </div>
+        </address>
+      </header>
+      <div class="prose prose-p:text-justify">{{ content | safe }}</div>
+      <div>
+        <address class="my-6 not-italic not-prose">
+          <div
+            class="w-full md:w-1/2 text-center px-4 py-4 mx-auto border-2 border-gray-200 rounded-3xl">
+            <div
+              class="w-32 h-32 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
+              <img
+                width="256"
+                class="object-cover w-32 h-32 rounded-full"
+                src="{{ authorPic | url }}"
+                alt="{{ author }}">
+            </div>
+            <div class="flex flex-col items-center text-center justify-center">
+              <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">
+                {{ author }}
+              </h2>
+              <div class="w-12 h-1 bg-indigo-700 rounded mb-4"></div>
+              <p class="text-base">{{ authorDescription }}</p>
+            </div>
+          </div>
+        </address>
+      </div>
+    </article>
+    <h3 class="mt-10 text-2xl font-bold text-gray-900">More from the blog</h3>
+    <div
+      class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+      {% for post in collections.blog %}
+        <article class="overflow-hidden rounded-lg shadow-lg">
+          <a href="{{ post.url }}">
+            <img
+              width="320"
+              alt="{{ post.data.title }}"
+              src="{{ post.data.image | url }}"
+              class="h-56 w-full object-cover">
+
+            <div class="bg-white p-4 sm:p-6">
+              <p class="block text-xs text-gray-500">
+                <time datetime="{{ post.date | machineDate }}">{{ post.date | readableDate }}</time>
+                · {{ post.templateContent | readingTime }}
+              </p>
+
+              <h3 class="mt-0.5 text-lg text-gray-900">{{ post.data.title }}</h3>
+
+              <div class="mt-2 line-clamp-3 text-sm text-gray-500">
+                {{ post.data.excerpt | safe }}
+              </div>
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+    <div class="mt-8">
+      <a href="/blog" class="text-indigo-600 hover:underline">&larr; Back to the blog</a>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,27 @@
+[
+  {
+    "href": "https://linkedin.com/in/hedam",
+    "icon": "fa-brands fa-linkedin",
+    "sr": "LinkedIn"
+  },
+  {
+    "href": "https://www.researchgate.net/profile/Niclas-Hedam",
+    "icon": "fa-brands fa-researchgate",
+    "sr": "ResearchGate"
+  },
+  {
+    "href": "https://orcid.org/0000-0001-5847-8419",
+    "icon": "fa-brands fa-orcid",
+    "sr": "ORCID"
+  },
+  {
+    "href": "https://github.com/niclashedam",
+    "icon": "fa-brands fa-square-github",
+    "sr": "GitHub"
+  },
+  {
+    "href": "https://itm8.com/cybersecurity",
+    "icon": "fa-solid fa-globe",
+    "sr": "itm8"
+  }
+]

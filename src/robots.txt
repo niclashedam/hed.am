@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://hed.am/sitemap.xml
+

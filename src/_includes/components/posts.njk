@@ -1,0 +1,39 @@
+<section class="antialiased text-gray-200 body-font">
+  <div class="bg-white pt-8 pb-16">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <p
+        class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
+        Recent Blog Posts
+      </p>
+      <div
+        class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        {% for post in collections.blog %}
+          <article class="overflow-hidden rounded-lg shadow-lg">
+            <a href="{{ post.url }}">
+              <img
+                width="384"
+                alt="{{ post.data.title }}"
+                src="{{ post.data.image | url }}"
+                class="h-56 w-full object-cover">
+
+              <div class="bg-white p-4 sm:p-6">
+                <p class="block text-xs text-gray-500">
+                  <time datetime="{{ post.date | machineDate }}">{{ post.date | readableDate }}</time>
+                  · {{ post.templateContent | readingTime }}
+                </p>
+
+                <h3 class="mt-0.5 text-lg text-gray-900">
+                  {{ post.data.title }}
+                </h3>
+
+                <div class="mt-2 line-clamp-3 text-sm text-gray-500">
+                  {{ post.data.excerpt | safe }}
+                </div>
+              </div>
+            </a>
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
