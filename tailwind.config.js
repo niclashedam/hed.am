@@ -6,6 +6,14 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            "code::before": { content: "" },
+            "code::after": { content: "" },
+          },
+        },
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],
