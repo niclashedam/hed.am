@@ -4,7 +4,17 @@
   "dictionaries": ["en-gb", "html", "css", "softwareTerms", "misc"],
   "useGitignore": false,
   "ignorePaths": [],
-  "ignoreRegExpList": ["<[^>]*>"],
+  "patterns": [
+    {
+      "name": "pre",
+      "pattern": "/<pre\\b(?=[^>]*\\bclass\\s*=\\s*(?:\\\"[^\\\"]*\\blanguage-[^\\\"]*\\\"|'[^']*\\blanguage-[^']*'))[^>]*>[\\s\\S]*?<\\/pre>/gi"
+    },
+    {
+      "name": "pre",
+      "pattern": "/<code\\b[^>]*>[\\s\\S]*?<\\/code>/gi"
+    }
+  ],
+  "ignoreRegExpList": ["<[^>]*>", "pre", "code"],
   "words": [
     "Niclas",
     "Hedam",
