@@ -7,7 +7,7 @@
       </p>
       <div
         class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-        {% for post in collections.blog %}
+        {% for post in collections.blog | limit(3) %}
           <article class="overflow-hidden rounded-lg shadow-lg">
             <a href="{{ post.url }}">
               <img

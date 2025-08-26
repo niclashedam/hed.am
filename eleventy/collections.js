@@ -1,6 +1,13 @@
 const striptags = require("striptags");
 
 module.exports = function (eleventyConfig, md) {
+  eleventyConfig.addNunjucksFilter("limit", (arr, limit) =>
+    arr.slice(0, limit),
+  );
+  eleventyConfig.addFilter("not", function (arr, key = "", value) {
+    return arr.filter((item) => item[key] !== value);
+  });
+
   eleventyConfig.addCollection("blog", async function (collectionApi) {
     const posts = collectionApi
       .getFilteredByGlob("src/blog/posts/*.md")
