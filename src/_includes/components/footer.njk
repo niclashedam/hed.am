@@ -18,58 +18,100 @@
   </div>
 </footer>
 <script type="application/ld+json">
-  {% if type == "article" %}
   {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
-    "headline": "{{ title }}",
-    "description": "{{ (description or excerpt or '') | striptags | trim }}",
-    "image": "https://hed.am{{ image | url }}",
-    "url": "https://hed.am{{ page.url }}",
-    "datePublished": "{{ date | machineDate }}",
-    {% if keywords %}
-    "keywords": "{{ keywords | join(', ') }}",
-    {% endif %}
-    "author": {
-      "@type": "Person",
-      "name": "Niclas Hedam",
-      "url": "https://hed.am/",
-      "image": "https://hed.am/assets/images/niclas.jpeg",
-      "jobTitle": "Security Advisor",
-      "worksFor": { "@type": "Organization", "name": "itm8" },
-      "sameAs": [
-        "https://orcid.org/0000-0001-5847-8419",
-        "https://scholar.google.com/citations?user=DdLrWgwAAAAJ",
-        "https://www.researchgate.net/profile/Niclas-Hedam",
-        "https://github.com/niclashedam",
-        "https://www.linkedin.com/in/hedam",
-        "https://dblp.uni-trier.de/pid/257/5600.html"
-      ]
-    }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://hed.am/#website",
+        "url": "https://hed.am/",
+        "name": "hed.am",
+        "alternateName": "Niclas Hedam",
+        "inLanguage": "{{ language or 'en' }}",
+        "publisher": { "@id": "https://hed.am/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://hed.am/#person",
+        "name": "Niclas Hedam",
+        "url": "https://hed.am/",
+        "jobTitle": "Security Advisor",
+        "worksFor": { "@type": "Organization", "name": "itm8" },
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://hed.am/assets/images/niclas.jpeg"
+        },
+        "sameAs": [
+          "https://orcid.org/0000-0001-5847-8419",
+          "https://scholar.google.com/citations?user=DdLrWgwAAAAJ",
+          "https://www.researchgate.net/profile/Niclas-Hedam",
+          "https://github.com/niclashedam",
+          "https://www.linkedin.com/in/hedam",
+          "https://dblp.uni-trier.de/pid/257/5600.html"
+        ]
+      }
+      {% if type == "article" %},
+      {
+        "@type": "WebPage",
+        "@id": "https://hed.am{{ page.url }}#webpage",
+        "url": "https://hed.am{{ page.url }}",
+        "name": "{{ title }}",
+        "description": "{{ (description or excerpt or '') | striptags | trim }}",
+        "inLanguage": "{{ language or 'en' }}",
+        "isPartOf": { "@id": "https://hed.am/#website" }{% if date %},
+        "datePublished": "{{ date | machineDate }}"{% endif %}{% if image %},
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://hed.am{{ image | url }}"
+        }{% endif %},
+        "author": { "@id": "https://hed.am/#person" }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://hed.am{{ page.url }}#article",
+        "headline": "{{ title }}",
+        "description": "{{ (description or excerpt or '') | striptags | trim }}",
+        "mainEntityOfPage": { "@id": "https://hed.am{{ page.url }}#webpage" },
+        "isPartOf": { "@id": "https://hed.am/#website" },
+        "inLanguage": "{{ language or 'en' }}",
+        "url": "https://hed.am{{ page.url }}"{% if image %},
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://hed.am{{ image | url }}"
+        }{% endif %}{% if date %},
+        "datePublished": "{{ date | machineDate }}"{% endif %}{% if keywords %},
+        "keywords": "{{ keywords | join(', ') }}",{% endif %}
+        "wordCount": {{ wordCount }},
+        "author": { "@id": "https://hed.am/#person" },
+        "publisher": { "@id": "https://hed.am/#person" },
+        "isAccessibleForFree": true
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://hed.am{{ page.url }}#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://hed.am/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://hed.am/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "{{ title }}", "item": "https://hed.am{{ page.url }}" }
+        ]
+      }
+      {% else %},
+      {
+        "@type": "WebPage",
+        "@id": "https://hed.am{{ page.url }}#webpage",
+        "url": "https://hed.am{{ page.url }}",
+        "name": "{{ title }}",
+        "description": "{{ (description or '') | striptags | trim }}",
+        "inLanguage": "{{ language or 'en' }}",
+        "isPartOf": { "@id": "https://hed.am/#website" }{% if date %},
+        "datePublished": "{{ date | machineDate }}"{% endif %}{% if image %},
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://hed.am{{ image | url }}"
+        }{% endif %},
+        "author": { "@id": "https://hed.am/#person" }
+      }
+      {% endif %}
+    ]
   }
-  {% else %}
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "url": "https://hed.am/",
-    "name": "{{ title }}",
-    "description": "{{ description }}",
-    "author": {
-      "@type": "Person",
-      "name": "Niclas Hedam",
-      "url": "https://hed.am/",
-      "image": "https://hed.am/assets/images/niclas.jpeg",
-      "jobTitle": "Security Advisor",
-      "worksFor": { "@type": "Organization", "name": "itm8" },
-      "sameAs": [
-        "https://orcid.org/0000-0001-5847-8419",
-        "https://scholar.google.com/citations?user=DdLrWgwAAAAJ",
-        "https://www.researchgate.net/profile/Niclas-Hedam",
-        "https://github.com/niclashedam",
-        "https://www.linkedin.com/in/hedam",
-        "https://dblp.uni-trier.de/pid/257/5600.html"
-      ]
-    }
-  }
-  {% endif %}
 </script>

@@ -52,7 +52,7 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science. He is passiona
                   title="{{ date | machineDate }}">
                   {{- date | readableDate -}}
                 </time>
-                · {{ content | readingTime }}
+                · {{ readingTime }} min read
               </p>
             </div>
           </div>
@@ -97,7 +97,7 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science. He is passiona
             <div class="bg-white p-4 sm:p-6">
               <p class="block text-xs text-gray-500">
                 <time datetime="{{ post.date | machineDate }}">{{ post.date | readableDate }}</time>
-                · {{ post.templateContent | readingTime }}
+                · {{ post.readingTime }} min read
               </p>
 
               <h3 class="mt-0.5 text-lg text-gray-900">{{ post.data.title }}</h3>

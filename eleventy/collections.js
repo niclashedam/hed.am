@@ -9,6 +9,8 @@ module.exports = function (eleventyConfig, md) {
   });
 
   eleventyConfig.addCollection("blog", async function (collectionApi) {
+    const wordsPerMinute = 200;
+
     const posts = collectionApi
       .getFilteredByGlob("src/blog/posts/*.md")
       .sort((a, b) => b.date - a.date);
@@ -17,6 +19,10 @@ module.exports = function (eleventyConfig, md) {
       const fm = await post.template.read();
       const raw = post.data.description || md.render(fm.content || "");
       let excerpt = striptags(raw).replace(/\s+/g, " ").trim();
+
+      post.data.wordCount = excerpt.length;
+      post.data.readingTime = Math.ceil(post.data.wordCount / wordsPerMinute);
+
       if (excerpt.length > 150) {
         const cutoff = excerpt.indexOf(" ", 150);
         excerpt =

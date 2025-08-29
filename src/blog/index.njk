@@ -39,7 +39,7 @@ description: "Latest posts and updates from Niclas Hedam's blog, covering cyber 
                 <div class="bg-white p-4 sm:p-6">
                   <p class="block text-xs text-gray-500">
                     <time datetime="{{ post.date | machineDate }}">{{ post.date | readableDate }}</time>
-                    · {{ post.templateContent | readingTime }}
+                    · {{ post.readingTime }} min read
                   </p>
 
                   <h3 class="mt-0.5 text-lg text-gray-900">
