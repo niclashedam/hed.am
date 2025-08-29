@@ -10,7 +10,7 @@ keywords:
   - security
   - bugs
 imageAlt: "A developer using ChatGPT to generate code snippets."
-image: /assets/images/blog/chatgpt.jpg
+image: /assets/images/blog/llms-can-code.jpg
 permalink: "/blog/llms-can-write-code-but-cannot-read-your-mind/"
 ---
 
