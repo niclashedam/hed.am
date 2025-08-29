@@ -19,9 +19,10 @@ module.exports = function (eleventyConfig, md) {
       const fm = await post.template.read();
       const raw = post.data.description || md.render(fm.content || "");
       let excerpt = striptags(raw).replace(/\s+/g, " ").trim();
+      let words = striptags(raw).trim().split(/\s+/).filter(Boolean).length;
 
-      post.data.wordCount = excerpt.length;
-      post.data.readingTime = Math.ceil(post.data.wordCount / wordsPerMinute);
+      post.data.wordCount = words;
+      post.data.readingTime = Math.ceil(words / wordsPerMinute);
 
       if (excerpt.length > 150) {
         const cutoff = excerpt.indexOf(" ", 150);
