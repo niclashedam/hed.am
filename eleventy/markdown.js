@@ -11,7 +11,8 @@ module.exports = function (eleventyConfig) {
 
   md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
     const href = tokens[idx].attrGet("href");
-    if (href && /^https?:\/\//.test(href)) {
+    // check if href is an external link or PDF
+    if (href && (/^https?:\/\//.test(href) || /\.pdf$/.test(href))) {
       tokens[idx].attrSet("target", "_blank");
       tokens[idx].attrJoin("rel", "noopener noreferrer");
     }
