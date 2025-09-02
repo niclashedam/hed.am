@@ -17,6 +17,9 @@
     </span>
   </div>
 </footer>
+{% if eleventyNavigation and eleventyNavigation.key %}
+  {% set breadcrumbs = collections.all | eleventyNavigationBreadcrumb(page.url, { includeSelf: true }) %}
+{% endif %}
 <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -125,27 +128,6 @@
             "@id": "https://hed.am/#person"
           },
           "isAccessibleForFree": true
-        }, {
-          "@type": "BreadcrumbList",
-          "@id": "https://hed.am{{ page.url }}#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://hed.am/"
-            }, {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Blog",
-              "item": "https://hed.am/blog/"
-            }, {
-              "@type": "ListItem",
-              "position": 3,
-              "name": "{{ title }}",
-              "item": "https://hed.am{{ page.url }}"
-            }
-          ]
         }
       {% else %}, {
           "@type": "WebPage",
@@ -165,6 +147,19 @@
           "author": {
             "@id": "https://hed.am/#person"
           }
+        }
+      {% endif %}
+      {% if breadcrumbs and breadcrumbs.length %}, {
+          "@type": "BreadcrumbList",
+          "@id": "https://hed.am{{ page.url }}#breadcrumb",
+          "itemListElement": [
+            {% for item in breadcrumbs %}{
+              "@type": "ListItem",
+              "position": {{ loop.index }},
+              "name": "{{ item.title }}",
+              "item": "https://hed.am{{ item.url }}"
+            }{% if not loop.last %}, {% endif %}{% endfor %}
+          ]
         }
       {% endif %}
     ]

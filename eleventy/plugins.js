@@ -1,5 +1,6 @@
 const { eleventyImageTransformPlugin } = require("@11ty/eleventy-img");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const navigationPlugin = require("@11ty/eleventy-navigation");
 const path = require("path");
 
 module.exports = function (eleventyConfig) {
@@ -20,4 +21,5 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(navigationPlugin);
 };
