@@ -7,6 +7,10 @@ module.exports = function (eleventyConfig) {
         collapseWhitespace: true,
         removeComments: true,
         useShortDoctype: true,
+        processScripts: ["application/ld+json"],
+        minifyJS: true,
+        minifyCSS: true,
+        removeComments: true,
       });
     }
     return content;
