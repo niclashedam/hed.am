@@ -7,7 +7,7 @@
     "@shopify/prettier-plugin-liquid": "^1.9.4",
     "@tailwindcss/typography": "^0.5.16",
     "axe-core": "^4.10.3",
-    "cspell": "^9.2.0",
+    "cspell": "^9.2.1",
     "glob": "^11.0.3",
     "html-minifier-terser": "^7.2.0",
     "jsdom": "^26.1.0",
