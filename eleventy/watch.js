@@ -5,7 +5,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.on("eleventy.before", () => {
     execSync(
-      "npx tailwindcss -i ./src/assets/css/main.css -o ./public/assets/css/dist.css --minify",
+      "npx @tailwindcss/cli -i ./src/assets/css/main.css -o ./public/assets/css/dist.css --minify",
       { stdio: "inherit" },
     );
   });
