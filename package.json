@@ -16,10 +16,11 @@
     "tailwindcss": "^3.4.10"
   },
   "scripts": {
-    "build": "eleventy",
+    "build": "npm run clean && eleventy",
     "check:format": "prettier . --check",
     "check:spelling": "npm run build && cspell --config cspell.json --no-progress \"public/**/*.html\"",
     "check:a11y": "npm run build && node ./scripts/a11y.js",
+    "clean": "rm -rf ./public && git checkout public",
     "format": "prettier . --write",
     "serve": "eleventy --serve"
   }
