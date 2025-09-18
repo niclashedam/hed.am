@@ -13,9 +13,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run check:a11y
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn check:a11y
   cspell:
     runs-on: ubuntu-latest
     steps:
@@ -23,9 +23,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run check:spelling
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn check:spelling
   prettier:
     runs-on: ubuntu-latest
     steps:
@@ -33,6 +33,16 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: npm
-      - run: npm ci
-      - run: npm run check:format
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn check:format
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+      - run: yarn install --frozen-lockfile
+      - run: yarn audit
