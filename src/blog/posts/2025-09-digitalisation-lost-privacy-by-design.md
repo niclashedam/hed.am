@@ -3,15 +3,21 @@ layout: layouts/post.njk
 title: "Digitalisation: Lost Privacy by Design"
 date: 2025-09-02
 keywords:
-  - privacy
-  - data collection
+  - digitalisation
+  - privacy by design
+  - data protection
+  - public records
   - surveillance
   - open data
-  - open-source intelligence
-  - mobilepay
-  - data protection
-  - privacy by design
   - digital rights
+  - data privacy
+  - government transparency
+  - cpr protection
+  - personal data
+  - registry data
+  - denmark
+  - eu privacy
+  - digital culture
 imageAlt: "A man lurking behind closed blinds."
 image: /assets/images/blog/digitalisation-lost-privacy-by-design.jpg
 permalink: "/blog/digitalisation-lost-privacy-by-design/"
