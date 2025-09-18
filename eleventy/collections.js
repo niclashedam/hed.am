@@ -32,6 +32,22 @@ module.exports = function (eleventyConfig, md) {
       post.data.excerpt = excerpt;
     }
 
+    for (const post of posts) {
+      const related = posts
+        .filter((p) => p.url !== post.url)
+        .map((p) => {
+          const sharedKeywords = (post.data.keywords || []).filter((keyword) =>
+            (p.data.keywords || []).includes(keyword),
+          );
+          return { post: p, score: sharedKeywords.length };
+        })
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 2)
+        .map((item) => item.post);
+
+      post.data.relatedPosts = related;
+    }
+
     return posts;
   });
 };

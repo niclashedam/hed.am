@@ -3,11 +3,21 @@ layout: layouts/post.njk
 title: "You Are the Product: Two Decades of Giving Up Data Control"
 date: 2025-08-18
 keywords:
-  - privacy
-  - google
-  - data collection
-  - surveillance
+  - data privacy
+  - surveillance capitalism
   - big tech
+  - google
+  - meta
+  - data collection
+  - targeted advertising
+  - user profiling
+  - digital rights
+  - privacy tools
+  - gdpr
+  - online tracking
+  - behavioural data
+  - internet privacy
+  - personal data
 imageAlt: "Surveillance camera focusing on security with American flag backdrop."
 image: /assets/images/blog/you-are-the-product.jpg
 permalink: "/blog/you-are-the-product/"

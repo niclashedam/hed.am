@@ -3,15 +3,21 @@ layout: layouts/post.njk
 title: "When CPUs Stopped Scaling: Why Hardware Got Complicated"
 date: 2025-09-08
 keywords:
-  - hardware
-  - cpu
-  - scaling
-  - technology
-  - dennard-scaling
+  - cpu scaling
+  - hardware evolution
+  - moore's law
+  - dennard scaling
   - computational storage
-  - graphics cards
-  - gpus
   - multi-core processors
+  - gpu
+  - arm architecture
+  - data movement
+  - computer architecture
+  - performance optimisation
+  - memory hierarchy
+  - software engineering
+  - hardware bottlenecks
+  - technology trends
   - delilah
 imageAlt: "A motherboard with three RAM sticks."
 image: /assets/images/blog/when-cpus-stopped-scaling.jpg

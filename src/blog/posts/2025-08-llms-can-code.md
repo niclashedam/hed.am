@@ -4,11 +4,20 @@ title: "LLMs Can Write Code, But Cannot Read Your Mind"
 date: 2025-08-26
 keywords:
   - llm
+  - ai coding
   - chatgpt
-  - ai
+  - copilot
   - software engineering
-  - security
-  - bugs
+  - code generation
+  - programming ai
+  - developer tools
+  - code security
+  - context awareness
+  - software bugs
+  - prompt engineering
+  - machine learning
+  - artificial intelligence
+  - code review
 imageAlt: "A developer using ChatGPT to generate code snippets."
 image: /assets/images/blog/llms-can-code.jpg
 permalink: "/blog/llms-can-write-code-but-cannot-read-your-mind/"

@@ -4,14 +4,21 @@ title: "EU Chat Control: If Privacy Is Outlawed, Only Outlaws Have Privacy"
 date: 2025-09-15
 keywords:
   - privacy
-  - encryption
-  - european union
-  - chat control
-  - surveillance
-  - child protection
-  - pre-crime
+  - digital rights
   - end-to-end encryption
+  - chat control
+  - EU regulation
+  - surveillance
+  - client-side scanning
+  - child protection
   - csam
+  - pre-crime
+  - cybersecurity policy
+  - mass surveillance
+  - encryption policy
+  - european union
+  - civil liberties
+  - technology law
 imageAlt: "European Union flags waving in the wind."
 image: /assets/images/blog/if-privacy-is-outlawed-only-outlaws-have-privacy.jpg
 permalink: "/blog/if-privacy-is-outlawed-only-outlaws-have-privacy/"
