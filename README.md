@@ -5,28 +5,29 @@ Source code for **hed.am**, a statically generated website built with [Eleventy]
 ## Prerequisites
 
 - [Node.js](https://nodejs.org/) 20 or later.
-- [npm](https://www.npmjs.com/) (comes with Node).
+- [yarn](https://yarnpkg.com/)
 
 ## Installation
 
 Clone the repository and install dependencies:
 
 ```bash
-npm install
+yarn install
 ```
 
 ## Available scripts
 
-All project tasks are run through npm scripts:
+All project tasks are run through Yarn scripts:
 
-| Command                  | Description                                                      |
-| ------------------------ | ---------------------------------------------------------------- |
-| `npm run serve`          | Start a local development server with live reload.               |
-| `npm run build`          | Generate the static site into the `public/` directory.           |
-| `npm run format`         | Format source files using Prettier.                              |
-| `npm run check:format`   | Verify that files are formatted correctly.                       |
-| `npm run check:spelling` | Build and spell-check generated HTML using cspell.               |
-| `npm run check:a11y`     | Build and audit generated HTML for accessibility using axe-core. |
+| Command               | Description                                                      |
+| --------------------- | ---------------------------------------------------------------- |
+| `yarn serve`          | Start a local development server with live reload.               |
+| `yarn build`          | Generate the static site into the `public/` directory.           |
+| `yarn format`         | Format source files using Prettier.                              |
+| `yarn clean`          | Remove generated files and start fresh.                          |
+| `yarn check:format`   | Verify that files are formatted correctly.                       |
+| `yarn check:spelling` | Build and spell-check generated HTML using cspell.               |
+| `yarn check:a11y`     | Build and audit generated HTML for accessibility using axe-core. |
 
 ## Project structure
 
@@ -41,18 +42,18 @@ All project tasks are run through npm scripts:
 
 ## Development workflow
 
-1. Run `npm run serve` to start a dev server.
+1. Run `yarn serve` to start a dev server.
 2. Edit files in `src/`; changes will automatically rebuild.
-3. When ready for production, run `npm run build` and deploy the `public/` directory.
+3. When ready for production, run `yarn build` and deploy the `public/` directory.
 
 ## Quality checks
 
 Before committing, ensure all checks pass:
 
 ```bash
-npm run check:format
-npm run check:spelling
-npm run check:a11y
+yarn check:format
+yarn check:spelling
+yarn check:a11y
 ```
 
 ## Contributing
