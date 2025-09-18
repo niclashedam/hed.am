@@ -2,12 +2,9 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-body {
-  font-family: "Inter", sans-serif;
-}
-
-.prose a {
-  @apply text-indigo-600 underline hover:text-indigo-800;
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-mono: "Roboto Mono", monospace;
 }
 
 .prose h1 {
@@ -15,11 +12,31 @@ body {
 }
 
 .prose h2 {
-  @apply mt-6 mb-3 text-2xl font-semibold;
+  @apply mt-8 mb-3 text-2xl font-semibold;
 }
 
 .prose h3 {
-  @apply mt-4 mb-2 text-xl font-semibold;
+  @apply mt-6 mb-2 text-xl font-semibold;
+}
+
+.code {
+  @apply font-mono;
+}
+
+.prose a:not(.icon) {
+  @apply text-indigo-600 underline hover:text-indigo-800;
+}
+
+/* only run on inline code, not code blocks */
+:not(pre) > code {
+  &::before {
+    content: "";
+  }
+  &::after {
+    content: "";
+  }
+
+  @apply bg-gray-200 px-1 rounded font-semibold inline-block;
 }
 
 .glitch-wrapper {

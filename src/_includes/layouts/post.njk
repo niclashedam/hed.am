@@ -4,11 +4,11 @@ type: article
 author: Niclas Hedam
 authorPic: /assets/images/niclas.jpeg
 authorTitle: PhD, Computer Science
-authorDescription: "Niclas Hedam holds a PhD in Computer Science. He is passionate about educating others on the importance of safeguarding personal information online."
+authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT University of Copenhagen. He is passionate about educating others on the importance of safeguarding personal information online."
 ---
 {% include 'components/header.njk' %}
 
-<main class="pt-8 pb-8 lg:pt-16 antialiased px-4 sm:px-6 lg:px-8">
+<main class="pt-8 pb-8 lg:pt-16 px-4 sm:px-6 lg:px-8">
   <div class="mx-auto w-full max-w-2xl">
     <nav class="mb-2 text-sm text-gray-500" aria-label="Breadcrumb">
       <ol class="flex items-center space-x-2">
@@ -77,6 +77,19 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science. He is passiona
               </h2>
               <div class="w-12 h-1 bg-indigo-700 rounded mb-4"></div>
               <p class="text-base">{{ authorDescription }}</p>
+            </div>
+            <div
+              class="inline-flex justify-center mt-4 space-x-5">
+              {% for item in links %}
+                <a
+                  href="{{ item.href }}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="icon text-gray-400 hover:text-gray-600 text-3xl">
+                  <span class="sr-only">{{ item.sr }}</span>
+                  <i class="{{ item.icon }}"></i>
+                </a>
+              {% endfor %}
             </div>
           </div>
         </address>
