@@ -19,8 +19,8 @@ keywords:
   - software development
   - open source
 imageAlt: "A man holding an npm sticker."
-image: /assets/images/blog/malicious-compliance.jpg
-permalink: "/blog/malicious-compliance/"
+image: /assets/images/blog/how-trusted-packages-turn-into-attack-vectors.jpg
+permalink: "/blog/how-trusted-packages-turn-into-attack-vectors/"
 ---
 
 Modern software is built largely on open-source packages and libraries. Instead of developing everything from scratch, developers often rely on third-party packages to speed up development and utilise existing solutions. For example, why implement a complex algorithm when you can simply install a package that does it for you, tested and verified by thousands or even millions of other software developers?
