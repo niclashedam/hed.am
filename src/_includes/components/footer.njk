@@ -49,10 +49,10 @@
         "@id": "https://hed.am/#person",
         "name": "Niclas Hedam",
         "url": "https://hed.am/",
-        "jobTitle": "Security Advisor",
+        "jobTitle": "{{ experience[0].title }}",
         "worksFor": {
           "@type": "Organization",
-          "name": "itm8"
+          "name": "{{ experience[0].company }}",
         },
         "image": {
           "@type": "ImageObject",

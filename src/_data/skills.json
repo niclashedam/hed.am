@@ -1,32 +1,32 @@
 [
   {
-    "icon": "fa-regular fa-eye",
-    "title": "Privacy-first mindset",
-    "text": "I work with privacy-by-design, end-to-end encryption and data minimisation to avoid mission-critical data becoming a key risk. Data is currently the most valuable resource and should be treated as such."
+    "icon": "fa-regular fa-fingerprint",
+    "title": "I have a privacy-first mindset",
+    "text": "I work with privacy-by-design, end-to-end encryption and data minimisation to avoid data becoming a risk. Data is currently the most valuable resource and should be treated as such."
   },
   {
     "icon": "fa-solid fa-code",
-    "title": "Software engineering",
-    "text": "I write and review code in C, C++, Python, Java, JavaScript, TypeScript, PHP and a dozen more languages."
+    "title": "I am a software engineer",
+    "text": "I write and review code in C, C++, Rust, C#, Python, Java, JavaScript, TypeScript, PHP and several more languages."
   },
   {
     "icon": "fa-solid fa-person-chalkboard",
-    "title": "Teaching and mentoring",
+    "title": "I have been a teaching and mentoring",
     "text": "I have taught Operating Systems and C to hundreds of students at the IT University of Copenhagen, which showcases my ability to present complex topics clearly."
   },
   {
-    "icon": "fa-solid fa-money-bill-trend-up",
-    "title": "Entrepreneurship",
-    "text": "Running a company taught me to turn technical work into business value and balance security investments with cost."
+    "icon": "fa-solid fa-user-tie",
+    "title": "I have been an entrepreneur",
+    "text": "Running my own company taught me how to turn technology into business value as well as setting strategic direction and realistic goals."
   },
   {
-    "icon": "fa-solid fa-microscope",
-    "title": "Research",
-    "text": "My PhD trained me in academic research and the scientific method. I have published and presented at international conferences and workshops."
+    "icon": "fa-solid fa-flask-vial",
+    "title": "I have done academic research",
+    "text": "My PhD trained me in academic research and following the scientific method. I have presented at international conferences and workshops."
   },
   {
     "icon": "fa-solid fa-server",
-    "title": "Infrastructure and hardware",
-    "text": "Hands-on experience with data centres, including installing and maintaining servers, storage and network equipment."
+    "title": "I have practical experience with hardware",
+    "text": "I have hands-on experience with data centres, including installing and maintaining servers, storage and network equipment."
   }
 ]
