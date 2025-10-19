@@ -28,6 +28,7 @@ All project tasks are run through Yarn scripts:
 | `yarn check:format`   | Verify that files are formatted correctly.                       |
 | `yarn check:spelling` | Build and spell-check generated HTML using cspell.               |
 | `yarn check:a11y`     | Build and audit generated HTML for accessibility using axe-core. |
+| `yarn check:jsonld`   | Build and validate JSON-LD structured data in generated HTML.    |
 
 ## Project structure
 
@@ -54,6 +55,7 @@ Before committing, ensure all checks pass:
 yarn check:format
 yarn check:spelling
 yarn check:a11y
+yarn check:jsonld
 ```
 
 ## Contributing
