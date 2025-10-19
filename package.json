@@ -12,6 +12,7 @@
     "glob": "^11.0.3",
     "html-minifier-terser": "^7.2.0",
     "jsdom": "^27.0.0",
+    "jsonld": "^8.3.3",
     "prettier": "^3.3.3",
     "striptags": "^3.2.0",
     "tailwindcss": "^4.1.14"
@@ -21,6 +22,7 @@
     "check:format": "prettier . --check",
     "check:spelling": "npm run build && cspell --config cspell.json --no-progress \"public/**/*.html\"",
     "check:a11y": "npm run build && node ./scripts/a11y.js",
+    "check:jsonld": "npm run build && node ./scripts/jsonld.js",
     "clean": "rm -rf ./public && git checkout public",
     "format": "prettier . --write",
     "serve": "eleventy --serve"
