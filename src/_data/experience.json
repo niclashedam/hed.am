@@ -1,5 +1,11 @@
 [
   {
+    "logo": "/assets/images/employer/darktrace.jpg",
+    "company": "Darktrace",
+    "title": "Solutions Engineer",
+    "dates": "2026 - Present"
+  },
+  {
     "logo": "/assets/images/employer/itm8.jpg",
     "company": "itm8",
     "title": "Security Advisor",
@@ -28,11 +34,5 @@
     "company": "Pairy",
     "title": "Lead Developer",
     "dates": "2016 - 2018"
-  },
-  {
-    "logo": "/assets/images/employer/bello.jpg",
-    "company": "Newsio | Bello",
-    "title": "Software Developer",
-    "dates": "2016"
   }
 ]
