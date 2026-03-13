@@ -1,0 +1,4 @@
+Contact: mailto:contact@hed.am
+Expires: 2027-03-13T23:59:00.000Z
+Encryption: https://hed.am/key.asc
+Preferred-Languages: en, da

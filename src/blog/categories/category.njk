@@ -1,11 +1,13 @@
 ---
 layout: layouts/base.njk
-title: Intelligence Briefs
-description: "Threat analysis and architecture guidance for organisations operating under security, privacy, and resilience pressure."
-eleventyNavigation:
-  key: /blog/
-  parent: /
-  title: Intelligence Briefs
+pagination:
+  data: collections.categories
+  size: 1
+  alias: category
+permalink: "/blog/categories/{{ category.slug }}/"
+eleventyComputed:
+  title: "{{ category.name }} — Intelligence Briefs"
+  description: "Intelligence Briefs in the {{ category.name }} category."
 ---
 {% include 'components/header.njk' %}
 
@@ -16,30 +18,30 @@ eleventyNavigation:
         <ol class="flex items-center space-x-2">
           <li><a href="/" class="text-gold-600 hover:underline">Home</a></li>
           <li aria-hidden="true">/</li>
-          <li aria-current="page" class="text-gray-700">Intelligence Briefs</li>
+          <li><a href="/blog" class="text-gold-600 hover:underline">Intelligence Briefs</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="/blog/categories/" class="text-gold-600 hover:underline">Categories</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" class="text-gray-700">{{ category.name }}</li>
         </ol>
       </nav>
 
       <div class="flex items-center gap-4 mb-6">
-        <span class="section-meta text-steel-500">ARCHIVE</span>
+        <a href="/blog/categories/" class="section-meta text-gold-600 hover:text-gold-500 transition-colors"
+          >CATEGORIES</a
+        >
         <span class="h-px flex-1 bg-parchment-dark max-w-[8rem]"></span>
       </div>
-      <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8">
-        <div>
-          <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Intelligence Briefs</h1>
-          <p class="mt-3 text-sm text-gray-500 font-mono">
-            Research notes, technical analyses and intelligence perspectives.
-          </p>
-        </div>
-        <a
-          href="/blog/categories/"
-          class="section-meta text-gold-600 hover:text-gold-500 transition-colors shrink-0 pb-0.5">
-          BROWSE BY CATEGORY →
-        </a>
+      <div class="mb-8">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">{{ category.name }}</h1>
+        <p class="mt-3 text-sm text-gray-500 font-mono">
+          {{ category.posts | length }}
+          {%- if category.posts | length == 1 %} intelligence brief{%- else %} intelligence briefs{%- endif %}
+        </p>
       </div>
 
       <div class="border-t border-parchment-dark pt-8 grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-3">
-        {% for post in collections.blog %}
+        {% for post in category.posts %}
           <article class="relative group overflow-hidden rounded-lg border border-parchment-dark bg-white hover:shadow-md transition-shadow">
             <img
               width="400"
@@ -47,14 +49,7 @@ eleventyNavigation:
               src="{{ post.data.image | url }}"
               class="h-48 w-full object-cover">
             <div class="p-5">
-              {% if post.data.categories %}
-                <a
-                  href="/blog/categories/{{ post.data.categories | slugify }}/"
-                  class="relative z-10 section-meta text-gold-600 hover:text-gold-500 transition-colors">
-                  {{ post.data.categories }}
-                </a>
-              {% endif %}
-              <h2 class="mt-2 text-base font-semibold text-gray-900 leading-snug group-hover:text-gold-700 transition-colors">
+              <h2 class="text-base font-semibold text-gray-900 leading-snug group-hover:text-gold-700 transition-colors">
                 <a href="{{ post.url }}" class="after:absolute after:inset-0 after:content-['']">
                   {{- post.data.title -}}
                 </a>

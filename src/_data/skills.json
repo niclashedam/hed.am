@@ -1,32 +1,26 @@
 [
   {
-    "icon": "fa-regular fa-fingerprint",
-    "title": "I have a privacy-first mindset",
-    "text": "I work with privacy-by-design, end-to-end encryption and data minimisation to avoid data becoming a risk. Data is currently the most valuable resource and should be treated as such."
+    "title": "Security Architecture",
+    "text": "I design security controls at the architecture level for environments where failure has high operational cost. I work from threat model to implementation with a focus on hardening, defence in depth, and resilience."
   },
   {
-    "icon": "fa-solid fa-code",
-    "title": "I am a software engineer",
-    "text": "I write and review code in C, C++, Rust, C#, Python, Java, JavaScript, TypeScript, PHP and several more languages."
+    "title": "Privacy by Design",
+    "text": "I apply privacy as an engineering requirement from day one. I focus on balancing data minimisation, user control, and transparency with business needs."
   },
   {
-    "icon": "fa-solid fa-person-chalkboard",
-    "title": "I have been a teaching and mentoring",
-    "text": "I have taught Operating Systems and C to hundreds of students at the IT University of Copenhagen, which showcases my ability to present complex topics clearly."
+    "title": "Software Engineering",
+    "text": "I build and review software in C, C++, C#, Python, Java, JavaScript, TypeScript, PHP, and related tooling, with an emphasis on secure defaults and long-term maintainability."
   },
   {
-    "icon": "fa-solid fa-user-tie",
-    "title": "I have been an entrepreneur",
-    "text": "Running my own company taught me how to turn technology into business value as well as setting strategic direction and realistic goals."
+    "title": "Systems & Infrastructure",
+    "text": "I have hands-on experience across Linux, Active Directory, storage, networking, and cloud-adjacent infrastructure, including maintenance on-site in datacenters."
   },
   {
-    "icon": "fa-solid fa-flask-vial",
-    "title": "I have done academic research",
-    "text": "My PhD trained me in academic research and following the scientific method. I have presented at international conferences and workshops."
+    "title": "Academic Research",
+    "text": "I hold a PhD in Computer Science from IT University of Copenhagen with research spanning data flow, firmware, and architecture. I turn hypothetical research ideas into practical engineering decisions."
   },
   {
-    "icon": "fa-solid fa-server",
-    "title": "I have practical experience with hardware",
-    "text": "I have hands-on experience with data centres, including installing and maintaining servers, storage and network equipment."
+    "title": "Technical Teaching & Mentoring",
+    "text": "I have lectured 500+ students in Operating Systems and C at IT University of Copenhagen. I deliver technically advanced topics to a diverse audience."
   }
 ]

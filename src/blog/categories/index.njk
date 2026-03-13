@@ -1,0 +1,51 @@
+---
+layout: layouts/base.njk
+title: Categories — Intelligence Briefs
+description: "Browse Intelligence Briefs by topic area."
+---
+{% include 'components/header.njk' %}
+
+<main id="main-content" class="bg-parchment">
+  <section class="py-10 lg:py-16">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <nav class="mb-8 text-sm text-gray-500" aria-label="Breadcrumb">
+        <ol class="flex items-center space-x-2">
+          <li><a href="/" class="text-gold-600 hover:underline">Home</a></li>
+          <li aria-hidden="true">/</li>
+          <li><a href="/blog" class="text-gold-600 hover:underline">Intelligence Briefs</a></li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" class="text-gray-700">Categories</li>
+        </ol>
+      </nav>
+
+      <div class="flex items-center gap-4 mb-6">
+        <span class="section-meta text-steel-500">TOPIC AREAS</span>
+        <span class="h-px flex-1 bg-parchment-dark max-w-[8rem]"></span>
+      </div>
+      <div class="mb-8">
+        <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Categories</h1>
+        <p class="mt-3 text-sm text-gray-500 font-mono">Browse Intelligence Briefs by topic area.</p>
+      </div>
+
+      <div class="border-t border-parchment-dark pt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-4">
+        {% for cat in collections.categories %}
+          <a
+            href="/blog/categories/{{ cat.slug }}/"
+            class="group flex items-center justify-between bg-white border border-parchment-dark rounded px-5 py-4 hover:border-gold-500 transition-colors">
+            <div class="flex items-center gap-3">
+              <span
+                class="w-1.5 h-1.5 rounded-full bg-gold-500 opacity-50 group-hover:opacity-100 transition-opacity flex-shrink-0"></span>
+              <span class="font-semibold text-gray-900 group-hover:text-gold-700 transition-colors">
+                {{- cat.name -}}
+              </span>
+            </div>
+            <span class="section-meta text-steel-500 group-hover:text-gold-500 transition-colors ml-4 flex-shrink-0">
+              {{ cat.posts | length }}
+              {%- if cat.posts | length == 1 %} BRIEF{%- else %} BRIEFS{%- endif %}
+            </span>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+</main>

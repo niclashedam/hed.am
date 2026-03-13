@@ -10,7 +10,6 @@ module.exports = function (eleventyConfig) {
         processScripts: ["application/ld+json"],
         minifyJS: true,
         minifyCSS: true,
-        removeComments: true,
       });
     }
     return content;

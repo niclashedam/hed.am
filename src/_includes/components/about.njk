@@ -1,51 +1,81 @@
-<section>
-  <div class="overflow-hidden bg-white py-24 sm:py-32">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <div
-        class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-        <div class="lg:pr-8 lg:pt-4">
-          <div class="lg:max-w-lg">
-            <h2
-              class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              About me
-            </h2>
-            <p class="mt-6 text-lg leading-8 text-gray-600">
-              I have more than 13 years of technical experience focused on infrastructure, security and privacy. I hold
-              a
-              <span class="text-indigo-600 font-semibold"> Bachelor’s degree in Software Development</span>, a
-              <span class="text-indigo-600 font-semibold"> Master’s degree in Computer Science</span>, specialising in
-              information security, and a <span class="text-indigo-600 font-semibold"> PhD in Computer Science</span>,
-              from the
-              <a
-                href="https://en.itu.dk"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="text-indigo-600 font-semibold underline"
-                >IT University of Copenhagen</a
-              >.
-            </p>
-            <p class="mt-6 text-lg leading-8 text-gray-600">
-              I work at the point where technical depth meets business reality, pinpointing where security will actually
-              reduce risk without disrupting critical operations. I challenge weak assumptions, quantify impact, and
-              prioritise what moves the needle.
-            </p>
-            <p class="mt-6 text-lg leading-8 text-gray-600">
-              Outside academia, I have collaborated with companies across industries and founded my first business at
-              16, gaining insight into real-world constraints and the importance of aligning security with business
-              value.
-            </p>
-            <p class="mt-6 text-lg leading-8 text-gray-600">
-              My goal is to help build a secure digital society where data and privacy are protected while supporting
-              innovation and meeting regulatory demands.
-            </p>
+<section id="about" class="bg-parchment py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="flex items-center gap-4 mb-8">
+      <span class="section-meta text-steel-500">SUBJECT FILE</span>
+      <span class="h-px flex-1 bg-parchment-dark max-w-[8rem]"></span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-16">
+      <div class="lg:col-span-2">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl mb-8">Operative Profile</h2>
+        <p class="section-meta text-steel-500 mb-3">MISSION</p>
+        <p class="text-lg leading-8 text-gray-700 border-l-2 border-gold-500 pl-5 mb-10">
+          My goal is to help build a secure digital society where data and privacy are protected while supporting
+          innovation and meeting regulatory demands.
+        </p>
+        <p class="text-lg leading-8 text-gray-600">
+          I am a Security Architect with 14+ years in IT across software, infrastructure, consulting, and research. I
+          hold a <span class="text-gold-600 font-semibold">BSc in Software Development</span>, an
+          <span class="text-gold-600 font-semibold">MSc in Computer Science (Information Security)</span>, and a
+          <span class="text-gold-600 font-semibold">PhD in Computer Science</span> from the
+          <a
+            href="https://en.itu.dk"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-gold-600 font-semibold underline"
+            >IT University of Copenhagen<span class="sr-only"> (opens in new tab)</span></a
+          >.
+        </p>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          I work at the point where technical depth meets business reality, pinpointing where security will actually
+          reduce risk without disrupting critical operations. I challenge weak assumptions, quantify impact, and
+          prioritise what moves the needle.
+        </p>
+        <p class="mt-6 text-lg leading-8 text-gray-600">
+          Outside academia, I have collaborated with companies across industries and founded my first business at 16,
+          gaining insight into real-world constraints and the importance of aligning security with business value.
+        </p>
+      </div>
+
+      <div class="space-y-10 font-mono">
+        <div>
+          <p class="section-meta text-steel-500 mb-5">PROFILE METADATA</p>
+          <div class="space-y-6">
+            <div class="border-l-2 border-gold-500 pl-4">
+              <p class="text-xs text-gray-400 tracking-widest uppercase">Experience</p>
+              <p class="text-2xl font-bold text-gray-900">14+ yrs</p>
+            </div>
+            <div class="border-l-2 border-gold-500 pl-4">
+              <p class="text-xs text-gray-400 tracking-widest uppercase">Academic Degrees</p>
+              <p class="text-2xl font-bold text-gray-900">3</p>
+            </div>
+            <div class="border-l-2 border-gold-500 pl-4">
+              <p class="text-xs text-gray-400 tracking-widest uppercase">Based in</p>
+              <p class="text-sm font-semibold text-gray-900">Copenhagen, DK</p>
+            </div>
           </div>
         </div>
-        <img
-          src="{{ image }}"
-          alt="{{ name}}"
-          class="w-full max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 lg:w-[57rem] lg:-ml-0"
-          eleventy:widths="672,912"
-          sizes="(width <= 1024px) 672px, 912px">
+
+        <div>
+          <p class="section-meta text-steel-500 mb-5">CREDENTIALS</p>
+          <div class="space-y-6">
+            <div>
+              <p class="text-xs text-gold-600 tracking-widest uppercase font-bold">PhD</p>
+              <p class="text-sm text-gray-900 font-semibold">Computer Science</p>
+              <p class="text-xs text-gray-500">IT University of Copenhagen</p>
+            </div>
+            <div>
+              <p class="text-xs text-gold-600 tracking-widest uppercase font-bold">MSc</p>
+              <p class="text-sm text-gray-900 font-semibold">Computer Science</p>
+              <p class="text-xs text-gray-500">IT University of Copenhagen</p>
+            </div>
+            <div>
+              <p class="text-xs text-gold-600 tracking-widest uppercase font-bold">BSc</p>
+              <p class="text-sm text-gray-900 font-semibold">Software Development</p>
+              <p class="text-xs text-gray-500">IT University of Copenhagen</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

@@ -3,36 +3,42 @@
     "logo": "/assets/images/employer/politi.jpg",
     "company": "National Police of Denmark",
     "title": "Security Architect",
-    "dates": "2026 - Present"
+    "dates": "2026 - Present",
+    "scope": "Critical systems · Public sector"
   },
   {
     "logo": "/assets/images/employer/itm8.jpg",
     "company": "itm8",
     "title": "Security Advisor",
-    "dates": "2024 - 2025"
+    "dates": "2024 - 2025",
+    "scope": "Advisory · Defensive security"
   },
   {
     "logo": "/assets/images/employer/siteimprove.jpg",
     "company": "Siteimprove",
     "title": "Student Developer",
-    "dates": "2018 - 2019"
+    "dates": "2018 - 2019",
+    "scope": "Product development · Accessibility"
   },
   {
     "logo": "/assets/images/employer/samsung.jpg",
     "company": "Samsung",
     "title": "Intern",
-    "dates": "2020"
+    "dates": "2020",
+    "scope": "Storage research · Firmware"
   },
   {
     "logo": "/assets/images/employer/trifork.jpg",
     "company": "Trifork",
     "title": "Junior Software Pilot",
-    "dates": "2015"
+    "dates": "2015",
+    "scope": "Advisory · App development"
   },
   {
     "logo": "/assets/images/employer/pairy.jpg",
     "company": "Pairy",
     "title": "Lead Developer",
-    "dates": "2016 - 2018"
+    "dates": "2016 - 2018",
+    "scope": "Product leadership · Engineering"
   }
 ]

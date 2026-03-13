@@ -18,6 +18,11 @@ keywords:
   - denmark
   - eu privacy
   - digital culture
+categories: Surveillance Society
+tldr:
+  - Public records can serve legitimate transparency goals, but digitisation changes the risk profile from manual access to mass extraction and automated abuse.
+  - Convenience-driven systems like payment apps, business registers, and property records can together expose home addresses, financial status, and daily movements to anyone willing to query them.
+  - Privacy harms in public datasets are often not about a single record, but about how multiple datasets can be linked and weaponised.
 imageAlt: "A man lurking behind closed blinds."
 image: /assets/images/blog/digitalisation-lost-privacy-by-design.jpg
 permalink: "/blog/digitalisation-lost-privacy-by-design/"
@@ -27,7 +32,7 @@ The Danish Ministry of Foreign Affairs tells the story of Denmark as a forerunne
 
 > Denmark is one of the world’s most digitalised countries. Most transactions are cashless, and almost all interaction with the Danish authorities takes place online.
 
-This stands in contrast to neighbouring Germany, where cash still is still the default and many government services remain offline. The [European Commission](https://digital-strategy.ec.europa.eu/en/factpages/germany-2024-digital-decade-country-report) has noted Germany’s below‑average standing on digital public services within the EU, despite Germany being the largest economy in Europe.
+This stands in contrast to neighbouring Germany, where cash is still the default and many government services remain offline. The [European Commission](https://digital-strategy.ec.europa.eu/en/factpages/germany-2024-digital-decade-country-report) has noted Germany’s below‑average standing on digital public services within the EU, despite Germany being the largest economy in Europe.
 
 Denmark and Germany have similar [Human Development Index (HDI)](https://en.wikipedia.org/wiki/Human_Development_Index) scores, yet their digital landscapes diverge sharply. Policy, public trust, and cultural memory all play a role. Germany’s post‑war split and reunification left uneven infrastructure, a deep sensitivity to surveillance, and a distrust of government. Caution about centralised records is embedded in the political DNA of Germans. Denmark, by contrast, is unified, with a strong welfare state and high institutional trust. That trust fuels a willingness to digitise aggressively and to share data with the state in exchange for seamless services. This shows that a high digitalisation is determined by culture, and not by a high HDI.
 
@@ -39,7 +44,7 @@ Public registers exist for good reasons: accountability, fraud prevention, safet
 
 When data is _public_, it is accessible to everyone, both good and bad actors, but it requires effort to collect the information, for example at the local court office, municipal archives, or other physical locations. When data is _public and digital_, it becomes trivial to copy, scrape, enrich, and weaponise at the speed of modern computers. The leap from a dusty folder in a municipal office to a JSON API is not merely an upgrade of user interface; it is a change in mentality.
 
-Below are a few Danish examples that illustrate the how available data actually is in Denmark.
+Below are a few Danish examples that illustrate how available data actually is in Denmark.
 
 ### MobilePay Is The Modern Phone-book
 

@@ -5,7 +5,28 @@
 @theme {
   --font-sans: "Inter", sans-serif;
   --font-mono: "Roboto Mono", monospace;
+
+  /* Intelligence colour palette */
+  --color-navy-950: #060d1a;
+  --color-navy-900: #0a1628;
+  --color-navy-800: #0f1d38;
+  --color-navy-700: #1a2a4a;
+
+  --color-gold-700: #8a6c1c;
+  --color-gold-600: #a88830;
+  --color-gold-500: #c8a84b;
+  --color-gold-400: #d4b86a;
+  --color-gold-300: #e0ca8f;
+
+  --color-steel-500: #5a82a2;
+  --color-steel-400: #7a9cbf;
+  --color-steel-300: #9db5cc;
+
+  --color-parchment: #f2f0eb;
+  --color-parchment-dark: #e4e1d8;
 }
+
+/* ── Typography ──────────────────────────────────────────────── */
 
 .prose h1 {
   @apply mt-8 mb-4 text-3xl font-bold;
@@ -23,11 +44,12 @@
   @apply font-mono;
 }
 
+/* Prose links → gold */
 .prose a:not(.icon) {
-  @apply text-indigo-600 underline hover:text-indigo-800;
+  @apply text-gold-600 underline hover:text-gold-500;
 }
 
-/* only run on inline code, not code blocks */
+/* Inline code (not code blocks) */
 :not(pre) > code {
   &::before {
     content: "";
@@ -35,265 +57,164 @@
   &::after {
     content: "";
   }
-
-  @apply bg-gray-200 px-1 rounded font-semibold inline-block;
+  @apply bg-gray-100 text-navy-800 px-1 rounded font-semibold inline-block;
 }
 
-.glitch-wrapper {
-  width: 100%;
-  height: 100%;
+/* ── Hero – Personnel File ───────────────────────────────────── */
+
+.hero-grid-bg {
+  background-image: radial-gradient(
+    460px at 85% 10%,
+    rgba(200, 168, 75, 0.12),
+    rgba(122, 156, 191, 0.03) 38%,
+    transparent 68%
+  );
+  pointer-events: none;
+}
+
+.hero-scan-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(200, 168, 75, 0.05) 50%,
+    transparent
+  );
+  animation: scan 7.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  0% {
+    top: -120px;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+/* Field rows: always in layout (opacity:0 not display:none), so height never changes */
+.hero-field {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: baseline;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(4px);
+  transition:
+    opacity 0.15s ease,
+    transform 0.2s ease;
+}
+
+.hero-field.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Value spans: clipped from right. Clip-path doesn't affect layout so no reflow. */
+.hf-val {
+  clip-path: inset(0 100% 0 0);
+}
+
+@keyframes hero-type {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+/* Fade-in for hero description and CTA block */
+#hero-desc,
+#hero-cta {
+  transition: opacity 0.8s ease;
+}
+
+/* ── Section decorative meta label ──────────────────────────── */
+
+.section-meta {
+  font-family: theme("fontFamily.mono");
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ── DECLASSIFIED stamp ─────────────────────────────────────────── */
+
+.declassified-stamp {
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  transform: rotate(-12deg);
+  transform-origin: top right;
+  border: 2px solid theme("colors.gold.500");
+  padding: 0.4rem 1rem;
   text-align: center;
+  pointer-events: none;
+  user-select: none;
+  opacity: 0.12;
 }
 
-.glitch {
-  position: relative;
-  font-weight: 600;
+.declassified-stamp .stamp-title {
+  font-family: theme("fontFamily.mono");
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: theme("colors.gold.500");
   line-height: 1.2;
-  color: theme("colors.indigo.600");
-  letter-spacing: 6px;
-  animation: shift 4s ease-in-out infinite alternate;
-  z-index: 1;
 }
 
-.glitch:before {
-  content: attr(data-glitch);
-  position: absolute;
-  top: 0;
-  left: -2px;
-  text-shadow: -1px 0 theme("colors.cyan.400");
-  width: 100%;
-  color: theme("colors.indigo.800");
-  overflow: hidden;
-  clip: rect(0, 900px, 0, 0);
-  animation: noise-before 3s infinite linear alternate-reverse;
+.declassified-stamp .stamp-sub {
+  font-family: theme("fontFamily.mono");
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  color: theme("colors.steel.400");
+  margin-top: 0.2rem;
 }
 
-.glitch:after {
-  content: attr(data-glitch);
-  position: absolute;
-  top: 0;
-  left: 2px;
-  text-shadow: 1px 0 theme("colors.fuchsia.400");
-  width: 100%;
-  color: theme("colors.indigo.950");
-  overflow: hidden;
-  clip: rect(0, 900px, 0, 0);
-  animation: noise-after 2s infinite linear alternate-reverse;
+/* ── Hero cursor blink ───────────────────────────────────────────── */
+
+.hero-cursor {
+  display: inline-block;
+  margin-left: 0.15em;
+  color: theme("colors.gold.500");
+  animation: blink 1s step-end infinite;
+  font-weight: bold;
 }
 
-@keyframes noise-before {
-  0% {
-    clip: rect(61px, 9999px, 52px, 0);
-  }
-
-  5% {
-    clip: rect(33px, 9999px, 144px, 0);
-  }
-
-  10% {
-    clip: rect(121px, 9999px, 115px, 0);
-  }
-
-  15% {
-    clip: rect(144px, 9999px, 162px, 0);
-  }
-
-  20% {
-    clip: rect(62px, 9999px, 180px, 0);
-  }
-
-  25% {
-    clip: rect(34px, 9999px, 42px, 0);
-  }
-
-  30% {
-    clip: rect(147px, 9999px, 179px, 0);
-  }
-
-  35% {
-    clip: rect(99px, 9999px, 63px, 0);
-  }
-
-  40% {
-    clip: rect(188px, 9999px, 122px, 0);
-  }
-
-  45% {
-    clip: rect(154px, 9999px, 14px, 0);
-  }
-
-  50% {
-    clip: rect(63px, 9999px, 37px, 0);
-  }
-
-  55% {
-    clip: rect(161px, 9999px, 147px, 0);
-  }
-
-  60% {
-    clip: rect(109px, 9999px, 175px, 0);
-  }
-
-  65% {
-    clip: rect(157px, 9999px, 88px, 0);
-  }
-
-  70% {
-    clip: rect(173px, 9999px, 131px, 0);
-  }
-
-  75% {
-    clip: rect(62px, 9999px, 70px, 0);
-  }
-
-  80% {
-    clip: rect(24px, 9999px, 153px, 0);
-  }
-
-  85% {
-    clip: rect(138px, 9999px, 40px, 0);
-  }
-
-  90% {
-    clip: rect(79px, 9999px, 136px, 0);
-  }
-
-  95% {
-    clip: rect(25px, 9999px, 34px, 0);
-  }
-
-  100% {
-    clip: rect(173px, 9999px, 166px, 0);
-  }
-}
-
-@keyframes noise-after {
-  0% {
-    clip: rect(26px, 9999px, 33px, 0);
-  }
-
-  5% {
-    clip: rect(140px, 9999px, 198px, 0);
-  }
-
-  10% {
-    clip: rect(184px, 9999px, 89px, 0);
-  }
-
-  15% {
-    clip: rect(121px, 9999px, 6px, 0);
-  }
-
-  20% {
-    clip: rect(181px, 9999px, 99px, 0);
-  }
-
-  25% {
-    clip: rect(154px, 9999px, 133px, 0);
-  }
-
-  30% {
-    clip: rect(134px, 9999px, 169px, 0);
-  }
-
-  35% {
-    clip: rect(26px, 9999px, 187px, 0);
-  }
-
-  40% {
-    clip: rect(147px, 9999px, 137px, 0);
-  }
-
-  45% {
-    clip: rect(31px, 9999px, 52px, 0);
-  }
-
-  50% {
-    clip: rect(191px, 9999px, 109px, 0);
-  }
-
-  55% {
-    clip: rect(74px, 9999px, 54px, 0);
-  }
-
-  60% {
-    clip: rect(145px, 9999px, 75px, 0);
-  }
-
-  65% {
-    clip: rect(153px, 9999px, 198px, 0);
-  }
-
-  70% {
-    clip: rect(99px, 9999px, 136px, 0);
-  }
-
-  75% {
-    clip: rect(118px, 9999px, 192px, 0);
-  }
-
-  80% {
-    clip: rect(1px, 9999px, 83px, 0);
-  }
-
-  85% {
-    clip: rect(145px, 9999px, 98px, 0);
-  }
-
-  90% {
-    clip: rect(121px, 9999px, 154px, 0);
-  }
-
-  95% {
-    clip: rect(156px, 9999px, 44px, 0);
-  }
-
-  100% {
-    clip: rect(67px, 9999px, 122px, 0);
-  }
-}
-
-@keyframes shift {
+@keyframes blink {
   0%,
-  40%,
-  44%,
-  58%,
-  61%,
-  65%,
-  69%,
-  73%,
   100% {
-    transform: skewX(0deg);
+    opacity: 1;
   }
+  50% {
+    opacity: 0;
+  }
+}
 
-  41% {
-    transform: skewX(10deg);
-  }
+/* ── Reduced motion ──────────────────────────────────────────────── */
 
-  42% {
-    transform: skewX(-10deg);
+@media (prefers-reduced-motion: reduce) {
+  .hero-scan-line {
+    animation: none;
   }
+  .hero-cursor {
+    animation: none;
+  }
+  .hero-field {
+    transition: none;
+  }
+  #hero-desc,
+  #hero-cta {
+    transition: none;
+  }
+}
 
-  59% {
-    transform: skewX(40deg) skewY(10deg);
-  }
-
-  60% {
-    transform: skewX(-40deg) skewY(-10deg);
-  }
-
-  63% {
-    transform: skewX(10deg) skewY(-5deg);
-  }
-
-  70% {
-    transform: skewX(-50deg) skewY(-20deg);
-  }
-
-  71% {
-    transform: skewX(10deg) skewY(-10deg);
-  }
+main {
+  flex: 1 0 auto;
 }

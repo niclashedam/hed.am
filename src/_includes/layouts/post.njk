@@ -8,21 +8,21 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
 ---
 {% include 'components/header.njk' %}
 
-<main class="pt-8 pb-8 lg:pt-16 px-4 sm:px-6 lg:px-8">
+<main id="main-content" class="bg-parchment pt-8 pb-16 lg:pt-16 px-6 lg:px-8">
   <div class="mx-auto w-full max-w-2xl">
     <nav class="mb-2 text-sm text-gray-500" aria-label="Breadcrumb">
       <ol class="flex items-center space-x-2">
-        <li><a href="/" class="text-indigo-600 hover:underline">Home</a></li>
-        <li>/</li>
+        <li><a href="/" class="text-gold-600 hover:underline">Home</a></li>
+        <li aria-hidden="true">/</li>
         <li>
-          <a href="/blog" class="text-indigo-600 hover:underline">Blog</a>
+          <a href="/blog" class="text-gold-600 hover:underline">Intelligence Briefs</a>
         </li>
-        <li>/</li>
+        <li aria-hidden="true">/</li>
         <li aria-current="page" class="text-gray-700">{{ title }}</li>
       </ol>
     </nav>
     <article
-      class="mx-auto w-full max-w-2xl prose prose-sm sm:prose-base lg:prose-lg prose-indigo">
+      class="mx-auto w-full max-w-2xl prose prose-sm sm:prose-base lg:prose-lg">
       <header class="mb-4 lg:mb-6 not-prose">
         <figure>
           <img
@@ -47,7 +47,6 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
               <p class="text-base text-gray-500">{{ authorTitle }}</p>
               <p class="text-base text-gray-500">
                 <time
-                  pubdate
                   datetime="{{ date | machineDate }}"
                   title="{{ date | machineDate }}">
                   {{- date | readableDate -}}
@@ -58,73 +57,79 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
           </div>
         </address>
       </header>
-      <div class="prose prose-p:text-justify">{{ content | safe }}</div>
+      {% if tldr %}
+        <div class="not-prose border border-parchment-dark bg-parchment-dark/45 rounded p-5 mb-6">
+          <p class="section-meta text-steel-500 mb-4">TL;DR</p>
+          <ul class="list-disc pl-5 space-y-2">
+            {% for paragraph in tldr %}
+              <li class="text-sm text-gray-700 leading-7 marker:text-gold-500">{{ paragraph }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+      <div class="prose">{{ content | safe }}</div>
       <div>
-        <address class="my-6 not-italic not-prose">
-          <div
-            class="w-full sm:w-1/2 text-center px-4 py-4 mx-auto border-2 border-gray-200 rounded-3xl">
-            <div
-              class="w-32 h-32 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
-              <img
-                width="256"
-                class="object-cover w-32 h-32 rounded-full"
-                src="{{ authorPic | url }}"
-                alt="{{ author }}">
-            </div>
-            <div class="flex flex-col items-center text-center justify-center">
-              <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">
-                {{ author }}
-              </h2>
-              <div class="w-12 h-1 bg-indigo-700 rounded mb-4"></div>
-              <p class="text-base">{{ authorDescription }}</p>
-            </div>
-            <div
-              class="inline-flex justify-center mt-4 space-x-5">
-              {% for item in links %}
-                <a
-                  href="{{ item.href }}"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="icon text-gray-400 hover:text-gray-600 text-3xl">
-                  <span class="sr-only">{{ item.sr }}</span>
-                  <i class="{{ item.icon }}"></i>
-                </a>
-              {% endfor %}
+        <address class="my-8 not-italic not-prose">
+          <div class="border border-parchment-dark bg-parchment-dark/45 rounded p-6 font-mono">
+            <p class="section-meta text-steel-500 mb-4">FILED BY</p>
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <p class="text-base font-bold text-gray-900">{{ author }}</p>
+                <p class="text-xs text-gold-600 tracking-widest uppercase font-bold mt-0.5">{{ authorTitle }}</p>
+                <p class="text-sm text-gray-500 mt-2 max-w-sm font-sans">{{ authorDescription }}</p>
+              </div>
+              <div class="flex gap-4">
+                {% for item in links %}
+                  <a
+                    href="{{ item.href }}"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="icon text-steel-400 hover:text-gold-500 text-xl transition-colors">
+                    <span class="sr-only">{{ item.sr }}, opens in new tab</span>
+                    <i class="{{ item.icon }}"></i>
+                  </a>
+                {% endfor %}
+              </div>
             </div>
           </div>
         </address>
       </div>
     </article>
-    <h3 class="mt-10 text-2xl font-bold text-gray-900">Similar posts</h3>
-    <div
-      class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2">
-      {% for post in relatedPosts %}
-        <article class="overflow-hidden rounded-lg shadow-lg">
-          <a href="{{ post.url }}">
+    <div class="mt-12 pt-8 border-t border-parchment-dark">
+      <p class="section-meta text-steel-500 mb-6">RELATED BRIEFS</p>
+      <div class="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        {% for post in relatedPosts %}
+          <article class="relative group overflow-hidden rounded-lg border border-parchment-dark bg-white hover:shadow-md transition-shadow">
             <img
               width="320"
               alt="{{ post.data.title }}"
               src="{{ post.data.image | url }}"
-              class="h-56 w-full object-cover">
-
-            <div class="bg-white p-4 sm:p-6">
-              <p class="block text-xs text-gray-500">
+              class="h-36 w-full object-cover">
+            <div class="p-4">
+              {% if post.data.categories %}
+                <a
+                  href="/blog/categories/{{ post.data.categories | slugify }}/"
+                  class="relative z-10 section-meta text-gold-600 hover:text-gold-500 transition-colors">
+                  {{ post.data.categories }}
+                </a>
+              {% endif %}
+              <h3 class="mt-1.5 text-sm font-semibold text-gray-900 leading-snug group-hover:text-gold-700 transition-colors">
+                <a href="{{ post.url }}" class="after:absolute after:inset-0 after:content-['']">
+                  {{- post.data.title -}}
+                </a>
+              </h3>
+              <p class="mt-1 text-xs text-gray-400 font-mono">
                 <time datetime="{{ post.date | machineDate }}">{{ post.date | readableDate }}</time>
-                · {{ post.data.readingTime }} min read
+                &middot; {{ post.data.readingTime }} min read
               </p>
-
-              <h3 class="mt-0.5 text-lg text-gray-900">{{ post.data.title }}</h3>
-
-              <div class="mt-2 line-clamp-3 text-sm text-gray-500">
-                {{ post.data.excerpt | safe }}
-              </div>
+              <div class="mt-1.5 line-clamp-2 text-xs text-gray-600">{{ post.data.excerpt | safe }}</div>
             </div>
-          </a>
-        </article>
-      {% endfor %}
+          </article>
+        {% endfor %}
+      </div>
     </div>
     <div class="mt-8">
-      <a href="/blog" class="text-indigo-600 hover:underline">&larr; Back to the blog</a>
+      <a href="/blog" class="text-gold-600 hover:underline">&larr; Back to Intelligence Briefs</a>
     </div>
   </div>
 </main>

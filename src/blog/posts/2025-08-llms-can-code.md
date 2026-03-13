@@ -18,6 +18,11 @@ keywords:
   - machine learning
   - artificial intelligence
   - code review
+categories: Artificial Intelligence
+tldr:
+  - LLMs can generate valid-looking code quickly, but they do not know your system constraints, threat model, or operational context unless you explicitly provide it.
+  - Small implementation choices that look equivalent can produce very different security outcomes, especially in cryptography and authentication-related code.
+  - Treat AI-generated code as draft material that requires the same review discipline as any external contribution.
 imageAlt: "A developer using ChatGPT to generate code snippets."
 image: /assets/images/blog/llms-can-code.jpg
 permalink: "/blog/llms-can-write-code-but-cannot-read-your-mind/"
