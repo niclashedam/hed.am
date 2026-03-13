@@ -24,13 +24,13 @@ In case you are not entirely sure what a VPN is, it stands for Virtual Private N
 
 VPNs are everywhere these days, even integrated into operating systems and browsers. They play such a crucial role, not because they are technologically necessary, but because the internet we have built has fundamental issues. And that should worry us. VPNs are not just useful tools; they are a series of surgical bandages over systemic failures caused primarily by greed, whether through crime or the pursuit of increased revenue. Here are three simple truths VPNs reveal about the internet.
 
-## 1) VPNs for internal access: patching distrust with VPNs
+## 1) VPNs for Internal Access: Patching Distrust with VPNs
 
 The most common use of VPNs is to manage distrust. Many VPNs exist solely to let employees access internal systems from the public internet. This would be unnecessary if the internet were inherently trusted. Historically, internet services were exposed to the public internet, with login credentials and firewalls intended to keep malicious actors out. That model failed spectacularly, leading to the rise of VPNs. Today, the dominant security model is “zero trust”: never trust the network, always verify identity.
 
 Let me paint you a picture to show just how crazy this really is. Doors, whether to your house or office, are designed to keep unwanted people out. You lock them, and only those with keys can enter. VPNs are like having to crawl through the sewers to get into your own house because you cannot trust the street outside. We have collectively decided that doors are not secure enough, and instead of fixing the doors, we make everyone go through the sewers.
 
-## 2) VPNs for privacy: hiding because surveillance is normalised
+## 2) VPNs for Privacy: Hiding because Surveillance Is Normalised
 
 A second major reason people use VPNs is to protect themselves against pervasive tracking and surveillance. Services like [ProtonVPN](https://protonvpn.com) exist because various actors including ISPs, mobile carriers, dominant platforms, and surveillance states can observe or correlate our traffic.
 
@@ -38,7 +38,7 @@ If personalised surveillance were not embedded in the economics and technical de
 
 Here is another metaphor for you. Imagine this: every time you are out in public, whether you are walking down the street or sitting in a café, there is someone following you. This person watches your every move, jots down notes, and reports back to companies and governments. To dodge this, you would have to buy a hoodie, put on some sunglasses, and maybe even resort to a fake mustache just to keep your identity private. Welcome to our world, where VPNs are just another part of the disguise we need to maintain any semblance of privacy.
 
-## 3) VPNs for bypassing geo-gatekeeping: overcoming intentional scarcity
+## 3) VPNs for Bypassing Geo-Gatekeeping: Overcoming Intentional Scarcity
 
 The third reason people use VPNs is to bypass artificial regional restrictions, such as streaming services locked to specific regions, app stores that hide apps by country, or content geo-restricted due to distribution contracts and licensing models that favour scarcity and segmented pricing. VPNs allow users to appear as if they are somewhere else and reclaim access.
 
@@ -48,7 +48,7 @@ And here is another metaphor for you. Imagine heading to the cinema to watch the
 
 The fact that websites like PlayPilot and JustWatch now exist just to help people understand regional restrictions shows how normalised this problem has become. Instead of fixing geo-restrictions, we have built an entire ecosystem around finding and bypassing these man-made barriers.
 
-## Discussion: Why do we accept this?
+## Discussion: Why Do We Accept This?
 
 Now, we might not be able to wipe out internet crime, but that does not mean we should just roll over and accept surveillance and geo-blocking as the norm. These issues highlight deeper problems within our digital infrastructure and governance.
 

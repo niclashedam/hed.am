@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: "You Are the Product: Two Decades of Giving Up Data Control"
+title: "You Are the Product: Two Decades of Giving up Data Control"
 date: 2025-08-18
 keywords:
   - data privacy
@@ -42,7 +42,7 @@ Your inbox does not just show what you have received. It shows what you did, are
 
 You probably do not think of your inbox as anything more than a stack of letters. But for a machine, it is thousands of data points showing who you spoke to, when, where you were, what you bought, and what you were thinking about doing next.
 
-## Search: Google Knows When You Are Sick, Stressed or Looking for Work
+## Search: Google Knows when You Are Sick, Stressed or Looking for Work
 
 We have all done it: searched Google for something we would never say out loud. Maybe your stomach’s been acting up, so you type in “stomach pain right side”, then click on a few Mayo Clinic links.
 
@@ -62,7 +62,7 @@ Maybe you have started visiting a co-working space in a different town. Google s
 
 This is not theory. It is how the system works. Location history is on by default, and even if you pause it, parts of it still get recorded ([Associated Press](https://apnews.com/article/828aefab64d4411bac257a07c1af0ecb)).
 
-## Ads: Not Just What You Want Now, But Also What You Will Want Next
+## Ads: Not Just What You Want Now, but Also What You Will Want Next
 
 All this data feeds into Google’s ad system. It does not just show you shoes because you searched for shoes. It shows you shoes _before_ you think to look, because it knows your routines, habits, and preferences. If you have just moved to a new house, Google Ads probably knows it before your friends do.
 
@@ -72,7 +72,7 @@ And it works. In Q4 of 2024, Google made over $72.5 billion in ad revenue ([Alph
 
 Google’s total revenue for Q4 of 2024 was $96.5 billion. When you consider that roughly 75% of that comes from advertising, it puts emphasis on how much your data is worth.
 
-## Governments Want That Data Too
+## Governments Want that Data Too
 
 It is not just advertisers who value this level of detail. Governments are now major consumers of Big Tech data. And the number of requests is growing fast.
 
@@ -82,7 +82,7 @@ Many of these are “reverse warrants”, geo-fence requests or keyword-triggere
 
 If you searched for “how to protest safely” or “climate rally route New York”, and later walked through the area, your data could be swept up and handed over, without your knowledge.
 
-## Why Deleting Your Account Does not Mean Deleting Your Data
+## Why Deleting Your Account Does Not Mean Deleting Your Data
 
 <figure>
   <img eleventy:ignore src="https://pmecdn.protonweb.com/image-transformation/?s=s&image=GGOGLE_15_FPS_PURPLE_BG_1ccc4d2483.gif" alt="Google fine tracker" />
@@ -103,7 +103,7 @@ Your data reveals more than you think. It shows what you are planning, what you 
 
 And laws change. What is fine today might not be fine in five years. That tweet you liked, the article you saved, the search you made during a rough time. These can resurface when you least expect it, and suddenly you are in a situation where you have to explain yourself to an employer, a government agency, or even the public.
 
-## What You Can Do Without Going Off-Grid
+## What You Can Do without Going Off-Grid
 
 You do not have to quit the internet or throw your phone in a river. But you can stop handing over data so freely. Here are some simple changes that make a big difference:
 

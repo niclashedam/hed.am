@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: "EU Chat Control: If Privacy Is Outlawed, Only Outlaws Have Privacy"
+title: "EU Chat Control: If Privacy Is Outlawed, only Outlaws Have Privacy"
 date: 2025-09-15
 keywords:
   - privacy
@@ -49,7 +49,7 @@ Examining this proposed law reveals two uncomfortable facts. First, circumventio
 
 Surveillance infrastructure, once established, tends to expand in scope. Once device-level scanning is normalised and implemented, adding new categories, such as terrorism, extremism, “disinformation”, tax or copyright, becomes a configuration change, not a new public debate. The technical capability is already present; only political will is required to broaden its use.
 
-## Real Offenders Won’t Wait To Be Caught
+## Real Offenders Won’t Wait to Be Caught
 
 Chat Control focuses on mainstream platforms like WhatsApp, Messenger, Signal and Telegram. Competent offenders are unlikely to remain on mainstream channels once on-device scanning is enabled; they will move to other platforms or add encryption layers. The result is that the lawful majority are scanned, while those intent on evading detection are likely to succeed.
 
@@ -63,7 +63,7 @@ Even if we accept the premise of pre-emptive scanning, significant challenges re
 
 At the same time, context is lost when a model sees only pixels, not relationships: pool photos, bath-time pictures to grandparents, dermatology images for a paediatric consult, screenshots from parenting forums. The artificial intelligence cannot understand who the people in these images are or who you are sending them to. If flagged, you cannot provide context or an explanation; _you are simply presumed guilty until proven innocent_.
 
-## The Exemption Question: Professional Secrecy Or Unequal Treatment?
+## The Exemption Question: Professional Secrecy or Unequal Treatment?
 
 Another key point in the debate is the question of exemptions. Even after accepting the premise of pre-emptive scanning and the challenges of AI accuracy, who gets exempted from this surveillance? The proposal currently includes exemptions for certain professions and roles, citing professional secrecy as justification. Ministers, commissioners, generals and party leaders may be excluded from scanning, but not doctors or journalists. The rationale is that some communications require confidentiality for the public good, but the argumentation is inconsistent. A public official, like a politician, is employed by the public, so why hide their communications from public oversight?
 
@@ -83,7 +83,7 @@ There is also empirical precedent on feasibility and trust. Apple [explored](htt
 
 If the goal is fewer victims and more convictions, efforts should focus where harm and profit concentrate, rather than treating the entire population as suspects. Target distribution networks and repeat offenders, freeze hosting infrastructure and trace payments, improve reporting pipelines so investigators receive fewer, higher-quality tips with context, and run targeted, warrant-backed operations that stand up in court.
 
-## The Questions EU Leaders Must Answer Clearly, In Public
+## The Questions EU Leaders Must Answer Clearly, in Public
 
 Legitimacy first: what is the legal precedent that justifies pre-crime scanning of private correspondence?
 

@@ -33,7 +33,7 @@ When I was a kid, computers only had a single core. Some did not come with a ded
 
 These trends meant that computers became faster and faster without significant changes to their architecture or how they worked. Manufacturers could cram more and more transistors into a single-core processor, keeping up with the development of advanced and complex software.
 
-## When The Magic Stopped
+## When the Magic Stopped
 
 In the mid-2000s, the physical limitations of processors began to show. We kept shrinking transistors, but voltage refused to drop enough. This led to two problems. First, making transistors smaller generated more heat in a smaller space, causing overheating of the entire processing chip. Second, electricity started leaking, as it could jump across smaller gaps more easily. Had the voltage continued to drop, the heating would have been manageable and electrical leakage minimised.
 
@@ -41,13 +41,13 @@ However, as this was not possible, processor speeds stalled around 3–5 GHz and
 
 _Hardware got complicated._
 
-## Multi-Core Helped, But Not Everywhere
+## Multi-Core Helped, but Not Everywhere
 
 The obvious quick fix was more cores. Even though we could not put more transistors into a single core, we could add more cores to the chip. This enabled computers to start multitasking. Previously, a computer only did one thing at a time, but could switch between tasks very quickly. So, while it may have looked like it was doing many things at once, it was really just switching between tasks.
 
 With multi-core processors, the computer could now do multiple things simultaneously. But this also meant that software developers had to know how to divide programs effectively across all the cores. For example, a video editing application could use one core to decode video, another to apply effects, and a third to encode the final output. In other cases, it was harder to split the programs into smaller tasks.
 
-## Enter The Specialists
+## Enter the Specialists
 
 Since a program must now be divided into smaller tasks, there is a natural limit to the amount of parallelism that can be achieved. Not all tasks can be broken down into smaller pieces that run simultaneously. Some tasks are inherently sequential, meaning they must be completed one after the other.
 
@@ -91,7 +91,7 @@ Until recently, almost all computers were equipped with x86 processors from Inte
 
 If you have a MacBook with an M chip, you are already using an ARM processor. Apple made a bold move by switching from Intel x86 processors to their own ARM-based M1 chips in 2020. This transition was driven by the need for better performance per watt, allowing for longer battery life and quieter operation without fans. I can honestly say that my MacBook Air with an M3 chip is the best laptop I have ever owned, and by far the quietest and most battery-efficient. My previous x86 MacBook had a few hours of battery life and a fan that would kick in often, while my M3 MacBook Air lasts multiple days on a single charge with no fan noise at all.
 
-## What Developers Should Do In 2025
+## What Developers Should Do in 2025
 
 Most developers will not have the time or resources to build an entirely new storage stack for efficiency. Instead, they should focus on optimising their existing systems, with an understanding of the limitations and capabilities of their hardware.
 
@@ -99,7 +99,7 @@ Start by measuring data movement, not just CPU time. CPUs are not the only bottl
 
 Look for the places where you read mountains of bytes to keep a handful. Are you reading many rows from an SQL database, just to do filtering and summarisation? If you can change your SQL queries to already filter and summarise the data, you can reduce the amount of data that needs to be moved. This is similar to computational storage; you tell the SQL server how to prepare the data, so less data has to be moved.
 
-### Locality Is A Superpower
+### Locality Is a Superpower
 
 If possible, access data in a cache-friendly way. This means thinking about how data is laid out in memory and trying to access it in a way that takes advantage of the CPU cache. For example, if you are processing a large array, try to access it in a linear fashion rather than jumping around to random elements. A CPU can predict what you are doing, because you go through the array linearly and it can prepare the data for you in advance.
 
