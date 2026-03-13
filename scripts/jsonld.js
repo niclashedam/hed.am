@@ -6,19 +6,9 @@ const glob = require("glob");
 const { JSDOM } = require("jsdom");
 const jsonld = require("jsonld");
 
-/**
- * JSON-LD Validator for static sites
- * Validates JSON-LD structured data in HTML files
- */
-
 let errorCount = 0;
 const errors = [];
 
-/**
- * Extract JSON-LD from HTML content
- * @param {string} html - HTML content
- * @returns {Array} Array of JSON-LD objects
- */
 function extractJsonLD(html) {
   const dom = new JSDOM(html);
   const document = dom.window.document;
@@ -47,22 +37,10 @@ function extractJsonLD(html) {
   return jsonldObjects;
 }
 
-/**
- * Validate individual JSON-LD object
- * @param {Object} jsonldObj - JSON-LD object to validate
- * @param {string} filePath - File path for error reporting
- */
 async function validateJsonLD(jsonldObj, filePath) {
   try {
-    // Expand the JSON-LD to check for validity
     await jsonld.expand(jsonldObj.content);
-
-    // Check for required properties based on @type
     validateRequiredProperties(jsonldObj.content, filePath);
-
-    console.log(
-      `✓ Valid JSON-LD found in ${filePath} (script ${jsonldObj.index})`,
-    );
   } catch (error) {
     errors.push({
       type: "validation_error",
@@ -75,14 +53,8 @@ async function validateJsonLD(jsonldObj, filePath) {
   }
 }
 
-/**
- * Validate required properties for common schema.org types
- * @param {Object} jsonldContent - JSON-LD content
- * @param {string} filePath - File path for error reporting
- */
 function validateRequiredProperties(jsonldContent, filePath) {
   if (jsonldContent["@graph"]) {
-    // Handle @graph structure
     jsonldContent["@graph"].forEach((item, index) => {
       validateSingleItem(item, filePath, `@graph[${index}]`);
     });
@@ -91,12 +63,6 @@ function validateRequiredProperties(jsonldContent, filePath) {
   }
 }
 
-/**
- * Validate a single JSON-LD item
- * @param {Object} item - JSON-LD item
- * @param {string} filePath - File path for error reporting
- * @param {string} context - Context for error reporting
- */
 function validateSingleItem(item, filePath, context = "") {
   const type = item["@type"];
   if (!type) {
@@ -110,7 +76,6 @@ function validateSingleItem(item, filePath, context = "") {
     return;
   }
 
-  // Validate based on @type
   switch (type) {
     case "Person":
       validatePerson(item, filePath, context);
@@ -136,7 +101,6 @@ function validateSingleItem(item, filePath, context = "") {
 function validatePerson(item, filePath, context) {
   const required = ["name"];
   const recommended = ["url", "image", "jobTitle", "sameAs"];
-
   checkRequiredProperties(item, required, filePath, context, "Person");
   checkRecommendedProperties(item, recommended, filePath, context, "Person");
 }
@@ -144,7 +108,6 @@ function validatePerson(item, filePath, context) {
 function validateOrganization(item, filePath, context) {
   const required = ["name"];
   const recommended = ["url", "logo", "sameAs"];
-
   checkRequiredProperties(item, required, filePath, context, "Organization");
   checkRecommendedProperties(
     item,
@@ -158,7 +121,6 @@ function validateOrganization(item, filePath, context) {
 function validateWebSite(item, filePath, context) {
   const required = ["name", "url"];
   const recommended = ["publisher", "potentialAction"];
-
   checkRequiredProperties(item, required, filePath, context, "WebSite");
   checkRecommendedProperties(item, recommended, filePath, context, "WebSite");
 }
@@ -166,7 +128,6 @@ function validateWebSite(item, filePath, context) {
 function validateWebPage(item, filePath, context) {
   const required = ["name", "url"];
   const recommended = ["description", "isPartOf", "author"];
-
   checkRequiredProperties(item, required, filePath, context, "WebPage");
   checkRecommendedProperties(item, recommended, filePath, context, "WebPage");
 }
@@ -174,7 +135,6 @@ function validateWebPage(item, filePath, context) {
 function validateBlogPosting(item, filePath, context) {
   const required = ["headline", "datePublished", "author"];
   const recommended = ["description", "image", "publisher", "mainEntityOfPage"];
-
   checkRequiredProperties(item, required, filePath, context, "BlogPosting");
   checkRecommendedProperties(
     item,
@@ -187,7 +147,6 @@ function validateBlogPosting(item, filePath, context) {
 
 function validateBreadcrumbList(item, filePath, context) {
   const required = ["itemListElement"];
-
   checkRequiredProperties(item, required, filePath, context, "BreadcrumbList");
 
   if (item.itemListElement && Array.isArray(item.itemListElement)) {
@@ -240,23 +199,24 @@ function checkRecommendedProperties(
   recommended.forEach((prop) => {
     if (!item[prop]) {
       console.warn(
-        `⚠ Recommended property "${prop}" missing for ${type} in ${filePath} ${context}`,
+        `WARN: Recommended property "${prop}" missing for ${type} in ${filePath} ${context}`,
       );
     }
   });
 }
 
-/**
- * Process a single HTML file
- * @param {string} filePath - Path to HTML file
- */
 async function processFile(filePath) {
   try {
     const html = fs.readFileSync(filePath, "utf8");
     const jsonldObjects = extractJsonLD(html);
 
     if (jsonldObjects.length === 0) {
-      console.warn(`⚠ No JSON-LD found in ${filePath}`);
+      errors.push({
+        type: "missing_jsonld",
+        file: filePath,
+        message: "No JSON-LD found",
+      });
+      errorCount++;
       return;
     }
 
@@ -273,57 +233,44 @@ async function processFile(filePath) {
   }
 }
 
-/**
- * Main function
- */
 async function main() {
-  console.log("🔍 Validating JSON-LD structured data...\n");
-
-  // Find all HTML files in the public directory
   const htmlFiles = glob.sync("public/**/*.html");
 
   if (htmlFiles.length === 0) {
     console.error(
-      '❌ No HTML files found in public/ directory. Run "npm run build" first.',
+      'ERROR: No HTML files found in public/. Run "npm run build" first.',
     );
     process.exit(1);
   }
 
-  console.log(`Found ${htmlFiles.length} HTML files to validate\n`);
-
-  // Process each file
   for (const file of htmlFiles) {
     await processFile(file);
   }
 
-  // Report results
-  console.log("\n📊 Validation Results:");
-  console.log(`Files processed: ${htmlFiles.length}`);
-  console.log(`Errors found: ${errorCount}`);
-
   if (errors.length > 0) {
-    console.log("\n❌ Errors:");
+    console.error("Errors:");
     errors.forEach((error, index) => {
-      console.log(`\n${index + 1}. ${error.type.toUpperCase()}`);
-      console.log(`   File: ${error.file || "N/A"}`);
-      if (error.context) console.log(`   Context: ${error.context}`);
-      if (error.schemaType) console.log(`   Schema Type: ${error.schemaType}`);
-      if (error.property) console.log(`   Property: ${error.property}`);
-      console.log(`   Message: ${error.message}`);
-
+      console.error(`\n  ${index + 1}. ${error.type.toUpperCase()}`);
+      console.error(`     File: ${error.file || "N/A"}`);
+      if (error.context) console.error(`     Context: ${error.context}`);
+      if (error.schemaType)
+        console.error(`     Schema Type: ${error.schemaType}`);
+      if (error.property) console.error(`     Property: ${error.property}`);
+      console.error(`     Message: ${error.message}`);
       if (error.jsonld) {
-        console.log(`   JSON-LD:`, JSON.stringify(error.jsonld, null, 2));
+        console.error(`     JSON-LD:`, JSON.stringify(error.jsonld, null, 2));
       }
     });
-
+    console.error(
+      `\n${htmlFiles.length} files checked, ${errorCount} error(s) found.`,
+    );
     process.exit(1);
   } else {
-    console.log("\n✅ All JSON-LD structured data is valid!");
+    console.log(`${htmlFiles.length} files checked, 0 errors.`);
   }
 }
 
-// Run the validation
 main().catch((error) => {
-  console.error("❌ Unexpected error:", error);
+  console.error("ERROR: Unexpected error:", error);
   process.exit(1);
 });

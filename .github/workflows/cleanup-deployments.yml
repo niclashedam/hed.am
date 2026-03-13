@@ -1,0 +1,25 @@
+name: cleanup deployments
+permissions: {}
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+    inputs:
+      keep:
+        description: "Number of production deployments to keep (previews are always deleted)"
+        default: "3"
+        required: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - name: Delete old Cloudflare Pages deployments
+        env:
+          CF_TOKEN: ${{ secrets.CF_TOKEN }}
+          CF_ACCOUNT_ID: ${{ vars.CF_ACCOUNT_ID }}
+          CF_PROJECT_NAME: ${{ vars.CF_PROJECT_NAME }}
+          KEEP: ${{ inputs.keep || '3' }}
+        run: node scripts/cleanup-deployments.js
