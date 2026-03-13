@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const glob = require("glob");
+const { globSync } = require("glob");
 const { JSDOM } = require("jsdom");
 const jsonld = require("jsonld");
 
@@ -234,7 +234,7 @@ async function processFile(filePath) {
 }
 
 async function main() {
-  const htmlFiles = glob.sync("public/**/*.html");
+  const htmlFiles = globSync("public/**/*.html");
 
   if (htmlFiles.length === 0) {
     console.error(

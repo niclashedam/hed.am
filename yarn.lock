@@ -2760,7 +2760,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^13.0.0, glob@npm:^13.0.6":
+"glob@npm:^13.0.0":
   version: 13.0.6
   resolution: "glob@npm:13.0.6"
   dependencies:
@@ -4193,7 +4193,6 @@ __metadata:
     "@tailwindcss/typography": "npm:^0.5.19"
     axe-core: "npm:^4.11.1"
     cspell: "npm:^9.7.0"
-    glob: "npm:^13.0.6"
     html-minifier-terser: "npm:^7.2.0"
     html-validate: "npm:^10.11.1"
     jsdom: "npm:^28.1.0"
