@@ -1396,25 +1396,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shopify/liquid-html-parser@npm:^2.9.0":
-  version: 2.9.0
-  resolution: "@shopify/liquid-html-parser@npm:2.9.0"
+"@shopify/liquid-html-parser@npm:^2.9.2":
+  version: 2.9.2
+  resolution: "@shopify/liquid-html-parser@npm:2.9.2"
   dependencies:
     line-column: "npm:^1.0.2"
     ohm-js: "npm:^17.0.0"
-  checksum: 10c0/1fc783d30a9907b1382b1dc226a74a025d5a0d59003778483643a344ca70b13e774daa01f1cc6b27951c1a73aeb74434208f0571ee77833f876e6ad4aa2fc245
+  checksum: 10c0/c7a8cbc0dd49183e077f6c96883d9d212705078bd88313f07067c305bd52b97c968f3a088d60fedefd3b6c90af643dddbee5d0be1de4283d0c63f09a3b1c8a41
   languageName: node
   linkType: hard
 
-"@shopify/prettier-plugin-liquid@npm:^1.10.0":
-  version: 1.10.0
-  resolution: "@shopify/prettier-plugin-liquid@npm:1.10.0"
+"@shopify/prettier-plugin-liquid@npm:^1.10.2":
+  version: 1.10.2
+  resolution: "@shopify/prettier-plugin-liquid@npm:1.10.2"
   dependencies:
-    "@shopify/liquid-html-parser": "npm:^2.9.0"
+    "@shopify/liquid-html-parser": "npm:^2.9.2"
     html-styles: "npm:^1.0.0"
   peerDependencies:
     prettier: ^2.0.0 || ^3.0.0
-  checksum: 10c0/4b82b98459e95aca058e6371e598976cce6f2c049705f7fd0fcb6efad1c28c58d55eb1237d06b790451dbdf456084baa1df75120fb2a2f98eb6f4a791423db54
+  checksum: 10c0/dd5cb5a60055ca9c55e689068c32cfb2095d685a4adafd4c6ec4a9b4b7ad75f5985d40b07c1e60e27536cbbec2101e0f6031cc9c81fcc98988eebf49d6346195
   languageName: node
   linkType: hard
 
@@ -4188,7 +4188,7 @@ __metadata:
     "@11ty/eleventy-img": "npm:^6.0.4"
     "@11ty/eleventy-navigation": "npm:^1.0.5"
     "@11ty/eleventy-plugin-syntaxhighlight": "npm:^5.0.2"
-    "@shopify/prettier-plugin-liquid": "npm:^1.10.0"
+    "@shopify/prettier-plugin-liquid": "npm:^1.10.2"
     "@tailwindcss/cli": "npm:^4.2.1"
     "@tailwindcss/typography": "npm:^0.5.19"
     axe-core: "npm:^4.11.1"
