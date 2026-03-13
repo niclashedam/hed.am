@@ -5,7 +5,7 @@ const axe = require("axe-core");
 
 async function runAxe(file) {
   const html = fs.readFileSync(file, "utf8");
-  const dom = new JSDOM(html, { runScripts: "dangerously" });
+  const dom = new JSDOM(html, { runScripts: "outside-only" });
   const { window } = dom;
   const { document } = window;
 
@@ -18,26 +18,35 @@ async function runAxe(file) {
     },
   });
   if (results.violations.length) {
-    console.error(`\nAccessibility violations in ${file}:`);
+    console.error(`FAIL: ${file}`);
     results.violations.forEach((v) => {
-      console.error(`${v.id} (${v.help})`);
+      console.error(`  ${v.id} (${v.help})`);
       v.nodes.forEach((n) => {
-        console.error(`  ${n.target.join(", ")}`);
+        console.error(`    ${n.target.join(", ")}`);
       });
     });
-  } else {
-    console.log(`No accessibility violations in ${file}`);
   }
   return results.violations.length;
 }
 
 (async () => {
   const files = glob.sync("public/**/*.html");
+  if (files.length === 0) {
+    console.error(
+      'ERROR: No HTML files found in public/. Run "npm run build" first.',
+    );
+    process.exit(1);
+  }
   let failures = 0;
   for (const file of files) {
     failures += await runAxe(file);
   }
   if (failures > 0) {
+    console.error(
+      `\n${files.length} files checked, ${failures} violation(s) found.`,
+    );
     process.exit(1);
+  } else {
+    console.log(`${files.length} files checked, 0 violations.`);
   }
 })();

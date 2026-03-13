@@ -11,6 +11,7 @@
     "cspell": "^9.7.0",
     "glob": "^13.0.6",
     "html-minifier-terser": "^7.2.0",
+    "html-validate": "^10.11.1",
     "jsdom": "^28.1.0",
     "jsonld": "^9.0.0",
     "prettier": "^3.8.1",
@@ -20,10 +21,13 @@
   },
   "scripts": {
     "build": "npm run clean && eleventy",
+    "check": "node ./scripts/check.js",
     "check:format": "prettier . --check",
     "check:spelling": "npm run build && cspell --config cspell.json --no-progress \"public/**/*.html\"",
     "check:a11y": "npm run build && node ./scripts/a11y.js",
     "check:jsonld": "npm run build && node ./scripts/jsonld.js",
+    "check:html": "npm run build && html-validate \"public/**/*.html\"",
+    "check:links": "npm run build && node ./scripts/links.js",
     "clean": "rm -rf ./public && git checkout public",
     "format": "prettier . --write",
     "serve": "eleventy --serve"

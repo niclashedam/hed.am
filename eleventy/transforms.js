@@ -5,6 +5,7 @@ module.exports = function (eleventyConfig) {
     if (outputPath && outputPath.endsWith(".html")) {
       return htmlmin.minify(content, {
         collapseWhitespace: true,
+        collapseBooleanAttributes: true,
         removeComments: true,
         useShortDoctype: true,
         processScripts: ["application/ld+json"],
