@@ -18,6 +18,11 @@ keywords:
   - dependency risk
   - software development
   - open source
+categories: Attack Vectors
+tldr:
+  - Dependency ecosystems accelerate software development but also expand trust to thousands of transitive components and maintainers you do not control.
+  - Supply chain attacks exploit this trust path, often through legitimate update channels and maintainer accounts rather than obvious malware signatures.
+  - Reducing risk requires discipline in dependency management, version control, isolation, and continuous verification, not blind trust in popularity.
 imageAlt: "A man holding an npm sticker."
 image: /assets/images/blog/how-trusted-packages-turn-into-attack-vectors.jpg
 permalink: "/blog/how-trusted-packages-turn-into-attack-vectors/"

@@ -1,18 +1,64 @@
-<section
-  class="bg-gradient-to-br from-gray-900 via-black to-gray-800 text-gray-200 body-font">
-  <div
-    class="max-w-7xl mx-auto py-16 px-10 sm:py-24 sm:px-6 lg:px-8 text-center">
-    <h2
-      class="mt-1 text-2xl font-extrabold text-white sm:text-3xl sm:tracking-tight lg:text-4xl">
-      Want to get in touch?
-    </h2>
-    <p class="max-w-3xl mt-5 mx-auto text-lg text-white">
-      Feel free to send me an e-mail at
-      <a
-        href="mailto:website-af5b41@sl.hed.am"
-        class="text-indigo-500 underline">
-        website-af5b41@sl.hed.am</a
-      >.
-    </p>
+<section id="contact" class="bg-navy-900 py-24 sm:py-32 text-gray-200 relative overflow-hidden">
+  <div class="absolute inset-0 hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-scan-line" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-8">
+      <span class="section-meta text-steel-400">COMMUNICATIONS</span>
+      <span class="h-px flex-1 bg-navy-700 max-w-[8rem]"></span>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight text-gray-200 sm:text-4xl">Initiate contact</h2>
+        <p class="mt-6 text-base leading-7 text-steel-400">
+          For sensitive topics, use PGP. For general contact, feel free to e-mail directly.
+        </p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <a
+            href="/key.asc"
+            class="font-mono text-xs tracking-wider text-gold-500 hover:text-gold-400 border border-gold-600 hover:border-gold-500 rounded px-4 py-2 transition-colors">
+            <span aria-hidden="true">↓</span> DOWNLOAD PUBLIC KEY
+          </a>
+          <a
+            href="https://keys.openpgp.org/search?q=contact@hed.am"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="font-mono text-xs tracking-wider text-steel-400 hover:text-steel-300 border border-navy-700 hover:border-navy-600 rounded px-4 py-2 transition-colors">
+            <span aria-hidden="true">↗</span> KEY SERVER<span class="sr-only"> (opens in new tab)</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="font-mono text-sm">
+        <div class="border border-navy-700 rounded p-6 space-y-4">
+          <div class="flex gap-4">
+            <span class="text-steel-400 w-28 flex-shrink-0">PROTOCOL</span>
+            <span class="text-gray-300">SMTP + PGP</span>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-steel-400 w-28 flex-shrink-0">E-MAIL</span>
+            <a
+              href="mailto:contact@hed.am"
+              class="text-gold-500 hover:text-gold-400 transition-colors underline break-all">
+              contact@hed.am
+            </a>
+          </div>
+          <div class="h-px bg-navy-700"></div>
+          <div class="flex gap-4">
+            <span class="text-steel-400 w-28 flex-shrink-0">ALGORITHM</span>
+            <span class="text-gray-300">Ed25519</span>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-steel-400 w-28 flex-shrink-0">KEY ID</span>
+            <span class="text-gray-300 tracking-widest">1C71 8BA1 A100 6103</span>
+          </div>
+          <div class="flex gap-4">
+            <span class="text-steel-400 w-28 flex-shrink-0">FORMAT</span>
+            <span class="text-gray-300">PGP/MIME · Inline PGP</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

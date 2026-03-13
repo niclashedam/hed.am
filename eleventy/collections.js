@@ -4,9 +4,6 @@ module.exports = function (eleventyConfig, md) {
   eleventyConfig.addNunjucksFilter("limit", (arr, limit) =>
     arr.slice(0, limit),
   );
-  eleventyConfig.addFilter("not", function (arr, key = "", value) {
-    return arr.filter((item) => item[key] !== value);
-  });
 
   eleventyConfig.addCollection("blog", async function (collectionApi) {
     const wordsPerMinute = 200;
@@ -49,5 +46,28 @@ module.exports = function (eleventyConfig, md) {
     }
 
     return posts;
+  });
+
+  eleventyConfig.addCollection("categories", function (collectionApi) {
+    const slugify = (str) =>
+      str
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-|-$/g, "");
+
+    const posts = collectionApi
+      .getFilteredByGlob("src/blog/posts/*.md")
+      .sort((a, b) => b.date - a.date);
+
+    const map = {};
+    for (const post of posts) {
+      const name = post.data.categories;
+      if (!name) continue;
+      const slug = slugify(name);
+      if (!map[slug]) map[slug] = { name, slug, posts: [] };
+      map[slug].posts.push(post);
+    }
+
+    return Object.values(map).sort((a, b) => a.name.localeCompare(b.name));
   });
 };

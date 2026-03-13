@@ -1,21 +1,50 @@
 ---
 layout: layouts/base.njk
-title: Page not found
-description: "Sorry, we could not find the page you're looking for."
+title: File Not Found
+description: "The requested file does not exist in this registry."
 permalink: 404.html
 eleventyNavigation:
   key: /404.html
   parent: /
   title: 404
 ---
-<main
-  class="w-full h-screen px-3 bg-gradient-to-br from-gray-900 via-black to-gray-800 px-6 py-24 sm:py-32 lg:px-8">
-  <div class="text-center">
-    <div class="glitch-wrapper">
-      <div
-        class="relative inline-block mt-3 text-indigo-600 glitch text-8xl"
-        data-glitch="404">
-        404
+<main id="main-content" class="min-h-screen bg-navy-900 flex items-center relative overflow-hidden">
+  <div class="absolute inset-0 hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-scan-line" aria-hidden="true"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-8 py-24 w-full">
+    <div class="max-w-2xl">
+      <!-- File reference header -->
+      <div class="flex items-center gap-4 mb-4">
+        <span class="section-meta text-steel-400">ERROR</span>
+        <span class="h-px flex-1 bg-navy-700 max-w-[10rem]"></span>
+      </div>
+
+      <!-- Error fields -->
+      <div class="space-y-5">
+        <div class="hero-field visible">
+          <span class="section-meta text-steel-500 w-36 flex-shrink-0">ERROR CODE</span>
+          <span class="font-mono text-white text-5xl font-bold tracking-tight">404</span>
+        </div>
+        <div class="hero-field visible">
+          <span class="section-meta text-steel-500 w-36 flex-shrink-0">STATUS</span>
+          <span class="font-mono text-gold-500 text-xl font-semibold">FILE NOT FOUND</span>
+        </div>
+        <div class="hero-field visible">
+          <span class="section-meta text-steel-500 w-36 flex-shrink-0">ACTION</span>
+          <span class="font-mono text-steel-300 text-sm">RETURN TO INDEX</span>
+        </div>
+      </div>
+
+      <p class="mt-10 text-gray-400 max-w-lg leading-relaxed text-sm sm:text-base">
+        The requested file does not exist. It may have been removed, relocated, or was never filed.
+      </p>
+
+      <div class="mt-8 flex flex-wrap gap-6 font-mono text-sm">
+        <a href="/" class="text-gold-500 hover:text-gold-400 tracking-wider transition-colors">→ RETURN TO INDEX</a>
+        <a href="/blog" class="text-steel-400 hover:text-steel-300 tracking-wider transition-colors"
+          >→ INTELLIGENCE BRIEFS</a
+        >
       </div>
     </div>
   </div>

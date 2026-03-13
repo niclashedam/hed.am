@@ -1,16 +1,15 @@
-<footer class="bg-black text-gray-200 body-font">
-  <div
-    class="container flex flex-col items-center px-8 py-8 mx-auto max-w-7xl sm:flex-row">
-    <p class="mt-4 text-sm text-gray-300 sm:ml-4 sm:pl-4 sm:mt-0">&copy; 2025 Niclas Hedam</p>
-    <span
-      class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
+<footer class="bg-navy-950 border-t border-navy-800 relative overflow-hidden">
+  <div class="absolute inset-0 hero-grid-bg" aria-hidden="true"></div>
+  <div class="relative container flex flex-col items-center px-6 lg:px-8 pt-8 pb-4 mx-auto max-w-7xl sm:flex-row">
+    <p class="font-mono text-xs text-steel-500 tracking-widest sm:ml-4 sm:pl-4">&copy; 2026 Niclas Hedam</p>
+    <span class="inline-flex justify-center mt-4 space-x-5 sm:ml-auto sm:mt-0 sm:justify-start">
       {% for item in links %}
         <a
           href="{{ item.href }}"
           target="_blank"
           rel="noopener noreferrer"
-          class="text-gray-300 hover:text-gray-500 text-2xl">
-          <span class="sr-only">{{ item.sr }}</span>
+          class="text-steel-500 hover:text-gold-500 text-2xl transition-colors">
+          <span class="sr-only">{{ item.sr }}, opens in new tab</span>
           <i class="{{ item.icon }}"></i>
         </a>
       {% endfor %}
@@ -119,7 +118,7 @@
               "url": "https://hed.am{{ image | url }}"
             }{% endif %}{% if date %},
             "datePublished": "{{ date | machineDate }}"{% endif %}{% if keywords %},
-            "keywords": "{{ keywords | join(', ') }}",{% endif %}
+            "keywords": "{{ keywords | join(', ') }}"{% endif %},
           "wordCount": {{ wordCount }},
           "author": {
             "@id": "https://hed.am/#person"

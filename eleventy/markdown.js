@@ -11,11 +11,18 @@ module.exports = function (eleventyConfig) {
 
   md.renderer.rules.link_open = function (tokens, idx, options, env, self) {
     const href = tokens[idx].attrGet("href");
+
     // check if href is an external link or PDF
-    if (href && (/^https?:\/\//.test(href) || /\.pdf$/.test(href))) {
+    if (href && /^https?:\/\//.test(href)) {
       tokens[idx].attrSet("target", "_blank");
       tokens[idx].attrJoin("rel", "noopener noreferrer");
     }
+
+    if (href && /\.pdf$/.test(href)) {
+      tokens[idx].attrSet("target", "_blank");
+      tokens[idx].attrJoin("rel", "noopener noreferrer");
+    }
+
     return defaultRender(tokens, idx, options, env, self);
   };
 

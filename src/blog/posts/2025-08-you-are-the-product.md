@@ -18,6 +18,11 @@ keywords:
   - behavioural data
   - internet privacy
   - personal data
+categories: Surveillance Society
+tldr:
+  - Many modern digital services no longer just provide utility for end-users. They continuously collect behavioural data that can reveal health, finances, routines, and social relationships.
+  - Both advertisers and governments are significant consumers of this data; in 2024 alone, Google and Meta received nearly half a million legal data requests from U.S. agencies, the vast majority of which were fulfilled.
+  - Legal rights to deletion and control exist on paper, but enforcement and data retention practices often leave individuals with limited practical control.
 imageAlt: "Surveillance camera focusing on security with American flag backdrop."
 image: /assets/images/blog/you-are-the-product.jpg
 permalink: "/blog/you-are-the-product/"
@@ -25,7 +30,7 @@ permalink: "/blog/you-are-the-product/"
 
 Over the past 20 years, our relationship with technology has changed dramatically. What started as a helpful tool, making communication and information access easier, has become something far more invasive. Platforms like Google and Meta now track and store enormous parts of our daily life, often without us realising just how much we are giving away.
 
-This is not about paranoia or conspiracy theories. It is about understanding how ordinary habits like Googling symptoms, checking the map and replying to an email helps create a profile of you that never goes away.
+This is not about paranoia or conspiracy theories. It is about understanding how ordinary habits like Googling symptoms, checking the map and replying to an email help create a profile of you that never goes away.
 
 ## The Simpler Internet: When Email Did Not Follow You
 
@@ -86,13 +91,13 @@ If you searched for “how to protest safely” or “climate rally route New Yo
 
 GDPR and the CCPA give you the right to delete your data, but enforcement is weak. Google was fined billions in 2024, but paid those fines out of their quarterly profits in under a month ([Proton Tech Fines Tracker](https://proton.me/tech-fines-tracker)).
 
-Even when you delete an account, the data may still live in backups or internal logs. And companies can claim “legitimate interest” as a reason to hold on to data indefinitely, without you having any say in it or know if your data is part of that “legitimate interest”.
+Even when you delete an account, the data may still live in backups or internal logs. And companies can claim “legitimate interest” as a reason to hold on to data indefinitely, without you having any say in it or knowing if your data is part of that “legitimate interest”.
 
-Once your information is in the system, it is difficult and often impossible to confirm whether it is truly been removed.
+Once your information is in the system, it is difficult and often impossible to confirm whether it has truly been removed.
 
 ## “Nothing to Hide” Is the Wrong Argument
 
-The common response to all of this is: “I got nothing to hide.” But privacy is not about hiding, but about context. You would never put your medical journal on Facebook. Not because it is illegal, but because it is personal. You want control over who sees what.
+The common response to all of this is: “I got nothing to hide.” But privacy is not about hiding — it is about context. You would never put your medical journal on Facebook. Not because it is illegal, but because it is personal. You want control over who sees what.
 
 Your data reveals more than you think. It shows what you are planning, what you are worried about, what you have changed your mind on. It does not need to be illegal to cause problems, it just needs to be misinterpreted.
 
@@ -131,4 +136,4 @@ We did not sign up for this. No one clicked “I agree” thinking they were han
 
 But here we are in 2025. If you want things to change, the first step is to stop giving your data away for free.
 
-The second is to help the organisations that are pushing back. It will not fix everything. But it is a step in the right direction and right now, that matters and all that we can do.
+The second is to help the organisations that are pushing back. It will not fix everything. But it is a step in the right direction and right now, that matters and is all that we can do.

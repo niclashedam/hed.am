@@ -21,7 +21,14 @@ layout: null
   <url>
     <loc>https://hed.am/blog/</loc>
   </url>
-  {% for post in collections.blog %}
+  <url>
+    <loc>https://hed.am/blog/categories/</loc>
+  </url>
+  {% for cat in collections.categories %}
+  <url>
+    <loc>https://hed.am/blog/categories/{{ cat.slug }}/</loc>
+  </url>
+  {% endfor %} {% for post in collections.blog %}
   <url>
     <loc>https://hed.am{{ post.url }}</loc>
     <lastmod>{{ post.date.toISOString() }}</lastmod>

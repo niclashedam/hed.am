@@ -8,6 +8,11 @@ keywords:
   - surveillance
   - geopolitics
   - internet architecture
+categories: Surveillance Society
+tldr:
+  - VPNs solve real problems, but their existence signals deeper failures in trust, privacy, and internet governance.
+  - People use VPNs to compensate for insecure network assumptions, surveillance-heavy business models, and artificial access barriers.
+  - The long-term fix is not better bandages, but infrastructure and policy that make privacy and open access the default.
 imageAlt: "A computer with a VPN application."
 image: /assets/images/blog/vpns-are-a-symptom.jpg
 permalink: "/blog/vpns-are-a-symptom/"
@@ -39,7 +44,7 @@ The third reason people use VPNs is to bypass artificial regional restrictions, 
 
 This is a political and economic problem, not a technical one. The internet should be a global medium, but commercial and legal models fragment it into national enclaves. VPNs are the tool citizens use to push back. This workaround exposes a broken equilibrium: instead of enabling open global access, the platform and media industry restrict, fragment, and rent access. Users resort to tunnelling to recover a basic expectation: that something available on the internet should be available to anyone on the internet.
 
-And here is another metaphor for you. Imagine heading to the cinema to watch the latest blockbuster movie, only to be told you cannot watch it because of your nationality. To get around this, you would have to get a fake passport to prove you are from somewhere else. And here is the fun detail: you have already bought the ticket and they happily accepted the money. Even if you have paid for a streaming service, you are still blocked from accessing a majority of their content because of where you are located. Even if you manage to get around the restrictions, they harass you with limiting subtitles to only the local language. This limitation also hits local foreigners, who may not speak the local language (yet) but are still blocked from accessing content in their native tongue.
+And here is another metaphor for you. Imagine heading to the cinema to watch the latest blockbuster movie, only to be told you cannot watch it because of your nationality. To get around this, you would have to get a fake passport to prove you are from somewhere else. And here is the fun detail: you have already bought the ticket and they happily accepted the money. Even if you have paid for a streaming service, you are still blocked from accessing a majority of their content because of where you are located. Even if you manage to get around the restrictions, they harass you by limiting subtitles to only the local language. This limitation also hits local foreigners, who may not speak the local language (yet) but are still blocked from accessing content in their native tongue.
 
 The fact that websites like PlayPilot and JustWatch now exist just to help people understand regional restrictions shows how normalised this problem has become. Instead of fixing geo-restrictions, we have built an entire ecosystem around finding and bypassing these man-made barriers.
 
@@ -47,7 +52,7 @@ The fact that websites like PlayPilot and JustWatch now exist just to help peopl
 
 Now, we might not be able to wipe out internet crime, but that does not mean we should just roll over and accept surveillance and geo-blocking as the norm. These issues highlight deeper problems within our digital infrastructure and governance.
 
-Surveillance has become so commonplace that we have started to see it as just another part of our digital lives. But why on earth do we put up with this? We have got laws against stalking and invasion of privacy in the real world, so why do we tolerate mass surveillance online? This normalisation of surveillance is often brushed off as necessary for security or the convenience of personalised services. But make no mistake, this comes at the cost of our privacy and autonomy. We have got to ask ourselves: do the benefits of all this surveillance really outweigh the cost to our fundamental rights? I have yet to meet anyone who genuinely likes "the algorithm" and that it controls what they see online.
+Surveillance has become so commonplace that we have started to see it as just another part of our digital lives. But why on earth do we put up with this? We have got laws against stalking and invasion of privacy in the real world, so why do we tolerate mass surveillance online? This normalisation of surveillance is often brushed off as necessary for security or the convenience of personalised services. But make no mistake, this comes at the cost of our privacy and autonomy. We have got to ask ourselves: do the benefits of all this surveillance really outweigh the cost to our fundamental rights? I have yet to meet anyone who genuinely likes "the algorithm" or wants it to control what they see online.
 
 Similarly, geo-blocking fragments the internet and limits our access to information and entertainment based on where we live. This is not just an inconvenience; it builds inequalities in access to digital content. Why do we put up with a system that restricts what we can see and do online based on where we live?
 

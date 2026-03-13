@@ -19,12 +19,17 @@ keywords:
   - european union
   - civil liberties
   - technology law
+categories: Surveillance Society
+tldr:
+  - Client-side scanning proposals shift private communication from targeted investigation to broad pre-emptive monitoring.
+  - The technical burden lands on everyone, while determined offenders can still adapt by changing channels or adding encryption layers.
+  - Once scanning infrastructure exists, expanding it to new policy categories becomes easier than reversing it.
 imageAlt: "European Union flags waving in the wind."
 image: /assets/images/blog/if-privacy-is-outlawed-only-outlaws-have-privacy.jpg
 permalink: "/blog/if-privacy-is-outlawed-only-outlaws-have-privacy/"
 ---
 
-We all want children to be safe. That instinct is right. European Union's “Chat Control” proposal presents itself as a child protection measure, but at its core, it would require scanning everyone’s private messages on their devices before they are sent. This is a form of pre-emptive monitoring. The stated aim is compassion; the architecture, however, is built on deep suspicion. The real question is not whether the goal is noble, but whether the tool is legitimate, effective, and safe at scale. When the state reaches into private correspondence pre-emptively, it shifts the default relationship between citizen and authority, where everyone is treated as guilty, instead of innocent, until proven otherwise. Such a radical shift demands extraordinary evidence, careful engineering, and robust safeguards, none of which are yet convincingly in view.
+We all want children to be safe. That instinct is right. The European Union's “Chat Control” proposal presents itself as a child protection measure, but at its core, it would require scanning everyone’s private messages on their devices before they are sent. This is a form of pre-emptive monitoring. The stated aim is compassion; the architecture, however, is built on deep suspicion. The real question is not whether the goal is noble, but whether the tool is legitimate, effective, and safe at scale. When the state reaches into private correspondence pre-emptively, it shifts the default relationship between citizen and authority, where everyone is treated as guilty, instead of innocent, until proven otherwise. Such a radical shift demands extraordinary evidence, careful engineering, and robust safeguards, none of which are yet convincingly in view.
 
 ## The Promise vs. The Implementation
 
@@ -44,7 +49,7 @@ Examining this proposed law reveals two uncomfortable facts. First, circumventio
 
 Surveillance infrastructure, once established, tends to expand in scope. Once device-level scanning is normalised and implemented, adding new categories, such as terrorism, extremism, “disinformation”, tax or copyright, becomes a configuration change, not a new public debate. The technical capability is already present; only political will is required to broaden its use.
 
-## Real Offenders Won’t Wait to Be Caught
+## Real Offenders Won’t Wait To Be Caught
 
 Chat Control focuses on mainstream platforms like WhatsApp, Messenger, Signal and Telegram. Competent offenders are unlikely to remain on mainstream channels once on-device scanning is enabled; they will move to other platforms or add encryption layers. The result is that the lawful majority are scanned, while those intent on evading detection are likely to succeed.
 

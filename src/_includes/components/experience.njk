@@ -1,40 +1,40 @@
-<section>
-  <div
-    class="bg-gradient-to-br from-gray-900 via-black to-gray-800 py-24 sm:py-32 text-gray-200">
-    <div
-      class="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
-      <div class="max-w-2xl">
-        <h2 class="text-3xl font-bold tracking-tight text-gray-200 sm:text-4xl">Experience</h2>
-        <p class="mt-6 text-lg leading-8 text-gray-400">
-          Over the past decade I have worked with over a dozen organisations of all sizes. Here are a few of them.
-        </p>
-      </div>
-      <ul
-        role="list"
-        class="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
-        {% for job in experience %}
-          <li>
-            <div class="flex items-center gap-x-6">
-              <img
-                width="128"
-                class="h-16 w-16 rounded-full"
-                src="{{ job.logo }}"
-                alt="{{ job.company }}">
-              <div>
-                <h3 class="text-base font-semibold leading-7 tracking-tight">
-                  {{ job.company }}
-                </h3>
-                <p class="text-sm font-bold leading-6 text-indigo-400">
-                  {{ job.title }}
-                </p>
-                <p class="text-sm font leading-6 text-gray-500">
-                  {{ job.dates }}
-                </p>
-              </div>
-            </div>
-          </li>
-        {% endfor %}
-      </ul>
+<section id="experience" class="bg-navy-900 py-24 sm:py-32 text-gray-200 relative overflow-hidden">
+  <div class="absolute inset-0 hero-grid-bg" aria-hidden="true"></div>
+  <div class="hero-scan-line" aria-hidden="true"></div>
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="flex items-center gap-4 mb-8">
+      <span class="section-meta text-steel-400">EMPLOYMENT HISTORY</span>
+      <span class="h-px flex-1 bg-navy-700 max-w-[8rem]"></span>
     </div>
+
+    <div class="mb-12 max-w-xl">
+      <h2 class="text-3xl font-bold tracking-tight text-gray-200 sm:text-4xl">Experience</h2>
+      <p class="mt-4 text-base leading-7 text-steel-400">
+        Partial record with most relevant experience. One or more prior engagements omitted.
+      </p>
+    </div>
+
+    <ul role="list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      {% for job in experience %}
+        <li class="bg-navy-800 border border-gold-500/25 rounded p-6 flex items-start gap-4 hover:border-gold-500/45 transition-colors">
+          <div class="h-16 w-16 flex-none overflow-hidden rounded-2xl">
+            <img
+              width="64"
+              height="64"
+              class="block h-full w-full object-cover opacity-90"
+              src="{{ job.logo }}"
+              alt="{{ job.company }}">
+          </div>
+          <div class="min-w-0">
+            <p class="font-mono text-xs text-steel-400 tracking-widest mb-2">{{ job.dates }}</p>
+            <h3 class="text-base font-semibold text-gray-100 leading-snug">{{ job.company }}</h3>
+            <p class="text-sm font-medium text-gold-500 mt-1">{{ job.title }}</p>
+            {% if job.scope %}
+              <p class="mt-2 font-mono text-[0.68rem] tracking-widest uppercase text-steel-300">{{ job.scope }}</p>
+            {% endif %}
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
   </div>
 </section>

@@ -1,39 +1,51 @@
-<section class="text-gray-200 body-font">
-  <div class="bg-white pt-8 pb-16">
-    <div class="mx-auto max-w-7xl px-6 lg:px-8">
-      <h2
-        class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl text-center">
-        Most recent blog posts
-      </h2>
-      <div
-        class="mx-auto mt-4 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 pt-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-        {% for post in collections.blog | limit(3) %}
-          <article class="overflow-hidden rounded-lg shadow-lg">
-            <a href="{{ post.url }}">
-              <img
-                width="384"
-                alt="{{ post.data.title }}"
-                src="{{ post.data.image | url }}"
-                class="h-56 w-full object-cover">
+<section class="bg-parchment py-24 sm:py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="flex items-center gap-4 mb-8">
+      <span class="section-meta text-steel-500">PUBLICATIONS</span>
+      <span class="h-px flex-1 bg-parchment-dark max-w-[8rem]"></span>
+    </div>
 
-              <div class="bg-white p-4 sm:p-6">
-                <p class="block text-xs text-gray-500">
-                  <time datetime="{{ post.date | machineDate }}">{{ post.date | readableDate }}</time>
-                  · {{ post.data.readingTime }} min read
-                </p>
-
-                <h3 class="mt-0.5 text-lg text-gray-900">
-                  {{ post.data.title }}
-                </h3>
-
-                <div class="mt-2 line-clamp-3 text-sm text-gray-500">
-                  {{ post.data.excerpt | safe }}
-                </div>
-              </div>
-            </a>
-          </article>
-        {% endfor %}
+    <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-10">
+      <div>
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Intelligence Briefs</h2>
+        <p class="mt-2 text-sm text-gray-500 font-mono">
+          Research notes, technical analyses and intelligence perspectives.
+        </p>
       </div>
+      <a href="/blog/" class="section-meta text-gold-600 hover:text-gold-500 transition-colors shrink-0 pb-0.5">
+        ALL BRIEFS →
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 gap-x-8 gap-y-8 lg:grid-cols-3">
+      {% for post in collections.blog | limit(3) %}
+        <article class="relative group overflow-hidden rounded-lg border border-parchment-dark bg-white hover:shadow-md transition-shadow">
+          <img
+            width="400"
+            alt="{{ post.data.title }}"
+            src="{{ post.data.image | url }}"
+            class="h-48 w-full object-cover">
+          <div class="p-5">
+            {% if post.data.categories %}
+              <a
+                href="/blog/categories/{{ post.data.categories | slugify }}/"
+                class="relative z-10 section-meta text-gold-600 hover:text-gold-500 transition-colors">
+                {{ post.data.categories }}
+              </a>
+            {% endif %}
+            <h3 class="mt-2 text-base font-semibold text-gray-900 leading-snug group-hover:text-gold-700 transition-colors">
+              <a href="{{ post.url }}" class="after:absolute after:inset-0 after:content-['']">{{ post.data.title }}</a>
+            </h3>
+            <p class="mt-1.5 text-xs text-gray-400 font-mono">
+              <time datetime="{{ post.date | machineDate }}">{{ post.date | readableDate }}</time>
+              &middot; {{ post.data.readingTime }} min read
+            </p>
+            <div class="mt-2 line-clamp-3 text-sm text-gray-600 leading-relaxed">
+              {{ post.data.excerpt | safe }}
+            </div>
+          </div>
+        </article>
+      {% endfor %}
     </div>
   </div>
 </section>

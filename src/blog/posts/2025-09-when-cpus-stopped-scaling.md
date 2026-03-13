@@ -19,6 +19,11 @@ keywords:
   - hardware bottlenecks
   - technology trends
   - delilah
+categories: Architecture
+tldr:
+  - CPU performance stopped scaling through clock speed alone, forcing modern systems toward multi-core and specialised hardware.
+  - The dominant bottleneck is often data movement, not raw computation, which changes how high-performance systems must be designed.
+  - Computational storage and eBPF-based approaches show how pushing selective work closer to storage can reduce movement and improve system efficiency.
 imageAlt: "A motherboard with three RAM sticks."
 image: /assets/images/blog/when-cpus-stopped-scaling.jpg
 permalink: "/blog/when-cpus-stopped-scaling/"
@@ -32,7 +37,7 @@ These trends meant that computers became faster and faster without significant c
 
 In the mid-2000s, the physical limitations of processors began to show. We kept shrinking transistors, but voltage refused to drop enough. This led to two problems. First, making transistors smaller generated more heat in a smaller space, causing overheating of the entire processing chip. Second, electricity started leaking, as it could jump across smaller gaps more easily. Had the voltage continued to drop, the heating would have been manageable and electrical leakage minimised.
 
-However, as this was not possible, processor speeds stalled around 3–5 GHz and desktop power froze near 100 W. We could still add more transistors, just not in a single core. During the same period, the expectations to software exploded, introducing HD video streaming, complex 3D games, real-time data over the internet and early machine learning. The old habit of “waiting for a faster CPU” stopped working.
+However, as this was not possible, processor speeds stalled around 3–5 GHz and desktop power froze near 100 W. We could still add more transistors, just not in a single core. During the same period, the expectations for software exploded, introducing HD video streaming, complex 3D games, real-time data over the internet and early machine learning. The old habit of “waiting for a faster CPU” stopped working.
 
 _Hardware got complicated._
 
@@ -70,7 +75,7 @@ This is where my research comes in.
 
 ## How My Work Fits (No PhD Required)
 
-During my [PhD](/papers/2024-Thesis.pdf), we built [Delilah](/papers/2023-DaMoN.pdf), a storage device that can run small sandboxed functions. These functions can filter, compress, and transform data right at the storage level, reducing the amount of data that needs to be moved to the CPU. The interesting thing about my work was the use of [eBPF](/papers/2021-eBPF.pdf) as the language for these functions.
+During my [PhD](/papers/2024-Thesis.pdf), we built [Delilah](/papers/2023-DaMoN.pdf), a storage device that can run small sandboxed functions. These functions can filter, compress, and transform data right at the storage level, reducing the amount of data that needs to be moved to the CPU. The interesting thing about my work was the use of [eBPF](/papers/2021-EBPF.pdf) as the language for these functions.
 
 eBPF was initially built for network packet filtering and has since evolved into a powerful tool for a variety of use cases, including security and monitoring. The interesting aspect of eBPF is that it is simple and verifiable, so the computer can ensure that the functions are safe and will not cause any harm to the data or drive. On top of this, eBPF is vendor-neutral, meaning that the same eBPF code can run on different hardware without modification. This solves the standardisation problem, as developers can write eBPF functions without worrying about the underlying hardware.
 
@@ -134,23 +139,23 @@ If you do the maths, assuming 4x4 matrices:
 
 | Iteration | cols | Version A                  | Result  | Version B                  | Result   |
 | --------- | ---- | -------------------------- | ------- | -------------------------- | -------- |
-| 0         | 4    | i \* cols + j = 0 \* 0 + 0 | **= 0** | j \* cols + i = 0 \* 4 + 0 | **= 0**  |
-| 1         | 4    | i \* cols + j = 0 \* 0 + 1 | **= 1** | j \* cols + i = 1 \* 4 + 0 | **= 4**  |
-| 2         | 4    | i \* cols + j = 0 \* 0 + 2 | **= 2** | j \* cols + i = 2 \* 4 + 0 | **= 8**  |
-| 3         | 4    | i \* cols + j = 0 \* 0 + 3 | **= 3** | j \* cols + i = 3 \* 4 + 0 | **= 12** |
-| 4         | 4    | i \* cols + j = 1 \* 0 + 0 | **= 4** | j \* cols + i = 0 \* 4 + 1 | **= 1**  |
-| 5         | 4    | i \* cols + j = 1 \* 0 + 1 | **= 5** | j \* cols + i = 1 \* 4 + 1 | **= 5**  |
-| 6         | 4    | i \* cols + j = 1 \* 0 + 2 | **= 6** | j \* cols + i = 2 \* 4 + 1 | **= 9**  |
-| 7         | 4    | i \* cols + j = 1 \* 0 + 3 | **= 7** | j \* cols + i = 3 \* 4 + 1 | **= 13** |
+| 0         | 4    | i \* cols + j = 0 \* 4 + 0 | **= 0** | j \* cols + i = 0 \* 4 + 0 | **= 0**  |
+| 1         | 4    | i \* cols + j = 0 \* 4 + 1 | **= 1** | j \* cols + i = 1 \* 4 + 0 | **= 4**  |
+| 2         | 4    | i \* cols + j = 0 \* 4 + 2 | **= 2** | j \* cols + i = 2 \* 4 + 0 | **= 8**  |
+| 3         | 4    | i \* cols + j = 0 \* 4 + 3 | **= 3** | j \* cols + i = 3 \* 4 + 0 | **= 12** |
+| 4         | 4    | i \* cols + j = 1 \* 4 + 0 | **= 4** | j \* cols + i = 0 \* 4 + 1 | **= 1**  |
+| 5         | 4    | i \* cols + j = 1 \* 4 + 1 | **= 5** | j \* cols + i = 1 \* 4 + 1 | **= 5**  |
+| 6         | 4    | i \* cols + j = 1 \* 4 + 2 | **= 6** | j \* cols + i = 2 \* 4 + 1 | **= 9**  |
+| 7         | 4    | i \* cols + j = 1 \* 4 + 3 | **= 7** | j \* cols + i = 3 \* 4 + 1 | **= 13** |
 
 See the pattern? Version A reads the values one by one, while Version B jumps around, causing more CPU cache misses and failed prefetching thus ultimately being slower. While teaching Operating Systems and C, I would show this example to my students and let them guess if there was a difference in performance, without telling them about locality (yet!). Most students would guess there was no difference, since the code is identical. In higher-level languages, you are used to thinking in O-notation. Going through a matrix from one end to the other is O(n), regardless of the access pattern. But in reality, the access pattern matters a lot for performance.
 
-I ran the two different versions with a matrix of 80,000 x 80,000 on my MacBook Air, equipped with a M3 chip.
+I ran the two different versions with a matrix of 80,000 x 80,000 on my MacBook Air, equipped with an M3 chip.
 
 ```shell
 $ time ./version-a
 0
-./version-a  5.36s user 1.33s system 97% cpu 6,896 total
+./version-a  5,36s user 1,33s system 97% cpu 6,896 total
 
 $ time ./version-b
 0
@@ -161,7 +166,7 @@ Accessing the same data in a different way can have a significant impact on perf
 
 ## The Point
 
-We will not see the old “free‑speed‑every‑two‑years” miracle return. That is simply the natural outcome of physics, economics, and the way we now build chips. Instead of chasing higher and higher clock rates we win by putting the computation where the data lives and by parallelizing as much as possible.
+We will not see the old “free‑speed‑every‑two‑years” miracle return. That is simply the natural outcome of physics, economics, and the way we now build chips. Instead of chasing higher and higher clock rates, we win by putting the computation where the data lives and by parallelizing as much as possible.
 
 The CPU is still the primary processing unit in a modern computer. It orchestrates threads, schedules I/O, and makes high‑level decisions, but it can no longer be expected to do the heavy number‑crunching. Its strength is low‑latency control and coordination, not raw processing power.
 
