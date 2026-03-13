@@ -1,6 +1,6 @@
 ---
 layout: layouts/post.njk
-title: "LLMs Can Write Code, But Cannot Read Your Mind"
+title: "LLMs Can Write Code, but Cannot Read Your Mind"
 date: 2025-08-26
 keywords:
   - llm
@@ -144,7 +144,7 @@ Most software development context is implicit. It lives in your mind as informat
 
 The LLMs do not know if you work in a financial institution or if you are just a hobbyist developer. They do not know if you have specific compliance requirements or if you are building a prototype. They only know what you tell them.
 
-## The Tendencies You Will See, If You Do Not Push Back
+## The Tendencies You Will See, if You Do Not Push Back
 
 The model tends to choose what is popular over what is correct or appropriate. It tends to default to patterns that are plausible but may be unsafe. It confuses APIs that look the same but have vastly different underlying guarantees. It produces code that passes a test suite while violating your compliance obligations or performance constraints.
 
@@ -154,7 +154,7 @@ Good instinct. Still insufficient. Important knowledge lives outside the prompt.
 
 Even if you tried adding all relevant context, you would likely forget something important. The model does not know what you have forgotten.
 
-## Where LLMs Do Shine, And Where To Use Them
+## Where LLMs Do Shine, and Where to Use Them
 
 Use the model to move faster where the stakes are low and the context is simple. For example, use it to write test skeletons and perform mundane refactors when you already have test coverage to account for misunderstandings. Use it to explain an error, while also providing relevant code and logs.
 
@@ -164,7 +164,7 @@ Use it as an unpaid intern. Sometimes the intern produces great work, and someti
 
 Would you let an intern design your system architecture? LLMs should not be in charge of working on security-critical systems, concurrency and lifecycle management, or anything compliance-sensitive. The model can draft, but you are accountable. Make sure to test and review the code, and assume that there is a bug somewhere.
 
-## Stack Overflow Is Not Always Correct, But LLMs Think It Is
+## Stack Overflow Is Not Always Correct, but LLMs Think It Is
 
 Developers copy from Q&A sites because it saves time. The risk is that popularity and upvotes are not the same thing as security. [A 2021 conference paper at the Annual Computer Security Applications Conference](https://ssp.korea.ac.kr/assets/papers/ACSAC21.pdf) analysed 1,958,283 Stack Overflow answers tagged C, C++, and Android and discovered 12,458 insecure posts containing 14,719 insecure snippets, with reported precision around 91–93%. The authors also found those insecure snippets had propagated into the latest releases of 151 out of 2,000 popular C/C++ projects.
 

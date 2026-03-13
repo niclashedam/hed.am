@@ -38,7 +38,7 @@ Denmark and Germany have similar [Human Development Index (HDI)](https://en.wiki
 
 The result is a highly digitalised Denmark, and a cautious Germany.
 
-## Public Registers Are Not The Enemy — But They Are Not Harmless
+## Public Registers Are Not the Enemy — but They Are Not Harmless
 
 Public registers exist for good reasons: accountability, fraud prevention, safety, and market transparency. I am not arguing for secrecy as a governance model. Rather, I argue that we have shifted from _necessary transparency_ for the greater good to _willing exposure_. The difference lies in design.
 
@@ -46,7 +46,7 @@ When data is _public_, it is accessible to everyone, both good and bad actors, b
 
 Below are a few Danish examples that illustrate how available data actually is in Denmark.
 
-### MobilePay Is The Modern Phone-book
+### MobilePay Is the Modern Phone-Book
 
 MobilePay made small payments simple and convenient. Instant transfers using a phone number instead of a bank transfer led to rapid adoption. [In 2022](https://www.mobilepay.dk/nyheder/2022/06/24/mobilepay-rapid-growth), MobilePay had almost 4.4 million users, corresponding to three-fourths of the population in Denmark.
 
@@ -54,7 +54,7 @@ But convenience came with an identity leakage in the form of reverse‑lookups. 
 
 **Open questions:** Should reverse‑lookup be opt‑in, so MobilePay only shows the phone number by default? Should searches be logged in reverse, so users can see who looked them up?
 
-### Leakage Of Website Owners
+### Leakage of Website Owners
 
 Punktum (the .dk registry operator) allows you to look up .dk domain holders. Transparency helps fight fraud and illegal content by holding website registrars accountable. It also makes individuals behind small sites and sole proprietorships easier targets for harassment. The line between “public interest” and “public exploitation” is thin, especially when queries are free and log-less.
 
@@ -70,7 +70,7 @@ Owning a business may not be a choice. It can be a means of making a living. Whi
 
 **Open questions:** Should the address of directors and founders even be published, and not just the business address? Should there be the ability to appoint a proxy, such as a lawyer or auditing firm, to handle incoming enquiries?
 
-### Own A House? You Are Exposed
+### Own a House? You Are Exposed
 
 Through OIS (Den Offentlige Informationsserver) and the Tinglysning registry, anyone can discover who owns a property, transaction prices, mortgages, and property history. That transparency disciplines markets. It also creates a high‑fidelity map of wealth, debt, and family movements.
 
@@ -80,13 +80,13 @@ An interesting side note is that other Nordic countries like Norway and Finland 
 
 **Open questions:** Do you have the right to know who owns any house? Why are renters protected, but not owners? If the financing of a house is public, why are other loans and financial information not public?
 
-### Bankrupt? You Are Now The News
+### Bankrupt? You Are Now the News
 
 Bankruptcy records deter fraud and protect creditors, but they also become a permanent dossier of failure that follows people long after debts are discharged. In Denmark, when someone goes bankrupt, dies, or has their home foreclosed, these events are published in [Statstidende](https://statstidende.dk), sometimes including the personal identification number (CPR). This not only stigmatises those whose lives are already in turmoil, but also exposes them to further harassment. At the same time, it opens the door to fraud, as their CPR number is now public.
 
 **Open questions:** Should bankruptcy records be public? Could they be anonymised in some way to avoid further victimisation?
 
-## CPR Protection Helps, But At A Cost
+## CPR Protection Helps, but at a Cost
 
 The state offers CPR protection, which reduces how widely your personal information is shared. I enabled it for a few years in the late 2010s. It works, but it is a major headache. Ordinary processes break and interactions with employers, banks and insurance become complicated. Since you no longer exist when they look you up, they cannot fetch your information. The system punishes those who opt out, and does not offer a way for companies to be approved or to request access. No, it is all or nothing.
 

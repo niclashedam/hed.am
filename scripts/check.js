@@ -9,12 +9,13 @@ const env = {
   PATH: `${path.resolve("node_modules/.bin")}${path.delimiter}${process.env.PATH}`,
 };
 
-const COL = 8; // widest name is "json-ld" (7)
+const COL = 8; // widest name is "headings" (8)
 const BAR = "─".repeat(56);
 const isTTY = !!process.stdout.isTTY;
 
 const STEPS = [
   { name: "format", cmd: "prettier . --check" },
+  { name: "headings", cmd: "node ./scripts/headings.js" },
   { name: "build", cmd: "yarn build", critical: true },
   {
     name: "spell",

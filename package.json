@@ -17,7 +17,8 @@
     "prettier": "^3.8.1",
     "striptags": "^3.2.0",
     "tailwindcss": "^4.2.1",
-    "terser": "^5.46.0"
+    "terser": "^5.46.0",
+    "title-case": "^4.3.2"
   },
   "scripts": {
     "build": "npm run clean && eleventy",
@@ -27,6 +28,7 @@
     "check:a11y": "npm run build && node ./scripts/a11y.js",
     "check:jsonld": "npm run build && node ./scripts/jsonld.js",
     "check:html": "npm run build && html-validate \"public/**/*.html\"",
+    "check:headings": "node ./scripts/headings.js",
     "check:links": "npm run build && node ./scripts/links.js",
     "clean": "rm -rf ./public && git checkout public",
     "format": "prettier . --write",
