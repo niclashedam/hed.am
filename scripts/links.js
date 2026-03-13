@@ -2,7 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
-const glob = require("glob");
+const { globSync } = require("glob");
 const { JSDOM } = require("jsdom");
 
 const PUBLIC = "public";
@@ -40,7 +40,7 @@ function resolveLink(href) {
 }
 
 function main() {
-  const files = glob.sync(`${PUBLIC}/**/*.html`);
+  const files = globSync(`${PUBLIC}/**/*.html`);
 
   if (files.length === 0) {
     console.error(

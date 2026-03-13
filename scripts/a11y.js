@@ -1,5 +1,5 @@
 const fs = require("fs");
-const glob = require("glob");
+const { globSync } = require("glob");
 const { JSDOM } = require("jsdom");
 const axe = require("axe-core");
 
@@ -30,7 +30,7 @@ async function runAxe(file) {
 }
 
 (async () => {
-  const files = glob.sync("public/**/*.html");
+  const files = globSync("public/**/*.html");
   if (files.length === 0) {
     console.error(
       'ERROR: No HTML files found in public/. Run "npm run build" first.',

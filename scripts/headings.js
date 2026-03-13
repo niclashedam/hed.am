@@ -2,7 +2,7 @@
 "use strict";
 
 const fs = require("fs");
-const glob = require("glob");
+const { globSync } = require("glob");
 
 async function main() {
   const { titleCase } = await import("title-case");
@@ -22,7 +22,7 @@ async function main() {
   // the trailing period triggers its sentence-end logic. Post-process them back.
   const check = (text) => titleCase(normalise(text)).replace(/\bVs\./g, "vs.");
 
-  const files = glob.sync("src/blog/posts/*.md");
+  const files = globSync("src/blog/posts/*.md");
 
   if (files.length === 0) {
     console.error("ERROR: No blog posts found in src/blog/posts/");
