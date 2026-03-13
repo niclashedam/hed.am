@@ -4,7 +4,7 @@ Source code for **hed.am**, a statically generated website built with [Eleventy]
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) 20 or later.
+- [Node.js](https://nodejs.org/) 22 or later.
 - [yarn](https://yarnpkg.com/)
 
 ## Installation
@@ -25,10 +25,14 @@ All project tasks are run through Yarn scripts:
 | `yarn build`          | Generate the static site into the `public/` directory.           |
 | `yarn format`         | Format source files using Prettier.                              |
 | `yarn clean`          | Remove generated files and start fresh.                          |
+| `yarn check`          | Run all quality checks.                                          |
 | `yarn check:format`   | Verify that files are formatted correctly.                       |
+| `yarn check:headings` | Verify that markdown headings are title case.                    |
 | `yarn check:spelling` | Build and spell-check generated HTML using cspell.               |
 | `yarn check:a11y`     | Build and audit generated HTML for accessibility using axe-core. |
 | `yarn check:jsonld`   | Build and validate JSON-LD structured data in generated HTML.    |
+| `yarn check:html`     | Build and validate HTML structure using html-validate.           |
+| `yarn check:links`    | Build and check for broken links.                                |
 
 ## Project structure
 
@@ -49,13 +53,22 @@ All project tasks are run through Yarn scripts:
 
 ## Quality checks
 
-Before committing, ensure all checks pass:
+Before committing, run all quality checks with:
 
 ```bash
-yarn check:format
-yarn check:spelling
-yarn check:a11y
-yarn check:jsonld
+yarn check
+```
+
+Or run individual checks:
+
+```bash
+yarn check:format       # Code formatting
+yarn check:spelling     # Spell checking
+yarn check:a11y         # Accessibility audit
+yarn check:jsonld       # JSON-LD validation
+yarn check:html         # HTML validation
+yarn check:headings     # Markdown headings are title case
+yarn check:links        # Broken link detection
 ```
 
 ## Contributing
