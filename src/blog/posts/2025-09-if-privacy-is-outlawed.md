@@ -27,6 +27,9 @@ tldr:
 imageAlt: "European Union flags waving in the wind."
 image: /assets/images/blog/if-privacy-is-outlawed-only-outlaws-have-privacy.jpg
 permalink: "/blog/if-privacy-is-outlawed-only-outlaws-have-privacy/"
+updates:
+  - date: 2026-03-13
+    note: "Added further references on claims regarding high-profile politicians."
 ---
 
 We all want children to be safe. That instinct is right. The European Union's “Chat Control” proposal presents itself as a child protection measure, but at its core, it would require scanning everyone’s private messages on their devices before they are sent. This is a form of pre-emptive monitoring. The stated aim is compassion; the architecture, however, is built on deep suspicion. The real question is not whether the goal is noble, but whether the tool is legitimate, effective, and safe at scale. When the state reaches into private correspondence pre-emptively, it shifts the default relationship between citizen and authority, where everyone is treated as guilty, instead of innocent, until proven otherwise. Such a radical shift demands extraordinary evidence, careful engineering, and robust safeguards, none of which are yet convincingly in view.
@@ -49,13 +52,27 @@ Examining this proposed law reveals two uncomfortable facts. First, circumventio
 
 Surveillance infrastructure, once established, tends to expand in scope. Once device-level scanning is normalised and implemented, adding new categories, such as terrorism, extremism, “disinformation”, tax or copyright, becomes a configuration change, not a new public debate. The technical capability is already present; only political will is required to broaden its use.
 
+::: warning Scope Creep Is Not Uncommon
+Many surveillance mechanisms introduced with narrow initial justification have expanded over time. RIPA in the UK, introduced for investigating serious crime, was later used by councils to monitor (dog-fouling)[https://www.theguardian.com/world/2016/dec/25/british-councils-used-investigatory-powers-ripa-to-secretly-spy-on-public] and (school catchment fraud)[https://www.theguardian.com/society/2009/nov/05/council-spying-school-catchment-area]. The question to ask about any surveillance infrastructure is not only “what will it be used for today?” but “what could it be used for in ten years, under a different government, with different political priorities?”
+:::
+
 ## Real Offenders Won’t Wait to Be Caught
 
 Chat Control focuses on mainstream platforms like WhatsApp, Messenger, Signal and Telegram. Competent offenders are unlikely to remain on mainstream channels once on-device scanning is enabled; they will move to other platforms or add encryption layers. The result is that the lawful majority are scanned, while those intent on evading detection are likely to succeed.
 
 It is similar to searching for criminals in a police station or tax evaders in a tax office. This is not the most effective way to catch high-value offenders. [Signal’s technical analysis](https://signal.org/blog/pdfs/upload-moderation.pdf) also discussed the re-branding of Client-Side Scanning as “upload moderation” to downplay the surveillance aspect. They noted that this does not solve the core problem: if it happens before encryption, the end-to-end guarantee is broken. End-to-end encryption exists to guarantee that only the intended recipients can read the messages, and introducing scanning on the sender's device compromises this guarantee. What is the point of locking the door, if the thief has the key?
 
-[Philip Zimmermann](https://www.philzimmermann.com/EN/essays/WhyIWrotePGP.html), the creator of PGP, observed this trend decades ago: “If privacy is outlawed, only outlaws will have privacy.” This has never been more true than today.
+::: pullquote
+If privacy is outlawed, only outlaws will have privacy.
+
+Philip Zimmermann, the creator of PGP, [observed this trend already decades ago](https://www.philzimmermann.com/EN/essays/WhyIWrotePGP.html), which has never been more true than today.
+:::
+
+::: source Key Independent Analyses
+[Internet Society: Client-Side Scanning: What It Is and Why It Threatens Trustworthy, Private Communication](https://www.internetsociety.org/resources/doc/2023/client-side-scanning/) - Internet Society did an independent technical analysis concluding that circumvention is easy and that scanning primarily catches the careless while missing determined offenders.
+
+[Signal: New Branding, Same Scanning: “Upload Moderation” Undermines End-to-End Encryption](https://signal.org/blog/pdfs/upload-moderation.pdf) - Signal's response to the rebranding of client-side scanning as "upload moderation", arguing the end-to-end guarantee is broken regardless of the terminology used.
+:::
 
 ## AI Makes Mistakes. At EU Scale, Mistakes Become Policy
 
@@ -77,7 +94,11 @@ Why can this group of citizens invoke the right to privacy, while ordinary citiz
 
 End-to-end encryption supports the security of banking, healthcare, domestic-violence shelters, journalism, elections and the private lives of ordinary people. Mandated server backdoors and client-side scanners both weaken this chain. It is not possible to have “strong” end-to-end encryption and device-level surveillance at the same time.
 
-There is also empirical precedent on feasibility and trust. Apple [explored](https://www.wired.com/story/apple-photo-scanning-csam-communication-safety-messages/) on-device CSAM scanning for iCloud Photos, but ultimately [abandoned](https://www.theverge.com/2022/12/9/23500838/apple-csam-plans-dropped-eff-ncmec-cdt-reactions) it after expert pushback, opting instead for narrower, opt-in child-safety features. If Apple, with full control over its phones and infrastructure, could not make this trustworthy, proposing similar machinery across the EU’s diverse devices seems even more challenging.
+::: note Precedent: Apple Abandoned On-Device CSAM Scanning
+In 2021, [Apple announced plans](https://www.bu.edu/riscs/2021/08/10/apple-csam/) to scan iCloud Photos on-device for CSAM before upload. After significant pushback from security researchers, privacy advocates, and civil liberties organisations, Apple [abandoned the plan](https://www.eff.org/deeplinks/2021/12/2021-we-told-apple-dont-scan-our-phones), opting instead for narrower, opt-in child safety features.
+
+Apple had full control over its hardware, operating system, and infrastructure and still could not make client-side scanning trustworthy enough to ship. The EU’s proposal would apply the same approach across hundreds of device manufacturers and operating systems.
+:::
 
 ## What Actually Moves Outcomes
 

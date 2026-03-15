@@ -1,7 +1,14 @@
 {
   "version": "0.2",
   "language": "en-GB",
-  "dictionaries": ["en-gb", "html", "css", "softwareTerms", "misc"],
+  "dictionaryDefinitions": [
+    {
+      "name": "da-dk",
+      "path": "./node_modules/@cspell/dict-da-dk/da_DK.trie",
+      "description": "Danish (da-DK) Dictionary."
+    }
+  ],
+  "dictionaries": ["en-gb", "da-dk", "html", "css", "softwareTerms", "misc"],
   "useGitignore": false,
   "ignorePaths": [],
   "patterns": [
@@ -10,7 +17,7 @@
       "pattern": "/<pre\\b(?=[^>]*\\bclass\\s*=\\s*(?:\\\"[^\\\"]*\\blanguage-[^\\\"]*\\\"|'[^']*\\blanguage-[^']*'))[^>]*>[\\s\\S]*?<\\/pre>/gi"
     },
     {
-      "name": "pre",
+      "name": "code",
       "pattern": "/<code\\b[^>]*>[\\s\\S]*?<\\/code>/gi"
     }
   ],
@@ -27,14 +34,12 @@
     "Kagi",
     "CCPA",
     "MobilePay",
-    "Offentlige",
-    "Informationsserver",
-    "Tinglysning",
-    "Statstidende",
     "Proff",
-    "Punktum",
     "Dennard",
     "CSAM",
-    "Darktrace"
+    "Darktrace",
+    "RIPA",
+    "ASCAC",
+    "Dicos"
   ]
 }

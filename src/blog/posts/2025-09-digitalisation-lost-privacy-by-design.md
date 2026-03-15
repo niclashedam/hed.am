@@ -38,7 +38,7 @@ Denmark and Germany have similar [Human Development Index (HDI)](https://en.wiki
 
 The result is a highly digitalised Denmark, and a cautious Germany.
 
-## Public Registers Are Not the Enemy — but They Are Not Harmless
+## Public Registers Are Not the Enemy - but They Are Not Harmless
 
 Public registers exist for good reasons: accountability, fraud prevention, safety, and market transparency. I am not arguing for secrecy as a governance model. Rather, I argue that we have shifted from _necessary transparency_ for the greater good to _willing exposure_. The difference lies in design.
 
@@ -49,6 +49,13 @@ Below are a few Danish examples that illustrate how available data actually is i
 ### MobilePay Is the Modern Phone-Book
 
 MobilePay made small payments simple and convenient. Instant transfers using a phone number instead of a bank transfer led to rapid adoption. [In 2022](https://www.mobilepay.dk/nyheder/2022/06/24/mobilepay-rapid-growth), MobilePay had almost 4.4 million users, corresponding to three-fourths of the population in Denmark.
+
+::: stat MobilePay Adoption in 2022
+
+4.4M users
+
+This is roughly three-quarters of Denmark's entire population, which means that a phone number is effectively a national identity lookup tool for most people in the country.
+:::
 
 But convenience came with an identity leakage in the form of reverse‑lookups. Because Danish financial identities are tightly coupled to civil identity (bank KYC is anchored in CPR through MitID), a phone number can often be resolved to a real name in‑app. That is incredibly useful for avoiding sending money to the wrong person. However, it is also a quiet way to unmask who owns a number. Did someone call you? Type the number into MobilePay; get a CPR-verified name.
 
@@ -76,7 +83,11 @@ Through OIS (Den Offentlige Informationsserver) and the Tinglysning registry, an
 
 See that big house? You can now see who owns it, what they paid for it, and even their mortgage details. This level of transparency can be beneficial for market integrity, but it also poses significant risks to individual privacy.
 
-An interesting side note is that other Nordic countries like Norway and Finland also expose the entirety of tax information, including income of everyone, but it requires you to get in touch with the tax authorities. This is exactly how public registries should work.
+::: note How Other Nordic Countries Handle Tax Transparency
+Norway and Finland also publish full personal income information, including the income of every citizen, but only through active contact with the tax authority. Access is public, but requires effort and, by design, leaves a trace.
+
+This is exactly how public registries should work.
+:::
 
 **Open questions:** Do you have the right to know who owns any house? Why are renters protected, but not owners? If the financing of a house is public, why are other loans and financial information not public?
 
@@ -95,6 +106,10 @@ The state offers CPR protection, which reduces how widely your personal informat
 ## Threats We Keep Underestimating
 
 We routinely underestimate how easily public records can be stitched together into a live map of a person’s life. For survivors of stalking and domestic abuse, a handful of queries can reveal where someone lives, where they work, what they own, and how to find them again. Safety plans collapse when registries act like a directory assistance service for bad actors.
+
+::: warning A Real-World Threat, Not a Hypothetical
+A MobilePay reverse-lookup, followed by a .dk WHOIS query or a CVR search can yield a phone number and a home address in only a few minutes from state-verified public data. This information can be used by stalkers, scammers, and other bad actors to cause real harm.
+:::
 
 Harassment feeds on the same visibility. Free speech online is trivially linked to legal identity when reverse‑lookups, property records, and business registers sit one tab away. The path from a controversial tweet to a home address should not be a weekend [OSINT](https://en.wikipedia.org/wiki/Open-source_intelligence) project, and yet that is where we have landed.
 

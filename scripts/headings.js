@@ -14,7 +14,8 @@ async function main() {
       const alpha = w.match(/[\p{L}\p{N}]+/u)?.[0] ?? "";
       const isAcronym = /\p{Lu}{2,}/u.test(alpha); // ≥2 consecutive uppercase
       const isManualCase = /\p{Ll}\p{Lu}/u.test(alpha); // lowercase before uppercase
-      return isAcronym || isManualCase ? w : w.toLowerCase();
+      const isAbbreviation = /^(\p{Lu}\.)+$/u.test(w); // U.S., U.K., etc.
+      return isAcronym || isManualCase || isAbbreviation ? w : w.toLowerCase();
     });
   }
 
@@ -71,13 +72,29 @@ async function main() {
       }
 
       const match = line.match(/^#{2,}\s+(.+)$/);
-      if (!match) continue;
+      if (match) {
+        const heading = match[1].trim();
+        const expected = check(heading);
+        if (heading !== expected) {
+          errors.push({ file: filePath, line: i + 1, heading, expected });
+          errorCount++;
+        }
+      }
 
-      const heading = match[1].trim();
-      const expected = check(heading);
-      if (heading !== expected) {
-        errors.push({ file: filePath, line: i + 1, heading, expected });
-        errorCount++;
+      // Check callout box titles: ::: type Optional Title
+      const containerMatch = line.match(/^:::\s+\S+\s+(.+)$/);
+      if (containerMatch) {
+        const title = containerMatch[1].trim();
+        const expected = check(title);
+        if (title !== expected) {
+          errors.push({
+            file: filePath,
+            line: i + 1,
+            heading: title,
+            expected,
+          });
+          errorCount++;
+        }
       }
     }
   }

@@ -52,6 +52,13 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
                   {{- date | readableDate -}}
                 </time>
                 · {{ readingTime }} min read
+                {% if updates %}
+                  {% set lastUpdate = updates | last %}
+                  ·
+                  <a href="#updates" class="text-gold-600 hover:underline"
+                    >Updated {{ lastUpdate.date | readableDate -}}
+                  </a>
+                {% endif %}
               </p>
             </div>
           </div>
@@ -68,6 +75,23 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
         </div>
       {% endif %}
       <div class="prose">{{ content | safe }}</div>
+      {% if updates %}
+        <div class="not-prose border border-gold-400 bg-gold-300/10 rounded p-5 mb-6" id="updates">
+          <p class="section-meta text-gold-600 mb-4">UPDATE</p>
+          <ul class="space-y-3">
+            {% for update in updates %}
+              <li class="flex items-baseline gap-3">
+                <time
+                  class="font-mono text-xs font-bold text-gold-600 shrink-0"
+                  datetime="{{ update.date | machineDate }}">
+                  {{- update.date | readableDate -}}
+                </time>
+                <span class="text-sm text-gray-700 leading-7">{{ update.note }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
       <div>
         <address class="my-8 not-italic not-prose">
           <div class="border border-parchment-dark bg-parchment-dark/45 rounded p-6 font-mono">

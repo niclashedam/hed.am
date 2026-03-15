@@ -51,6 +51,10 @@ All project tasks are run through Yarn scripts:
 2. Edit files in `src/`; changes will automatically rebuild.
 3. When ready for production, run `yarn build` and deploy the `public/` directory.
 
+## Briefs
+
+Briefs (blog posts) live in `src/blog/posts/` as Markdown files with YAML frontmatter. See [BRIEFS.md](./BRIEFS.md) for details on formatting and features.
+
 ## Quality checks
 
 Before committing, run all quality checks with:

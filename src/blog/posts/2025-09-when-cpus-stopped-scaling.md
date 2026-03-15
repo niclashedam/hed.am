@@ -31,6 +31,12 @@ permalink: "/blog/when-cpus-stopped-scaling/"
 
 When I was a kid, computers only had a single core. Some did not come with a dedicated graphics card, relying instead on integrated graphics within the motherboard. By the 2000s, computers had already been around for quite some time, and a few interesting trends had emerged. Moore's Law predicted that the number of transistors on a chip would double approximately every two years, leading to exponential increases in performance. Dennard Scaling observed that as transistors became smaller, they consumed less power, allowing for higher clock speeds and more powerful CPUs.
 
+::: definition Dennard Scaling
+A trend observed by Robert Dennard in 1974. In essence, as transistors shrink, their power density stays constant. This means you can pack more transistors into the same space without generating proportionally more heat. This allowed CPU clock speeds to scale alongside transistor counts for roughly three decades. When more performance was needed in CPUs, manufacturers could simply increase the clock speed by adding more transistors.
+
+It broke down around 2005, when transistors became so small that voltage could no longer drop proportionally. Heat and current leakage began rising faster than transistor counts could compensate, effectively ending free single-core speed gains.
+:::
+
 These trends meant that computers became faster and faster without significant changes to their architecture or how they worked. Manufacturers could cram more and more transistors into a single-core processor, keeping up with the development of advanced and complex software.
 
 ## When the Magic Stopped
@@ -62,6 +68,12 @@ This required us to rethink computer architecture once again.
 We quickly learnt that moving data takes a lot of time. Colin Scott made a website called [Latency Numbers Every Programmer Should Know](https://colin-scott.github.io/personal_website/research/interactive_latency.html), which shows the staggering differences in latency between various types of memory accesses.
 
 Accessing a byte in the CPU was, in 2020, on the order of a few nanoseconds. Accessing the same byte in main memory takes around a hundred nanoseconds. Reading that same byte from an SSD takes 16,000 nanoseconds. This taught us a valuable lesson: the cost of moving data is often much higher than the cost of processing it. The fastest byte is the one you never move.
+
+::: stat Memory Access Latency of 2020
+~16,000x
+
+The latency gap between a CPU L1 cache hit, which costs a nanosecond, and reading from an SSD, which costs 16,000 ns. Main memory sits in between at around 100 nanoseconds. Numbers are from [Colin Scott's interactive latency chart](https://colin-scott.github.io/personal_website/research/interactive_latency.html).
+:::
 
 Computational Storage emerged as a solution to this problem. Computational storage runs tiny, safe functions inside or right next to the SSD to do simple but high-value work early: filter, compress, parse, summarise. Instead of pulling a million records to the CPU to keep a few thousand, the SSD gives you the few thousand to begin with.
 
@@ -163,6 +175,12 @@ $ time ./version-b
 ```
 
 Accessing the same data in a different way can have a significant impact on performance.
+
+::: stat The Conclusion of the Experiment
+7x difference
+
+Between column-order access (Version B) at 37.67s versus 5.36s for row-order access (Version A) on an identical 80,000 times 80,000 matrix. It is the same algorithm and same data but radically different performance due to CPU cache behaviour.
+:::
 
 ## The Point
 

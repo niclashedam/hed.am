@@ -56,9 +56,19 @@ npm, the package manager for JavaScript, has been a frequent target. Large-scale
 
 Also in September 2025, a self-replicating worm appeared that steals GitHub developer credentials from affected systems to spread itself to other projects. As of 16th September, the worm had affected more than 187 packages, including packages by CrowdStrike. CrowdStrike was the very same company that caused millions of computers to crash in 2024 due to poor quality assurance.
 
+::: stat September 2025: Self-Replicating Worm
+187+ packages
+
+Affected in two weeks, including packages published by CrowdStrike. The worm spread by stealing GitHub credentials from infected systems and using them to push malicious commits to other repositories.
+:::
+
 ## Package Managers, Malicious Compliance, and You
 
 The root cause of these attacks is the very convenience that package managers provide. They make it easy to install and update packages, but they also make it easy to introduce malicious code. When you run `npm install`, you are executing code from the package's `postinstall` script, which can do anything. If an attacker can compromise a package, they can execute arbitrary code on your system.
+
+::: warning Installing a Package Runs Untrusted Code
+Running `npm install` executes any `postinstall` scripts in newly downloaded packages with the same privileges as your own code without asking for permission. A compromised package can exfiltrate credentials, establish persistence, or modify local files silently. The install step is not just downloading files; it is executing untrusted code.
+:::
 
 The problem is made even worse by the fact that many developers blindly trust packages and their maintainers. They assume that popular packages are safe because they have been downloaded millions of times. But popularity does not guarantee security. Even well-maintained packages can be compromised if an attacker can gain access to the maintainer's account.
 
@@ -101,6 +111,12 @@ If the language code package suddenly starts making network requests to a suspic
 Perhaps the most important aspect of supply chain security is recognising the human element. Open-source software is built by people with varying levels of security awareness, different motivations, and different circumstances. A maintainer might be overwhelmed, burnt out, or simply make a mistake. They might fall victim to phishing attacks or have their accounts compromised through no fault of their own.
 
 The centralised nature of package registries creates single points of failure. When popular packages are compromised, the impact can be enormous. The 2021 attack on the `Codecov` bash uploader affected thousands of companies, including major technology firms. The 2022 compromise of the `node-ipc` package by its own maintainer demonstrated that even trusted contributors can become threat actors.
+
+::: note Two Precedents Worth Knowing
+**Codecov (2021):** Attackers injected a script into Codecov's bash uploader by exploiting a misconfiguration in its build pipeline. The script silently exfiltrated environment variables, including CI/CD secrets and API keys, from any project that ran the uploader. Thousands of companies were affected before the attack was discovered weeks later.
+
+**node-ipc (2022):** The maintainer of `node-ipc`, a widely-used package with tens of millions of weekly downloads, deliberately introduced destructive code targeting users in Russia and Belarus. Files were overwritten with a peace symbol. This was not an external attack, but rather a trusted author making a political statement through a dependency used by millions.
+:::
 
 ## A Balanced Approach
 
