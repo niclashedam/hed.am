@@ -31,7 +31,11 @@ layout: null
   {% endfor %} {% for post in collections.blog %}
   <url>
     <loc>https://hed.am{{ post.url }}</loc>
-    <lastmod>{{ post.date.toISOString() }}</lastmod>
+    {% if post.data.updates %} {% set lastUpdate = post.data.updates | last %}
+    <lastmod>{{ lastUpdate.date | machineDate }}</lastmod>
+    {% else %}
+    <lastmod>{{ post.date | machineDate }}</lastmod>
+    {% endif %}
   </url>
   {% endfor %}
 </urlset>

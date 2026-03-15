@@ -20,7 +20,9 @@ permalink: "/blog/vpns-are-a-symptom/"
 
 We have all been there. You start up your work computer, and the first thing you do, almost without thinking, is connect to a VPN. Or perhaps you want to watch a show that is not available in your country, so you open up a VPN app to appear as if you are somewhere else. Maybe you are worried about your ISP tracking your browsing, so you use a VPN to hide your traffic.
 
-In case you are not entirely sure what a VPN is, it stands for Virtual Private Network. It is a tool that routes your internet connection through a server located elsewhere (e.g. your workplace or a different country). Because of this routing, a VPN can mask your actual location, making it seem as if you are browsing from somewhere else. At the same time, because VPNs may be located inside an office network, they can also provide access to internal resources that are not available to the public internet.
+::: definition Virtual Private Network (VPN)
+VPN is short for Virtual Private Network. It is a tool that routes your internet connection through a server located elsewhere (e.g. your workplace or a different country). Because of this routing, a VPN can mask your actual location, making it seem as if you are browsing from somewhere else. At the same time, because VPNs may be located inside an office network, they can also provide access to internal resources that are not available to the public internet.
+:::
 
 VPNs are everywhere these days, even integrated into operating systems and browsers. They play such a crucial role, not because they are technologically necessary, but because the internet we have built has fundamental issues. And that should worry us. VPNs are not just useful tools; they are a series of surgical bandages over systemic failures caused primarily by greed, whether through crime or the pursuit of increased revenue. Here are three simple truths VPNs reveal about the internet.
 
@@ -56,6 +58,10 @@ Surveillance has become so commonplace that we have started to see it as just an
 
 Similarly, geo-blocking fragments the internet and limits our access to information and entertainment based on where we live. This is not just an inconvenience; it builds inequalities in access to digital content. Why do we put up with a system that restricts what we can see and do online based on where we live?
 
-Instead of pushing for a world with open access, we are heading in the opposite direction. Take Denmark’s recent attempt to [make VPNs for bypassing geo-restrictions illegal](https://www.dr.dk/nyheder/politik/regeringen-vil-forbyde-vpn-er-til-streame-udenlandsk-tv-og-aabne-ulovlige-hjemmesider), for example.
+Instead of pushing for a world with open access, we are heading in the opposite direction. Take Denmark’s recent attempt to make VPNs for bypassing geo-restrictions illegal, for example.
+
+::: source DR
+[Regeringen vil forbyde VPN'er til at streame udenlandsk tv og åbne ulovlige hjemmesider](https://www.dr.dk/nyheder/politik/regeringen-vil-forbyde-vpn-er-til-streame-udenlandsk-tv-og-aabne-ulovlige-hjemmesider) - A coverage of the proposal that would criminalise using a VPN to bypass geo-restrictions, a move that illustrates how governments are responding to the workaround rather than fixing the underlying problem.
+:::
 
 This raises some serious questions about the future of the internet and the role we play in shaping it. Do we want an internet that is fragmented and controlled, or one that is open and accessible to everyone? These are not just technical issues; they are fundamental questions about the kind of society we want to live in.

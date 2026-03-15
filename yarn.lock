@@ -425,6 +425,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@cspell/dict-da-dk@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "@cspell/dict-da-dk@npm:4.1.2"
+  checksum: 10c0/168973dc60fb2ea6083c5e64ce208fee239a01f0fe0bbe7b9863f5864d49f83cfe8b23a4186072ef6cb7433ee8eb33b68a79a5c94e87ac1c296a35ca0cba1337
+  languageName: node
+  linkType: hard
+
 "@cspell/dict-dart@npm:^2.3.2":
   version: 2.3.2
   resolution: "@cspell/dict-dart@npm:2.3.2"
@@ -3488,6 +3495,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"markdown-it-container@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "markdown-it-container@npm:4.0.0"
+  checksum: 10c0/768390a6e2c182996b4d0be8dd1a7279d266ca2f29936dd8265ef0954a97606bc3514802cc3576db59e119e241e61924a4a1e601a91480be1c12bef5e28797ae
+  languageName: node
+  linkType: hard
+
+"markdown-it-footnote@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "markdown-it-footnote@npm:4.0.0"
+  checksum: 10c0/47aa807b143af211d7eca376c724b05e939e8b5960f6e287c63eca7f121be7ac697ff5601d5b7c89cbde7a32713a66b2a6f375251fad1fe989bd05d07f80e4cd
+  languageName: node
+  linkType: hard
+
 "markdown-it@npm:^14.1.0":
   version: 14.1.0
   resolution: "markdown-it@npm:14.1.0"
@@ -4188,6 +4209,7 @@ __metadata:
     "@11ty/eleventy-img": "npm:^6.0.4"
     "@11ty/eleventy-navigation": "npm:^1.0.5"
     "@11ty/eleventy-plugin-syntaxhighlight": "npm:^5.0.2"
+    "@cspell/dict-da-dk": "npm:^4.1.2"
     "@shopify/prettier-plugin-liquid": "npm:^1.10.2"
     "@tailwindcss/cli": "npm:^4.2.1"
     "@tailwindcss/typography": "npm:^0.5.19"
@@ -4197,6 +4219,8 @@ __metadata:
     html-validate: "npm:^10.11.1"
     jsdom: "npm:^28.1.0"
     jsonld: "npm:^9.0.0"
+    markdown-it-container: "npm:^4.0.0"
+    markdown-it-footnote: "npm:^4.0.0"
     prettier: "npm:^3.8.1"
     striptags: "npm:^3.2.0"
     tailwindcss: "npm:^4.2.1"

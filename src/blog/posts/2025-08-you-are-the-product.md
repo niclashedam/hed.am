@@ -60,7 +60,11 @@ Maybe you use it to find the fastest route to work every morning. Then one day, 
 
 Maybe you have started visiting a co-working space in a different town. Google sees this pattern and could infer that you are starting a side business or thinking about changing jobs. If you visit a church, Google knows your religion. A political rally? Your political leanings. A therapist? Your mental health status. All of this is logged. Not for a day, but potentially indefinitely.
 
-This is not theory. It is how the system works. Location history is on by default, and even if you pause it, parts of it still get recorded ([Associated Press](https://apnews.com/article/828aefab64d4411bac257a07c1af0ecb)).
+This is not theory. It is how the system works. Location history is on by default, and even if you pause it, parts of it still get recorded.
+
+::: source Associated Press
+[Google tracks your movements, like it or not](https://apnews.com/article/828aefab64d4411bac257a07c1af0ecb) - An investigation by Associated Press revealing that location data is recorded in Google services even when Location History is paused.
+:::
 
 ## Ads: Not Just What You Want Now, but Also What You Will Want Next
 
@@ -72,13 +76,25 @@ And it works. In Q4 of 2024, Google made over $72.5 billion in ad revenue ([Alph
 
 Google’s total revenue for Q4 of 2024 was $96.5 billion. When you consider that roughly 75% of that comes from advertising, it puts emphasis on how much your data is worth.
 
+::: stat Google Q4 2024 Ad Revenue
+$72.5B
+
+Out of $96.5 billion in total revenue roughly 75 cents in every dollar came from advertising. Advertisers are the customer. You are the product.
+:::
+
 ## Governments Want that Data Too
 
 It is not just advertisers who value this level of detail. Governments are now major consumers of Big Tech data. And the number of requests is growing fast.
 
-Between 2014 and 2024, Google, Meta and Apple handed over data on 3.16 million user accounts to U.S. authorities ([Proton](https://proton.me/blog/big-tech-data-requests-surge)). In 2024 alone, Google and Meta received nearly half a million data requests from U.S. agencies. The vast majority were fulfilled.
+Between 2014 and 2024, Google, Meta and Apple handed over data on 3.16 million user accounts to U.S. authorities. In 2024 alone, Google and Meta received nearly half a million data requests from U.S. agencies. The vast majority were fulfilled.
 
-Many of these are “reverse warrants”, geo-fence requests or keyword-triggered searches—where authorities ask for information on _anyone_ who was near a location, or searched for a phrase. You do not need to be a suspect. You just need to fit the pattern.
+::: stat U.S. Government Data Requests (2014–2024)
+3.16M
+
+Accounts handed over to U.S. authorities by Google, Meta, and Apple over a ten-year period. In 2024 alone, the figure approached 500,000 requests and most requests were fulfilled.
+:::
+
+Many of these are “reverse warrants”, geo-fence requests or keyword-triggered searches-where authorities ask for information on _anyone_ who was near a location, or searched for a phrase. You do not need to be a suspect. You just need to fit the pattern.
 
 If you searched for “how to protest safely” or “climate rally route New York”, and later walked through the area, your data could be swept up and handed over, without your knowledge.
 
@@ -95,9 +111,13 @@ Even when you delete an account, the data may still live in backups or internal 
 
 Once your information is in the system, it is difficult and often impossible to confirm whether it has truly been removed.
 
+::: source Proton
+[Authorities worldwide can see more than ever, with Big Tech as their eyes](https://proton.me/blog/big-tech-data-requests-surge) - An analysis by Proton of government data requests made to major platforms between 2014 and 2024.
+:::
+
 ## “Nothing to Hide” Is the Wrong Argument
 
-The common response to all of this is: “I got nothing to hide.” But privacy is not about hiding — it is about context. You would never put your medical journal on Facebook. Not because it is illegal, but because it is personal. You want control over who sees what.
+The common response to all of this is: “I got nothing to hide.” But privacy is not about hiding - it is about context. You would never put your medical journal on Facebook. Not because it is illegal, but because it is personal. You want control over who sees what.
 
 Your data reveals more than you think. It shows what you are planning, what you are worried about, what you have changed your mind on. It does not need to be illegal to cause problems, it just needs to be misinterpreted.
 
