@@ -92,7 +92,8 @@
           "isPartOf": {
             "@id": "https://hed.am/#website"
           }{% if date %},
-            "datePublished": "{{ date | machineDate }}"{% endif %}{% if image %},
+            "datePublished": "{{ date | machineDate }}",
+            "dateModified": "{{ ((updates | last).date if (updates and updates.length) else date) | machineDate }}"{% endif %}{% if image %},
             "primaryImageOfPage": {
               "@type": "ImageObject",
               "url": "https://hed.am{{ image | url }}"
@@ -117,8 +118,10 @@
               "@type": "ImageObject",
               "url": "https://hed.am{{ image | url }}"
             }{% endif %}{% if date %},
-            "datePublished": "{{ date | machineDate }}"{% endif %}{% if keywords %},
-            "keywords": "{{ keywords | join(', ') }}"{% endif %},
+            "datePublished": "{{ date | machineDate }}",
+            "dateModified": "{{ ((updates | last).date if (updates and updates.length) else date) | machineDate }}"{% endif %}{% if keywords %},
+            "keywords": "{{ keywords | join(', ') }}"{% endif %}{% if categories %},
+            "articleSection": "{{ categories }}"{% endif %},
           "wordCount": {{ wordCount }},
           "author": {
             "@id": "https://hed.am/#person"
