@@ -1,6 +1,7 @@
 ---
 layout: layouts/post.njk
 title: "EU Chat Control: If Privacy Is Outlawed, only Outlaws Have Privacy"
+opinion: true
 date: 2025-09-15
 keywords:
   - privacy

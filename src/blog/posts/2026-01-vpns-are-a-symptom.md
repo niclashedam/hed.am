@@ -1,6 +1,7 @@
 ---
 layout: layouts/post.njk
 title: "VPNs Are a Symptom, Not a Feature: Why the Internet Is Broken"
+opinion: true
 date: 2026-01-26
 keywords:
   - vpn

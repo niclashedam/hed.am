@@ -1,6 +1,7 @@
 ---
 layout: layouts/post.njk
 title: "Digitalisation: Lost Privacy by Design"
+opninion: true
 date: 2025-09-02
 keywords:
   - digitalisation

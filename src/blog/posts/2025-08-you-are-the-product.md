@@ -1,6 +1,7 @@
 ---
 layout: layouts/post.njk
 title: "You Are the Product: Two Decades of Giving up Data Control"
+opinion: true
 date: 2025-08-18
 keywords:
   - data privacy
