@@ -134,7 +134,14 @@ function validateWebPage(item, filePath, context) {
 
 function validateBlogPosting(item, filePath, context) {
   const required = ["headline", "datePublished", "author"];
-  const recommended = ["description", "image", "publisher", "mainEntityOfPage"];
+  const recommended = [
+    "description",
+    "image",
+    "publisher",
+    "mainEntityOfPage",
+    "dateModified",
+    "articleSection",
+  ];
   checkRequiredProperties(item, required, filePath, context, "BlogPosting");
   checkRecommendedProperties(
     item,

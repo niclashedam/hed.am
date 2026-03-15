@@ -3,8 +3,11 @@
 {% if page.url != '/' %}
   {% set seoTitle = title + ' - Niclas Hedam' %}
 {% endif %}
+{% set seoDescription = excerpt or description %}
 <title>{{ seoTitle }}</title>
-<meta name="description" content="{{ excerpt or description or '' }}">
+{% if seoDescription %}
+  <meta name="description" content="{{ seoDescription }}">
+{% endif %}
 {% if author %}
   <meta name="author" content="{{ author }}">
 {% endif %}
@@ -13,16 +16,22 @@
 {% endif %}
 <link rel="canonical" href="https://hed.am{{ page.url }}">
 <meta property="og:type" content="{{ type | default('website') }}">
+<meta property="og:site_name" content="hed.am">
+<meta property="og:locale" content="en_US">
 <meta property="og:title" content="{{ seoTitle }}">
-<meta property="og:description" content="{{ excerpt or description or '' }}">
+{% if seoDescription %}
+  <meta property="og:description" content="{{ seoDescription }}">
+{% endif %}
 <meta property="og:url" content="https://hed.am{{ page.url }}">
 {% if image %}
   <meta property="og:image" content="https://hed.am{{ image | url }}">
   <meta property="og:image:alt" content="{{ imageAlt or title }}">
 {% endif %}
-<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:card" content="{{ 'summary_large_image' if image else 'summary' }}">
 <meta name="twitter:title" content="{{ seoTitle }}">
-<meta name="twitter:description" content="{{ excerpt or description or '' }}">
+{% if seoDescription %}
+  <meta name="twitter:description" content="{{ seoDescription }}">
+{% endif %}
 {% if image %}
   <meta name="twitter:image" content="https://hed.am{{ image | url }}">
 {% endif %}

@@ -11,6 +11,7 @@ layout: null
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://hed.am/</loc>
+    <lastmod>{{ collections.blog[0].date | machineDate }}</lastmod>
   </url>
   {% for pdf in papers %}
   <url>
@@ -20,13 +21,16 @@ layout: null
   {% endfor %}
   <url>
     <loc>https://hed.am/blog/</loc>
+    <lastmod>{{ collections.blog[0].date | machineDate }}</lastmod>
   </url>
   <url>
     <loc>https://hed.am/blog/categories/</loc>
+    <lastmod>{{ collections.blog[0].date | machineDate }}</lastmod>
   </url>
   {% for cat in collections.categories %}
   <url>
     <loc>https://hed.am/blog/categories/{{ cat.slug }}/</loc>
+    <lastmod>{{ cat.posts[0].date | machineDate }}</lastmod>
   </url>
   {% endfor %} {% for post in collections.blog %}
   <url>
