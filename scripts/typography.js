@@ -65,7 +65,8 @@ const CHECKS = [
     id: "unspaced-em-dash",
     // Literal em dashes should not appear in source; use --- and let the typographer add \u2014.
     find: (s) => reMatches(s, /\u2014/g),
-    suggest: "Replace literal em dash with ---; typographer will add the \u2014",
+    suggest:
+      "Replace literal em dash with ---; typographer will add the \u2014",
   },
 ];
 
