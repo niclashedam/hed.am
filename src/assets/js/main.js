@@ -9,7 +9,7 @@ window.addEventListener("load", function () {
 });
 
 // Hero field-reveal animation
-// Text is in the DOM from page load so row heights are always correct — no reflow.
+// Text is in the DOM from page load so row heights are always correct - no reflow.
 // clip-path wipes each value into view; steps() count is set via inline style
 // because CSS custom properties can't be used as arguments to steps().
 (function () {

@@ -9,13 +9,14 @@ const env = {
   PATH: `${path.resolve("node_modules/.bin")}${path.delimiter}${process.env.PATH}`,
 };
 
-const COL = 8; // widest name is "headings" (8)
+const COL = 10; // widest name is "typography" (10)
 const BAR = "─".repeat(56);
 const isTTY = !!process.stdout.isTTY;
 
 const STEPS = [
   { name: "format", cmd: "prettier . --check" },
   { name: "headings", cmd: "node ./scripts/headings.js" },
+  { name: "typography", cmd: "node ./scripts/typography.js" },
   { name: "build", cmd: "yarn build", critical: true },
   {
     name: "spell",
@@ -62,7 +63,7 @@ for (const step of STEPS) {
     }
 
     if (step.critical) {
-      console.log(`  Build failed — skipping remaining checks.\n`);
+      console.log(`  Build failed - skipping remaining checks.\n`);
       process.exit(1);
     }
   }
