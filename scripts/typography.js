@@ -43,25 +43,29 @@ const CHECKS = [
     id: "spaced-hyphen",
     // " - " in prose is almost always an em dash written as a hyphen.
     // The lookbehind/ahead for \S excludes markdown list items ("  - item").
-    find: (s) => reMatches(s, /(?<=\S) - (?=\S)/g),
-    suggest: "Use --- for em dash: word --- word",
-  },
-  {
-    id: "unspaced-em-dash",
-    // If an em dash is written directly (not via ---), it must have spaces.
+    // Skip digit–digit cases like "3 - 5", which are usually numeric ranges.
     find(s) {
       const hits = [];
-      for (const m of s.matchAll(/\u2014/g)) {
-        const before = m.index > 0 ? s[m.index - 1] : null;
-        const after = m.index < s.length - 1 ? s[m.index + 1] : null;
-        if (before !== " " || after !== " ") {
-          hits.push({ index: m.index, found: m[0] });
+      for (const m of s.matchAll(/(?<=\S) - (?=\S)/g)) {
+        const index = m.index;
+        const before = index > 0 ? s[index - 1] : "";
+        const after = index + 3 < s.length ? s[index + 3] : "";
+        const isDigitRange = /\d/.test(before) && /\d/.test(after);
+        if (isDigitRange) {
+          continue;
         }
+        hits.push({ index, found: m[0] });
       }
       return hits;
     },
     suggest:
-      "Add spaces around em dash, or use --- (typographer adds the \u2014)",
+      "Use --- for em dashes in prose (word --- word); use -- without spaces for numeric ranges (3--5)",
+  },
+  {
+    id: "unspaced-em-dash",
+    // Literal em dashes should not appear in source; use --- and let the typographer add \u2014.
+    find: (s) => reMatches(s, /\u2014/g),
+    suggest: "Replace literal em dash with ---; typographer will add the \u2014",
   },
 ];
 
