@@ -3,7 +3,7 @@ const markdownItContainer = require("markdown-it-container");
 const markdownItFootnote = require("markdown-it-footnote");
 
 module.exports = function (eleventyConfig) {
-  const md = markdownIt({ html: true, linkify: true });
+  const md = markdownIt({ html: true, linkify: true, typographer: true });
 
   const defaultRender =
     md.renderer.rules.link_open ||

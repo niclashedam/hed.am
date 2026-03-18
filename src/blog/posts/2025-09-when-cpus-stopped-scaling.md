@@ -43,7 +43,7 @@ These trends meant that computers became faster and faster without significant c
 
 In the mid-2000s, the physical limitations of processors began to show. We kept shrinking transistors, but voltage refused to drop enough. This led to two problems. First, making transistors smaller generated more heat in a smaller space, causing overheating of the entire processing chip. Second, electricity started leaking, as it could jump across smaller gaps more easily. Had the voltage continued to drop, the heating would have been manageable and electrical leakage minimised.
 
-However, as this was not possible, processor speeds stalled around 3–5 GHz and desktop power froze near 100 W. We could still add more transistors, just not in a single core. During the same period, the expectations for software exploded, introducing HD video streaming, complex 3D games, real-time data over the internet and early machine learning. The old habit of “waiting for a faster CPU” stopped working.
+However, as this was not possible, processor speeds stalled around 3--5 GHz and desktop power froze near 100 W. We could still add more transistors, just not in a single core. During the same period, the expectations for software exploded, introducing HD video streaming, complex 3D games, real-time data over the internet and early machine learning. The old habit of "waiting for a faster CPU" stopped working.
 
 _Hardware got complicated._
 
@@ -63,7 +63,7 @@ The CPU did not retire; it became the coordinator. But since GPUs are primarily 
 
 This required us to rethink computer architecture once again.
 
-## What “Computational Storage” Means
+## What "Computational Storage" Means
 
 We quickly learnt that moving data takes a lot of time. Colin Scott made a website called [Latency Numbers Every Programmer Should Know](https://colin-scott.github.io/personal_website/research/interactive_latency.html), which shows the staggering differences in latency between various types of memory accesses.
 
@@ -81,7 +81,7 @@ The example I usually give to friends, family, and colleagues is a simple one: i
 
 Computational Storage allows the system to do the filtering right at the storage level, so only the relevant rows are sent to the CPU in the first place. In essence, Excel asks the SSD to only return the rows that match the filter criteria, limiting the amount of bytes that need to be moved.
 
-The major challenge with Computational Storage is standardisation. Different SSDs have different capabilities, and there is no universal way to express the kinds of computations you might want to run. This fragmentation makes it hard for developers to take advantage of these features without getting locked into a specific vendor’s ecosystem.
+The major challenge with Computational Storage is standardisation. Different SSDs have different capabilities, and there is no universal way to express the kinds of computations you might want to run. This fragmentation makes it hard for developers to take advantage of these features without getting locked into a specific vendor's ecosystem.
 
 This is where my research comes in.
 
@@ -91,11 +91,11 @@ During my [PhD](/papers/2024-Thesis.pdf), we built [Delilah](/papers/2023-DaMoN.
 
 eBPF was initially built for network packet filtering and has since evolved into a powerful tool for a variety of use cases, including security and monitoring. The interesting aspect of eBPF is that it is simple and verifiable, so the computer can ensure that the functions are safe and will not cause any harm to the data or drive. On top of this, eBPF is vendor-neutral, meaning that the same eBPF code can run on different hardware without modification. This solves the standardisation problem, as developers can write eBPF functions without worrying about the underlying hardware.
 
-When plain and simple eBPF is not fast enough, Delilah (or the program itself) can jump to device “registered functions”, which are hardware-specific or hardware-accelerated functions. These functions do not have the limitations of eBPF, as they are written in C by the vendor. While this breaks the vendor-neutral promise to a limited extent, it allows for high-performance operations when needed and access to hardware-specific features.
+When plain and simple eBPF is not fast enough, Delilah (or the program itself) can jump to device "registered functions", which are hardware-specific or hardware-accelerated functions. These functions do not have the limitations of eBPF, as they are written in C by the vendor. While this breaks the vendor-neutral promise to a limited extent, it allows for high-performance operations when needed and access to hardware-specific features.
 
 The bigger lesson from my thesis is more practical: you do not win by cramming more raw compute into the drive. Just like with CPUs, you cannot out-compute the cost of moving data. You win by reducing data movement through good interfaces (a clean way to request work) and state on the device (so it can cache/remember and avoid re-reading). Push computation down to storage only when it reliably shrinks the data you would otherwise move.
 
-## ARM’s Role
+## ARM's Role
 
 While GPUs and Computational Storage were helpful in speeding up computers, a side plot emerged: efficiency. Now that complex work was being done elsewhere, the CPU could focus on coordination and management tasks, optimising its workload and power consumption.
 
@@ -184,8 +184,8 @@ Between column-order access (Version B) at 37.67s versus 5.36s for row-order acc
 
 ## The Point
 
-We will not see the old “free‑speed‑every‑two‑years” miracle return. That is simply the natural outcome of physics, economics, and the way we now build chips. Instead of chasing higher and higher clock rates, we win by putting the computation where the data lives and by parallelizing as much as possible.
+We will not see the old "free-speed-every-two-years" miracle return. That is simply the natural outcome of physics, economics, and the way we now build chips. Instead of chasing higher and higher clock rates, we win by putting the computation where the data lives and by parallelizing as much as possible.
 
-The CPU is still the primary processing unit in a modern computer. It orchestrates threads, schedules I/O, and makes high‑level decisions, but it can no longer be expected to do the heavy number‑crunching. Its strength is low‑latency control and coordination, not raw processing power.
+The CPU is still the primary processing unit in a modern computer. It orchestrates threads, schedules I/O, and makes high-level decisions, but it can no longer be expected to do the heavy number-crunching. Its strength is low-latency control and coordination, not raw processing power.
 
-In short, the era of “wait for the next GHz bump” is over. Modern performance comes from architectural awareness and knowing exactly where data lives, how it moves, and which mechanisms are best suited to work on the data.
+In short, the era of "wait for the next GHz bump" is over. Modern performance comes from architectural awareness and knowing exactly where data lives, how it moves, and which mechanisms are best suited to work on the data.

@@ -67,10 +67,10 @@ Version B uses a cryptographically secure generator. Same shape, radically diffe
 Research has shown that humans are unable to generate truly random sequences and tend to rely on predictable patterns. The same applies to computers. Randomness in computers may be a predictable pattern or may be derived from input such as time or user behaviour. The randomness generator in the `secrets` module is designed to be secure against these issues by using a significantly more complex algorithm.
 
 ::: source Perceptual and Motor Skills
-[Human Production of “Random” Numbers](https://journals.sagepub.com/doi/epdf/10.2466/pms.1995.81.3f.1347) - A study in _Perceptual and Motor Skills_ demonstrated that humans cannot generate truly random sequences and rely on predictable patterns, relevant to why human-written seed values and manual token generation are insufficient for security.
+[Human Production of "Random" Numbers](https://journals.sagepub.com/doi/epdf/10.2466/pms.1995.81.3f.1347) --- A study in _Perceptual and Motor Skills_ demonstrated that humans cannot generate truly random sequences and rely on predictable patterns, relevant to why human-written seed values and manual token generation are insufficient for security.
 :::
 
-This is a fact that developers should know by heart, but an LLM prompted with “write a function to generate random passwords” may default to Version A because it is more common in public code and matches the _naïve_ reading of “random”. Unless you state the context explicitly (e.g., “cryptographically secure password for authentication”), it does not know your context or where the code will be used.
+This is a fact that developers should know by heart, but an LLM prompted with "write a function to generate random passwords" may default to Version A because it is more common in public code and matches the _naïve_ reading of "random". Unless you state the context explicitly (e.g., "cryptographically secure password for authentication"), it does not know your context or where the code will be used.
 
 ::: warning Default ≠ Correct
 An LLM defaults to what is statistically common in its training data and not what is correct for a particular use case. Examples could be using `random` instead of `secrets`, unseeded `rand()` instead of time-seeded or even HTTP instead of HTTPS.
@@ -134,7 +134,7 @@ Do you see the difference? In Version A, the use of `rand()` without seeding it 
 
 Even though Version B is more secure, it still has weaknesses. If an attacker can predict the time when the program was started, they might be able to reproduce the random sequence. How does the LLM know what level of randomness is required for a given application?
 
-Let’s run Version A, so you can see how random the `rand()` function actually is.
+Let's run Version A, so you can see how random the `rand()` function actually is.
 
 ```shell
 $ gcc -o version-a version-a.c
@@ -158,9 +158,9 @@ The LLMs do not know if you work in a financial institution or if you are just a
 
 The model tends to choose what is popular over what is correct or appropriate. It tends to default to patterns that are plausible but may be unsafe. It confuses APIs that look the same but have vastly different underlying guarantees. It produces code that passes a test suite while violating your compliance obligations or performance constraints.
 
-We’ll just add more context to the prompt, you may suggest.
+We'll just add more context to the prompt, you may suggest.
 
-Good instinct. Still insufficient. Important knowledge lives outside the prompt. You cannot cram your entire architecture, threat model, and operational history into a prompt. This is both impossible in terms of capacity, as well as a matter of security. Pasting your entire architecture into an LLM prompt would reveal your entire company’s code, including API keys and security flaws.
+Good instinct. Still insufficient. Important knowledge lives outside the prompt. You cannot cram your entire architecture, threat model, and operational history into a prompt. This is both impossible in terms of capacity, as well as a matter of security. Pasting your entire architecture into an LLM prompt would reveal your entire company's code, including API keys and security flaws.
 
 Even if you tried adding all relevant context, you would likely forget something important. The model does not know what you have forgotten.
 
@@ -176,13 +176,13 @@ Would you let an intern design your system architecture? LLMs should not be in c
 
 ## Stack Overflow Is Not Always Correct, but LLMs Think It Is
 
-Developers copy from Q&A sites because it saves time. The risk is that popularity and upvotes are not the same thing as security. [A 2021 conference paper at the Annual Computer Security Applications Conference](https://ssp.korea.ac.kr/assets/papers/ACSAC21.pdf) analysed 1,958,283 Stack Overflow answers tagged C, C++, and Android and discovered 12,458 insecure posts containing 14,719 insecure snippets, with reported precision around 91–93%. The authors also found those insecure snippets had propagated into the latest releases of 151 out of 2,000 popular C/C++ projects.
+Developers copy from Q&A sites because it saves time. The risk is that popularity and upvotes are not the same thing as security. [A 2021 conference paper at the Annual Computer Security Applications Conference](https://ssp.korea.ac.kr/assets/papers/ACSAC21.pdf) analysed 1,958,283 Stack Overflow answers tagged C, C++, and Android and discovered 12,458 insecure posts containing 14,719 insecure snippets, with reported precision around 91--93%. The authors also found those insecure snippets had propagated into the latest releases of 151 out of 2,000 popular C/C++ projects.
 
 ::: source ASCAC 2021
-[Dicos: Discovering Insecure Code Snippets from Stack Overflow Posts by Leveraging User Discussions](https://ssp.korea.ac.kr/assets/papers/ACSAC21.pdf) - An analysis of insecure snippets on Stack Overflow and their propagation into widely-used open-source projects.
+[Dicos: Discovering Insecure Code Snippets from Stack Overflow Posts by Leveraging User Discussions](https://ssp.korea.ac.kr/assets/papers/ACSAC21.pdf) --- An analysis of insecure snippets on Stack Overflow and their propagation into widely-used open-source projects.
 :::
 
-Their example is almost exactly the pitfall above, but hidden behind an LLM. A C string-trimming function called `isspace` on a plain char, which can go negative and thus trigger undefined behaviour. It was later “fixed” in the same Stack Overflow thread by casting to unsigned char and handling boundary conditions. LLMs are trained on exactly this kind of code. One person made a mistake on Stack Overflow, and suddenly this same mistake is being propagated to hundreds of other codebases. LLMs then train themselves on the question and those public codebases, increasing the belief that this specific implementation is correct. Why would it not be, if everyone is using it?
+Their example is almost exactly the pitfall above, but hidden behind an LLM. A C string-trimming function called `isspace` on a plain char, which can go negative and thus trigger undefined behaviour. It was later "fixed" in the same Stack Overflow thread by casting to unsigned char and handling boundary conditions. LLMs are trained on exactly this kind of code. One person made a mistake on Stack Overflow, and suddenly this same mistake is being propagated to hundreds of other codebases. LLMs then train themselves on the question and those public codebases, increasing the belief that this specific implementation is correct. Why would it not be, if everyone is using it?
 
 LLMs are trained on a vast amount of public code that includes code and Q&A text. Even if a particular model has a way to find and filter out insecure code, the statistical gravity still pulls towards common patterns. If those patterns encode subtle landmines, the model will happily reproduce them unless you inject the missing context: target standard, platform assumptions, data characteristics, failure modes, and forbidden APIs. If you are not explicit, you are asking a frequency-learner to substitute popularity for correctness.
 

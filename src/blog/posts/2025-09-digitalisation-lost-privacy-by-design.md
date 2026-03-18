@@ -31,15 +31,15 @@ permalink: "/blog/digitalisation-lost-privacy-by-design/"
 
 The Danish Ministry of Foreign Affairs tells the story of Denmark as a forerunner in digitalisation on [denmark.dk](https://denmark.dk/innovation-and-design/digitalisation).
 
-> Denmark is one of the world’s most digitalised countries. Most transactions are cashless, and almost all interaction with the Danish authorities takes place online.
+> Denmark is one of the world's most digitalised countries. Most transactions are cashless, and almost all interaction with the Danish authorities takes place online.
 
-This stands in contrast to neighbouring Germany, where cash is still the default and many government services remain offline. The [European Commission](https://digital-strategy.ec.europa.eu/en/factpages/germany-2024-digital-decade-country-report) has noted Germany’s below‑average standing on digital public services within the EU, despite Germany being the largest economy in Europe.
+This stands in contrast to neighbouring Germany, where cash is still the default and many government services remain offline. The [European Commission](https://digital-strategy.ec.europa.eu/en/factpages/germany-2024-digital-decade-country-report) has noted Germany's below-average standing on digital public services within the EU, despite Germany being the largest economy in Europe.
 
-Denmark and Germany have similar [Human Development Index (HDI)](https://en.wikipedia.org/wiki/Human_Development_Index) scores, yet their digital landscapes diverge sharply. Policy, public trust, and cultural memory all play a role. Germany’s post‑war split and reunification left uneven infrastructure, a deep sensitivity to surveillance, and a distrust of government. Caution about centralised records is embedded in the political DNA of Germans. Denmark, by contrast, is unified, with a strong welfare state and high institutional trust. That trust fuels a willingness to digitise aggressively and to share data with the state in exchange for seamless services. This shows that a high digitalisation is determined by culture, and not by a high HDI.
+Denmark and Germany have similar [Human Development Index (HDI)](https://en.wikipedia.org/wiki/Human_Development_Index) scores, yet their digital landscapes diverge sharply. Policy, public trust, and cultural memory all play a role. Germany's post-war split and reunification left uneven infrastructure, a deep sensitivity to surveillance, and a distrust of government. Caution about centralised records is embedded in the political DNA of Germans. Denmark, by contrast, is unified, with a strong welfare state and high institutional trust. That trust fuels a willingness to digitise aggressively and to share data with the state in exchange for seamless services. This shows that a high digitalisation is determined by culture, and not by a high HDI.
 
 The result is a highly digitalised Denmark, and a cautious Germany.
 
-## Public Registers Are Not the Enemy - but They Are Not Harmless
+## Public Registers Are Not the Enemy --- but They Are Not Harmless
 
 Public registers exist for good reasons: accountability, fraud prevention, safety, and market transparency. I am not arguing for secrecy as a governance model. Rather, I argue that we have shifted from _necessary transparency_ for the greater good to _willing exposure_. The difference lies in design.
 
@@ -58,13 +58,13 @@ MobilePay made small payments simple and convenient. Instant transfers using a p
 This is roughly three-quarters of Denmark's entire population, which means that a phone number is effectively a national identity lookup tool for most people in the country.
 :::
 
-But convenience came with an identity leakage in the form of reverse‑lookups. Because Danish financial identities are tightly coupled to civil identity (bank KYC is anchored in CPR through MitID), a phone number can often be resolved to a real name in‑app. That is incredibly useful for avoiding sending money to the wrong person. However, it is also a quiet way to unmask who owns a number. Did someone call you? Type the number into MobilePay; get a CPR-verified name.
+But convenience came with an identity leakage in the form of reverse-lookups. Because Danish financial identities are tightly coupled to civil identity (bank KYC is anchored in CPR through MitID), a phone number can often be resolved to a real name in-app. That is incredibly useful for avoiding sending money to the wrong person. However, it is also a quiet way to unmask who owns a number. Did someone call you? Type the number into MobilePay; get a CPR-verified name.
 
-**Open questions:** Should reverse‑lookup be opt‑in, so MobilePay only shows the phone number by default? Should searches be logged in reverse, so users can see who looked them up?
+**Open questions:** Should reverse-lookup be opt-in, so MobilePay only shows the phone number by default? Should searches be logged in reverse, so users can see who looked them up?
 
 ### Leakage of Website Owners
 
-Punktum (the .dk registry operator) allows you to look up .dk domain holders. Transparency helps fight fraud and illegal content by holding website registrars accountable. It also makes individuals behind small sites and sole proprietorships easier targets for harassment. The line between “public interest” and “public exploitation” is thin, especially when queries are free and log-less.
+Punktum (the .dk registry operator) allows you to look up .dk domain holders. Transparency helps fight fraud and illegal content by holding website registrars accountable. It also makes individuals behind small sites and sole proprietorships easier targets for harassment. The line between "public interest" and "public exploitation" is thin, especially when queries are free and log-less.
 
 One could also argue that this risks limiting free speech. Minority groups who wish to share information online may be deterred by the potential for harassment. People would be able to look up their identities easily and turn up at their doors.
 
@@ -80,7 +80,7 @@ Owning a business may not be a choice. It can be a means of making a living. Whi
 
 ### Own a House? You Are Exposed
 
-Through OIS (Den Offentlige Informationsserver) and the Tinglysning registry, anyone can discover who owns a property, transaction prices, mortgages, and property history. That transparency disciplines markets. It also creates a high‑fidelity map of wealth, debt, and family movements.
+Through OIS (Den Offentlige Informationsserver) and the Tinglysning registry, anyone can discover who owns a property, transaction prices, mortgages, and property history. That transparency disciplines markets. It also creates a high-fidelity map of wealth, debt, and family movements.
 
 See that big house? You can now see who owns it, what they paid for it, and even their mortgage details. This level of transparency can be beneficial for market integrity, but it also poses significant risks to individual privacy.
 
@@ -106,15 +106,15 @@ The state offers CPR protection, which reduces how widely your personal informat
 
 ## Threats We Keep Underestimating
 
-We routinely underestimate how easily public records can be stitched together into a live map of a person’s life. For survivors of stalking and domestic abuse, a handful of queries can reveal where someone lives, where they work, what they own, and how to find them again. Safety plans collapse when registries act like a directory assistance service for bad actors.
+We routinely underestimate how easily public records can be stitched together into a live map of a person's life. For survivors of stalking and domestic abuse, a handful of queries can reveal where someone lives, where they work, what they own, and how to find them again. Safety plans collapse when registries act like a directory assistance service for bad actors.
 
 ::: warning A Real-World Threat, Not a Hypothetical
 A MobilePay reverse-lookup, followed by a .dk WHOIS query or a CVR search can yield a phone number and a home address in only a few minutes from state-verified public data. This information can be used by stalkers, scammers, and other bad actors to cause real harm.
 :::
 
-Harassment feeds on the same visibility. Free speech online is trivially linked to legal identity when reverse‑lookups, property records, and business registers sit one tab away. The path from a controversial tweet to a home address should not be a weekend [OSINT](https://en.wikipedia.org/wiki/Open-source_intelligence) project, and yet that is where we have landed.
+Harassment feeds on the same visibility. Free speech online is trivially linked to legal identity when reverse-lookups, property records, and business registers sit one tab away. The path from a controversial tweet to a home address should not be a weekend [OSINT](https://en.wikipedia.org/wiki/Open-source_intelligence) project, and yet that is where we have landed.
 
-Commercial profiling turns public data into industrial fuel. Brokers enrich registry data with breaches and social graphs to build dossiers that outlive consent. Scam campaigns become precise: names, roles, new mortgages and fresh company registrations. All pre‑validated by the state, guaranteed to be correct.
+Commercial profiling turns public data into industrial fuel. Brokers enrich registry data with breaches and social graphs to build dossiers that outlive consent. Scam campaigns become precise: names, roles, new mortgages and fresh company registrations. All pre-validated by the state, guaranteed to be correct.
 
 Like I wrote about in the recent blog post [You Are the Product: Two Decades of Giving Up Data Control](/blog/you-are-the-product), this information can be used to add to the ever-growing tracking landscape, where _you are the product_. If data can be scraped, it will be scraped.
 
@@ -124,11 +124,11 @@ Public registers are not the problem. Publishing by default is. The Web made cop
 
 Disclose context (i.e. what, where, when) before identity (i.e. who), make sensitive lookups accountable, and make identity reveals temporary. If a system cannot tell you who looked you up and why, it is not finished.
 
-Imagine a property search that works the way people actually use it. Prices, transactions and plot information remain openly searchable. To see a private individual’s legal name, the requester authenticates, states a purpose, and leaves a receipt. The owner receives a lookup notification, with a way to challenge misuse. Newsrooms and banks keep working; not stalkers, since the receipt is proof that the access occurred, and acts as evidence in stalking cases.
+Imagine a property search that works the way people actually use it. Prices, transactions and plot information remain openly searchable. To see a private individual's legal name, the requester authenticates, states a purpose, and leaves a receipt. The owner receives a lookup notification, with a way to challenge misuse. Newsrooms and banks keep working; not stalkers, since the receipt is proof that the access occurred, and acts as evidence in stalking cases.
 
 Carry the same pattern into the business register. Sole proprietors publish a service address by default and keep their residence private. Banks and platforms verify attributes like identity and ownership through verifiable credentials tied to MitID without ever learning a home address.
 
-Payments should adopt identity consents by design. In MobilePay, a number shows initials or only the first name until both parties opt to reveal their names, and only within that thread. Reverse‑lookups outside a conversation fail fast, bulk probing is rate‑limited and logged, and abnormal patterns trigger user alerts.
+Payments should adopt identity consents by design. In MobilePay, a number shows initials or only the first name until both parties opt to reveal their names, and only within that thread. Reverse-lookups outside a conversation fail fast, bulk probing is rate-limited and logged, and abnormal patterns trigger user alerts.
 
 Sensitive records should not be immortal on the open web. Bankruptcy cases still deter fraud through public, anonymised summaries; full files reside at the courthouse with proper access controls. Search engines and archive services respect an expiry; accountability remains, stigma loses its crawler.
 

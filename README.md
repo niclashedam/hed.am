@@ -72,6 +72,7 @@ yarn check:a11y         # Accessibility audit
 yarn check:jsonld       # JSON-LD validation
 yarn check:html         # HTML validation
 yarn check:headings     # Markdown headings are title case
+yarn check:typography   # Typography rules (e.g., curly quotes, en dashes)
 yarn check:links        # Broken link detection
 ```
 

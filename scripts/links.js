@@ -28,7 +28,7 @@ function resolveLink(href) {
   const pathname = href.split("?")[0].split("#")[0];
   if (!pathname) return null;
 
-  // Check as a direct file — this covers all types: .pdf, .xml, .css, images, etc.
+  // Check as a direct file - this covers all types: .pdf, .xml, .css, images, etc.
   const direct = path.join(PUBLIC, pathname);
   if (fs.existsSync(direct) && fs.statSync(direct).isFile()) return direct;
 

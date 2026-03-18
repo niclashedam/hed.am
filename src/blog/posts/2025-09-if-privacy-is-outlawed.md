@@ -33,15 +33,15 @@ updates:
     note: "Added further references on claims regarding high-profile politicians."
 ---
 
-We all want children to be safe. That instinct is right. The European Union's “Chat Control” proposal presents itself as a child protection measure, but at its core, it would require scanning everyone’s private messages on their devices before they are sent. This is a form of pre-emptive monitoring. The stated aim is compassion; the architecture, however, is built on deep suspicion. The real question is not whether the goal is noble, but whether the tool is legitimate, effective, and safe at scale. When the state reaches into private correspondence pre-emptively, it shifts the default relationship between citizen and authority, where everyone is treated as guilty, instead of innocent, until proven otherwise. Such a radical shift demands extraordinary evidence, careful engineering, and robust safeguards, none of which are yet convincingly in view.
+We all want children to be safe. That instinct is right. The European Union's "Chat Control" proposal presents itself as a child protection measure, but at its core, it would require scanning everyone's private messages on their devices before they are sent. This is a form of pre-emptive monitoring. The stated aim is compassion; the architecture, however, is built on deep suspicion. The real question is not whether the goal is noble, but whether the tool is legitimate, effective, and safe at scale. When the state reaches into private correspondence pre-emptively, it shifts the default relationship between citizen and authority, where everyone is treated as guilty, instead of innocent, until proven otherwise. Such a radical shift demands extraordinary evidence, careful engineering, and robust safeguards, none of which are yet convincingly in view.
 
 ## The Promise vs. The Implementation
 
-The idea is straightforward: “detect abuse material and grooming early”. The implementation, however, is anything but simple. Chat apps today use end-to-end encryption, which means that the phone of the sender encrypts the message, and only the recipient’s phone can decrypt it. While the message is in transit or stored on servers, no one else can read it, not even the internet provider or app developer. This is a powerful privacy guarantee that protects not only criminals but also journalists, activists, domestic-violence survivors, and ordinary people.
+The idea is straightforward: "detect abuse material and grooming early". The implementation, however, is anything but simple. Chat apps today use end-to-end encryption, which means that the phone of the sender encrypts the message, and only the recipient's phone can decrypt it. While the message is in transit or stored on servers, no one else can read it, not even the internet provider or app developer. This is a powerful privacy guarantee that protects not only criminals but also journalists, activists, domestic-violence survivors, and ordinary people.
 
-If chat apps are to continue to use end-to-end encryption, scanning must happen on the phone _before_ encryption, i.e. just as the message is being sent. The proposal allows “detection orders” for known images (hash matching), “new/similar” images (perceptual matching), and grooming text. The model that decides what to flag will not be public. You will not see the rules. You will only encounter the system if a classifier is confident enough to escalate your case to the authorities.
+If chat apps are to continue to use end-to-end encryption, scanning must happen on the phone _before_ encryption, i.e. just as the message is being sent. The proposal allows "detection orders" for known images (hash matching), "new/similar" images (perceptual matching), and grooming text. The model that decides what to flag will not be public. You will not see the rules. You will only encounter the system if a classifier is confident enough to escalate your case to the authorities.
 
-This is not targeted surveillance of suspects. It is continuous monitoring of everyone. That is the fundamental change. Once device-level scanning is normalised, the citizen–state relationship changes, and so does your attack surface.
+This is not targeted surveillance of suspects. It is continuous monitoring of everyone. That is the fundamental change. Once device-level scanning is normalised, the citizen-state relationship changes, and so does your attack surface.
 
 ## Competence, Humility, Evidence
 
@@ -51,17 +51,17 @@ Examining this proposed law reveals two uncomfortable facts. First, circumventio
 
 ## Build It Once, Use It Everywhere
 
-Surveillance infrastructure, once established, tends to expand in scope. Once device-level scanning is normalised and implemented, adding new categories, such as terrorism, extremism, “disinformation”, tax or copyright, becomes a configuration change, not a new public debate. The technical capability is already present; only political will is required to broaden its use.
+Surveillance infrastructure, once established, tends to expand in scope. Once device-level scanning is normalised and implemented, adding new categories, such as terrorism, extremism, "disinformation", tax or copyright, becomes a configuration change, not a new public debate. The technical capability is already present; only political will is required to broaden its use.
 
 ::: warning Scope Creep Is Not Uncommon
-Many surveillance mechanisms introduced with narrow initial justification have expanded over time. RIPA in the UK, introduced for investigating serious crime, was later used by councils to monitor [dog-fouling](https://www.theguardian.com/world/2016/dec/25/british-councils-used-investigatory-powers-ripa-to-secretly-spy-on-public) and [school catchment fraud](https://www.theguardian.com/society/2009/nov/05/council-spying-school-catchment-area). The question to ask about any surveillance infrastructure is not only “what will it be used for today?” but “what could it be used for in ten years, under a different government, with different political priorities?”
+Many surveillance mechanisms introduced with narrow initial justification have expanded over time. RIPA in the UK, introduced for investigating serious crime, was later used by councils to monitor [dog-fouling](https://www.theguardian.com/world/2016/dec/25/british-councils-used-investigatory-powers-ripa-to-secretly-spy-on-public) and [school catchment fraud](https://www.theguardian.com/society/2009/nov/05/council-spying-school-catchment-area). The question to ask about any surveillance infrastructure is not only "what will it be used for today?" but "what could it be used for in ten years, under a different government, with different political priorities?"
 :::
 
-## Real Offenders Won’t Wait to Be Caught
+## Real Offenders Won't Wait to Be Caught
 
 Chat Control focuses on mainstream platforms like WhatsApp, Messenger, Signal and Telegram. Competent offenders are unlikely to remain on mainstream channels once on-device scanning is enabled; they will move to other platforms or add encryption layers. The result is that the lawful majority are scanned, while those intent on evading detection are likely to succeed.
 
-It is similar to searching for criminals in a police station or tax evaders in a tax office. This is not the most effective way to catch high-value offenders. [Signal’s technical analysis](https://signal.org/blog/pdfs/upload-moderation.pdf) also discussed the re-branding of Client-Side Scanning as “upload moderation” to downplay the surveillance aspect. They noted that this does not solve the core problem: if it happens before encryption, the end-to-end guarantee is broken. End-to-end encryption exists to guarantee that only the intended recipients can read the messages, and introducing scanning on the sender's device compromises this guarantee. What is the point of locking the door, if the thief has the key?
+It is similar to searching for criminals in a police station or tax evaders in a tax office. This is not the most effective way to catch high-value offenders. [Signal's technical analysis](https://signal.org/blog/pdfs/upload-moderation.pdf) also discussed the re-branding of Client-Side Scanning as "upload moderation" to downplay the surveillance aspect. They noted that this does not solve the core problem: if it happens before encryption, the end-to-end guarantee is broken. End-to-end encryption exists to guarantee that only the intended recipients can read the messages, and introducing scanning on the sender's device compromises this guarantee. What is the point of locking the door, if the thief has the key?
 
 ::: pullquote
 If privacy is outlawed, only outlaws will have privacy.
@@ -70,9 +70,9 @@ Philip Zimmermann, the creator of PGP, [observed this trend already decades ago]
 :::
 
 ::: source Key Independent Analyses
-[Internet Society: Client-Side Scanning: What It Is and Why It Threatens Trustworthy, Private Communication](https://www.internetsociety.org/resources/doc/2023/client-side-scanning/) - Internet Society did an independent technical analysis concluding that circumvention is easy and that scanning primarily catches the careless while missing determined offenders.
+[Internet Society: Client-Side Scanning: What It Is and Why It Threatens Trustworthy, Private Communication](https://www.internetsociety.org/resources/doc/2023/client-side-scanning/) --- Internet Society did an independent technical analysis concluding that circumvention is easy and that scanning primarily catches the careless while missing determined offenders.
 
-[Signal: New Branding, Same Scanning: “Upload Moderation” Undermines End-to-End Encryption](https://signal.org/blog/pdfs/upload-moderation.pdf) - Signal's response to the rebranding of client-side scanning as "upload moderation", arguing the end-to-end guarantee is broken regardless of the terminology used.
+[Signal: New Branding, Same Scanning: "Upload Moderation" Undermines End-to-End Encryption](https://signal.org/blog/pdfs/upload-moderation.pdf) --- Signal's response to the rebranding of client-side scanning as "upload moderation", arguing the end-to-end guarantee is broken regardless of the terminology used.
 :::
 
 ## AI Makes Mistakes. At EU Scale, Mistakes Become Policy
@@ -87,18 +87,18 @@ Another key point in the debate is the question of exemptions. Even after accept
 
 This raises questions about equal treatment. If the technology is truly safe and necessary, why should any group be exempt at all? Professional secrecy is important, but so too is the privacy of ordinary citizens, including families, support workers, and vulnerable individuals. Exemptions risk creating a two-tier system, where privacy is protected for some but not for others. The public deserves a clear explanation of why certain groups are excluded, and whether this is genuinely about professional secrecy or simply about shielding those in power.
 
-It is also worth noting that no group is immune to controversy. Danish politicians have had several scandals in recent times. A former Danish Minister of Foreign Affairs was implicated in a controversy involving sexual misconduct towards a 15‑year‑old participant at a Social Democratic Youth of Denmark camp. [At the time of the incident, the politician was 34 years old](https://www.dr.dk/nyheder/politik/affaere-med-15-aarig-koster-s-ordfoerer-dyrt). A [former Minister of Industry, Business and Financial Affairs](https://www.dr.dk/nyheder/indland/henrik-sass-faar-fire-maaneders-faengsel-overgrebsmateriale) was reported to possess more than 6,200 photographs and more than 2,200 videos containing sexual abuse material involving minors, as well as a child‑like sex doll. Lastly, a former member of parliament acknowledged that, when he was 28, he had a romantic relationship with a 15‑year‑old girl. He was expelled from his party for breaching its code of conduct, [the police later dropped the grooming case](https://www.dr.dk/nyheder/politik/politiet-dropper-grooming-sag-mod-mike-fonseca), and [he has since confirmed they are still together](https://www.dr.dk/nyheder/politik/efter-maaneders-tavshed-taler-mike-fonseca-om-muligt-comeback-i-politik-maaske-var). The last example is the essence of grooming.
+It is also worth noting that no group is immune to controversy. Danish politicians have had several scandals in recent times. A former Danish Minister of Foreign Affairs was implicated in a controversy involving sexual misconduct towards a 15-year-old participant at a Social Democratic Youth of Denmark camp. [At the time of the incident, the politician was 34 years old](https://www.dr.dk/nyheder/politik/affaere-med-15-aarig-koster-s-ordfoerer-dyrt). A [former Minister of Industry, Business and Financial Affairs](https://www.dr.dk/nyheder/indland/henrik-sass-faar-fire-maaneders-faengsel-overgrebsmateriale) was reported to possess more than 6,200 photographs and more than 2,200 videos containing sexual abuse material involving minors, as well as a child-like sex doll. Lastly, a former member of parliament acknowledged that, when he was 28, he had a romantic relationship with a 15-year-old girl. He was expelled from his party for breaching its code of conduct, [the police later dropped the grooming case](https://www.dr.dk/nyheder/politik/politiet-dropper-grooming-sag-mod-mike-fonseca), and [he has since confirmed they are still together](https://www.dr.dk/nyheder/politik/efter-maaneders-tavshed-taler-mike-fonseca-om-muligt-comeback-i-politik-maaske-var). The last example is the essence of grooming.
 
 Why can this group of citizens invoke the right to privacy, while ordinary citizens cannot?
 
 ## Security Is a System, Not a Slogan
 
-End-to-end encryption supports the security of banking, healthcare, domestic-violence shelters, journalism, elections and the private lives of ordinary people. Mandated server backdoors and client-side scanners both weaken this chain. It is not possible to have “strong” end-to-end encryption and device-level surveillance at the same time.
+End-to-end encryption supports the security of banking, healthcare, domestic-violence shelters, journalism, elections and the private lives of ordinary people. Mandated server backdoors and client-side scanners both weaken this chain. It is not possible to have "strong" end-to-end encryption and device-level surveillance at the same time.
 
 ::: note Precedent: Apple Abandoned On-Device CSAM Scanning
 In 2021, [Apple announced plans](https://www.bu.edu/riscs/2021/08/10/apple-csam/) to scan iCloud Photos on-device for CSAM before upload. After significant pushback from security researchers, privacy advocates, and civil liberties organisations, Apple [abandoned the plan](https://www.eff.org/deeplinks/2021/12/2021-we-told-apple-dont-scan-our-phones), opting instead for narrower, opt-in child safety features.
 
-Apple had full control over its hardware, operating system, and infrastructure and still could not make client-side scanning trustworthy enough to ship. The EU’s proposal would apply the same approach across hundreds of device manufacturers and operating systems.
+Apple had full control over its hardware, operating system, and infrastructure and still could not make client-side scanning trustworthy enough to ship. The EU's proposal would apply the same approach across hundreds of device manufacturers and operating systems.
 :::
 
 ## What Actually Moves Outcomes
@@ -115,8 +115,8 @@ Then safety: what are the audited false-positive and false-negative rates per mo
 
 Finally, security: what is the threat model for the mandated scanner itself, including update channels and indicator feeds, and how will you prevent hostile reuse of those hooks? If you cannot answer these cleanly, perhaps the mechanism is not ready.
 
-## Europe’s Choice
+## Europe's Choice
 
-Europe can both defend private correspondence and protect children with precise warrants, resourced investigators and pressure where abuse actually scales. Or it can normalise pre-emptive device scanning, risk overwhelming police with false positives, and widen everyone’s attack surface. If the system is truly safe and accurate, apply it without exemptions. If that cannot be done, the public deserves to know why. The best policy is one that delivers both safety and dignity.
+Europe can both defend private correspondence and protect children with precise warrants, resourced investigators and pressure where abuse actually scales. Or it can normalise pre-emptive device scanning, risk overwhelming police with false positives, and widen everyone's attack surface. If the system is truly safe and accurate, apply it without exemptions. If that cannot be done, the public deserves to know why. The best policy is one that delivers both safety and dignity.
 
 If you want to learn more, I suggest visiting [Fight Chat Control](https://fightchatcontrol.eu/).

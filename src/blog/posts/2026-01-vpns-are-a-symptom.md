@@ -29,7 +29,7 @@ VPNs are everywhere these days, even integrated into operating systems and brows
 
 ## 1) VPNs for Internal Access: Patching Distrust with VPNs
 
-The most common use of VPNs is to manage distrust. Many VPNs exist solely to let employees access internal systems from the public internet. This would be unnecessary if the internet were inherently trusted. Historically, internet services were exposed to the public internet, with login credentials and firewalls intended to keep malicious actors out. That model failed spectacularly, leading to the rise of VPNs. Today, the dominant security model is “zero trust”: never trust the network, always verify identity.
+The most common use of VPNs is to manage distrust. Many VPNs exist solely to let employees access internal systems from the public internet. This would be unnecessary if the internet were inherently trusted. Historically, internet services were exposed to the public internet, with login credentials and firewalls intended to keep malicious actors out. That model failed spectacularly, leading to the rise of VPNs. Today, the dominant security model is "zero trust": never trust the network, always verify identity.
 
 Let me paint you a picture to show just how crazy this really is. Doors, whether to your house or office, are designed to keep unwanted people out. You lock them, and only those with keys can enter. VPNs are like having to crawl through the sewers to get into your own house because you cannot trust the street outside. We have collectively decided that doors are not secure enough, and instead of fixing the doors, we make everyone go through the sewers.
 
@@ -59,10 +59,10 @@ Surveillance has become so commonplace that we have started to see it as just an
 
 Similarly, geo-blocking fragments the internet and limits our access to information and entertainment based on where we live. This is not just an inconvenience; it builds inequalities in access to digital content. Why do we put up with a system that restricts what we can see and do online based on where we live?
 
-Instead of pushing for a world with open access, we are heading in the opposite direction. Take Denmark’s recent attempt to make VPNs for bypassing geo-restrictions illegal, for example.
+Instead of pushing for a world with open access, we are heading in the opposite direction. Take Denmark's recent attempt to make VPNs for bypassing geo-restrictions illegal, for example.
 
 ::: source DR
-[Regeringen vil forbyde VPN'er til at streame udenlandsk tv og åbne ulovlige hjemmesider](https://www.dr.dk/nyheder/politik/regeringen-vil-forbyde-vpn-er-til-streame-udenlandsk-tv-og-aabne-ulovlige-hjemmesider) - A coverage of the proposal that would criminalise using a VPN to bypass geo-restrictions, a move that illustrates how governments are responding to the workaround rather than fixing the underlying problem.
+[Regeringen vil forbyde VPN'er til at streame udenlandsk tv og åbne ulovlige hjemmesider](https://www.dr.dk/nyheder/politik/regeringen-vil-forbyde-vpn-er-til-streame-udenlandsk-tv-og-aabne-ulovlige-hjemmesider) --- A coverage of the proposal that would criminalise using a VPN to bypass geo-restrictions, a move that illustrates how governments are responding to the workaround rather than fixing the underlying problem.
 :::
 
 This raises some serious questions about the future of the internet and the role we play in shaping it. Do we want an internet that is fragmented and controlled, or one that is open and accessible to everyone? These are not just technical issues; they are fundamental questions about the kind of society we want to live in.

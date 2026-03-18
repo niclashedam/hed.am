@@ -31,6 +31,7 @@
     "check:jsonld": "npm run build && node ./scripts/jsonld.js",
     "check:html": "npm run build && html-validate \"public/**/*.html\"",
     "check:headings": "node ./scripts/headings.js",
+    "check:typography": "node ./scripts/typography.js",
     "check:links": "npm run build && node ./scripts/links.js",
     "clean": "rm -rf ./public && git checkout public",
     "format": "prettier . --write",
