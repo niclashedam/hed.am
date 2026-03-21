@@ -10,15 +10,21 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
 
 <main id="main-content" class="bg-parchment pt-8 pb-16 lg:pt-16 px-6 lg:px-8">
   <div class="mx-auto w-full max-w-2xl">
-    <nav class="mb-2 text-sm text-gray-500" aria-label="Breadcrumb">
-      <ol class="flex items-center space-x-2">
+    <nav class="mb-4 text-sm text-gray-500 hidden md:block" aria-label="Breadcrumb">
+      <ol class="flex items-center gap-2">
         <li><a href="/" class="text-gold-600 hover:underline">Home</a></li>
-        <li aria-hidden="true">/</li>
+        <li class="text-gray-400">/</li>
         <li>
-          <a href="/blog" class="text-gold-600 hover:underline">Intelligence Briefs</a>
+          <a href="/blog/" class="text-gold-600 hover:underline">Intelligence Briefs</a>
         </li>
-        <li aria-hidden="true">/</li>
-        <li aria-current="page" class="text-gray-700">{{ title }}</li>
+        {% if categories %}
+          <li class="text-gray-400">/</li>
+          <li>
+            <a href="/blog/categories/{{ categories | slugify }}/" class="text-gold-600 hover:underline">
+              {{- categories -}}
+            </a>
+          </li>
+        {% endif %}
       </ol>
     </nav>
     <article
@@ -36,31 +42,32 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
           {{ title }}
         </h1>
         <address class="flex items-center my-6 not-italic">
-          <div class="inline-flex items-center mr-3 text-gray-900">
+          <div class="h-16 w-16 flex-none overflow-hidden rounded-full mr-4">
             <img
-              width="128"
-              class="object-cover mr-4 w-16 h-16 rounded-full"
+              width="64"
+              height="64"
+              class="block h-full w-full object-cover"
               src="{{ authorPic | url }}"
               alt="{{ author }}">
-            <div>
-              <a href="/" rel="author" class="text-lg font-bold">{{ author }}</a>
-              <p class="text-base text-gray-500">{{ authorTitle }}</p>
-              <p class="text-base text-gray-500">
-                <time
-                  datetime="{{ date | machineDate }}"
-                  title="{{ date | machineDate }}">
-                  {{- date | readableDate -}}
-                </time>
-                · {{ readingTime }} min read
-                {% if updates %}
-                  {% set lastUpdate = updates | last %}
-                  ·
-                  <a href="#updates" class="text-gold-600 hover:underline"
-                    >Updated {{ lastUpdate.date | readableDate -}}
-                  </a>
-                {% endif %}
-              </p>
-            </div>
+          </div>
+          <div class="text-gray-900">
+            <a href="/" rel="author" class="text-lg font-bold">{{ author }}</a>
+            <p class="text-base text-gray-500">{{ authorTitle }}</p>
+            <p class="text-base text-gray-500">
+              <time
+                datetime="{{ date | machineDate }}"
+                title="{{ date | machineDate }}">
+                {{- date | readableDate -}}
+              </time>
+              · {{ readingTime }} min read
+              {% if updates %}
+                {% set lastUpdate = updates | last %}
+                ·
+                <a href="#updates" class="text-gold-600 hover:underline"
+                  >Updated {{ lastUpdate.date | readableDate -}}
+                </a>
+              {% endif %}
+            </p>
           </div>
         </address>
       </header>
@@ -69,7 +76,9 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
           <p class="section-meta text-steel-500 mb-4">TL;DR</p>
           <ul class="list-disc pl-5 space-y-2">
             {% for paragraph in tldr %}
-              <li class="text-sm text-gray-700 leading-7 marker:text-gold-500">{{ paragraph }}</li>
+              <li class="text-sm text-gray-700 leading-7 marker:text-gold-500 hyphens-auto text-justify">
+                {{ paragraph }}
+              </li>
             {% endfor %}
           </ul>
         </div>
@@ -86,7 +95,7 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
                   datetime="{{ update.date | machineDate }}">
                   {{- update.date | readableDate -}}
                 </time>
-                <span class="text-sm text-gray-700 leading-7">{{ update.note }}</span>
+                <span class="text-sm text-gray-700 leading-7 hyphens-auto text-justify">{{ update.note }}</span>
               </li>
             {% endfor %}
           </ul>
@@ -95,7 +104,7 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
       {% if opinion %}
         <div class="not-prose border border-steel-300 bg-steel-300/10 rounded p-5 mb-6">
           <p class="section-meta text-steel-500 mb-2">OPINION</p>
-          <p class="text-sm text-gray-600 leading-7">
+          <p class="text-sm text-gray-600 leading-7 hyphens-auto text-justify">
             The views expressed in this article are the author's own and do not represent the positions of any employer,
             institution, or organisation the author is affiliated with. All information provided in this article is
             based solely on public knowledge.
@@ -110,7 +119,9 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
               <div>
                 <p class="text-base font-bold text-gray-900">{{ author }}</p>
                 <p class="text-xs text-gold-600 tracking-widest uppercase font-bold mt-0.5">{{ authorTitle }}</p>
-                <p class="text-sm text-gray-500 mt-2 max-w-sm font-sans">{{ authorDescription }}</p>
+                <p class="text-sm text-gray-500 mt-2 max-w-sm font-sans hyphens-auto text-justify">
+                  {{ authorDescription }}
+                </p>
               </div>
               <div class="flex gap-4">
                 {% for item in links %}
@@ -163,7 +174,7 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
       </div>
     </div>
     <div class="mt-8">
-      <a href="/blog" class="text-gold-600 hover:underline">&larr; Back to Intelligence Briefs</a>
+      <a href="/blog/" class="text-gold-600 hover:underline">&larr; Back to Intelligence Briefs</a>
     </div>
   </div>
 </main>

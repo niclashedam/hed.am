@@ -33,8 +33,11 @@ function resolveLink(href) {
   if (fs.existsSync(direct) && fs.statSync(direct).isFile()) return direct;
 
   // Check as a pretty-URL directory (e.g. /blog/post/ → public/blog/post/index.html)
-  const withIndex = path.join(PUBLIC, pathname, "index.html");
-  if (fs.existsSync(withIndex)) return withIndex;
+  // Only match if the link has a trailing slash
+  if (pathname.endsWith("/")) {
+    const withIndex = path.join(PUBLIC, pathname, "index.html");
+    if (fs.existsSync(withIndex)) return withIndex;
+  }
 
   return null;
 }

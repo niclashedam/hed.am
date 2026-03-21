@@ -242,6 +242,11 @@ main {
   margin: 1rem 0 0;
 }
 
+.callout-body {
+  hyphens: auto;
+  text-align: justify;
+}
+
 /* Note - steel blue tint */
 .callout-note {
   border: 1px solid theme("colors.steel.400");
