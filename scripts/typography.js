@@ -62,6 +62,14 @@ const CHECKS = [
       "Use --- for em dashes in prose (word --- word); use -- without spaces for numeric ranges (3--5)",
   },
   {
+    id: "en-dash-between-words",
+    // En dashes (--) should only be used for numeric ranges, not between words.
+    // Catches patterns like "straight--forward" which should be "straightforward" or "word --- word" for em dash.
+    find: (s) => reMatches(s, /[a-z]--[a-z]/gi),
+    suggest:
+      "Use --- for em dashes (word --- word); use -- only for numeric ranges (3--5); for compound words use single hyphen or no hyphen",
+  },
+  {
     id: "unspaced-em-dash",
     // Literal em dashes should not appear in source; use --- and let the typographer add \u2014.
     find: (s) => reMatches(s, /\u2014/g),
