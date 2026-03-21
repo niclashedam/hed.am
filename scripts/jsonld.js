@@ -158,7 +158,6 @@ function validateBreadcrumbList(item, filePath, context) {
 
   if (item.itemListElement && Array.isArray(item.itemListElement)) {
     const items = item.itemListElement;
-    const names = items.map((item) => item.name);
 
     // Basic validation for each item
     items.forEach((listItem, index) => {
