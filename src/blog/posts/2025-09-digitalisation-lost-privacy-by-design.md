@@ -116,7 +116,7 @@ Harassment feeds on the same visibility. Free speech online is trivially linked 
 
 Commercial profiling turns public data into industrial fuel. Brokers enrich registry data with breaches and social graphs to build dossiers that outlive consent. Scam campaigns become precise: names, roles, new mortgages and fresh company registrations. All pre-validated by the state, guaranteed to be correct.
 
-Like I wrote about in the recent blog post [You Are the Product: Two Decades of Giving Up Data Control](/blog/you-are-the-product), this information can be used to add to the ever-growing tracking landscape, where _you are the product_. If data can be scraped, it will be scraped.
+Like I wrote about in the recent blog post [You Are the Product: Two Decades of Giving Up Data Control](/blog/you-are-the-product/), this information can be used to add to the ever-growing tracking landscape, where _you are the product_. If data can be scraped, it will be scraped.
 
 ## Minimal Viable Privacy: Keep the Good, Mitigate the Harm
 

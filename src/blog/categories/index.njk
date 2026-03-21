@@ -2,6 +2,10 @@
 layout: layouts/base.njk
 title: Categories - Intelligence Briefs
 description: "Browse Intelligence Briefs by topic area."
+eleventyNavigation:
+  key: /blog/categories/
+  parent: /blog/
+  title: Categories
 ---
 {% include 'components/header.njk' %}
 
@@ -12,7 +16,7 @@ description: "Browse Intelligence Briefs by topic area."
         <ol class="flex items-center space-x-2">
           <li><a href="/" class="text-gold-600 hover:underline">Home</a></li>
           <li aria-hidden="true">/</li>
-          <li><a href="/blog" class="text-gold-600 hover:underline">Intelligence Briefs</a></li>
+          <li><a href="/blog/" class="text-gold-600 hover:underline">Intelligence Briefs</a></li>
           <li aria-hidden="true">/</li>
           <li aria-current="page" class="text-gray-700">Categories</li>
         </ol>

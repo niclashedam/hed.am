@@ -157,7 +157,11 @@ function validateBreadcrumbList(item, filePath, context) {
   checkRequiredProperties(item, required, filePath, context, "BreadcrumbList");
 
   if (item.itemListElement && Array.isArray(item.itemListElement)) {
-    item.itemListElement.forEach((listItem, index) => {
+    const items = item.itemListElement;
+    const names = items.map((item) => item.name);
+
+    // Basic validation for each item
+    items.forEach((listItem, index) => {
       if (!listItem["@type"] || listItem["@type"] !== "ListItem") {
         errors.push({
           type: "invalid_list_item",
@@ -177,6 +181,133 @@ function validateBreadcrumbList(item, filePath, context) {
         errorCount++;
       }
     });
+
+    // Validate sequential positions
+    items.forEach((listItem, index) => {
+      if (listItem.position !== index + 1) {
+        errors.push({
+          type: "invalid_position",
+          file: filePath,
+          context: `${context} itemListElement[${index}]`,
+          message: `Position should be ${index + 1}, got ${listItem.position}`,
+        });
+        errorCount++;
+      }
+    });
+
+    // Validate URL format
+    items.forEach((listItem, index) => {
+      if (listItem.item && !listItem.item.startsWith("https://hed.am/")) {
+        errors.push({
+          type: "invalid_breadcrumb_url",
+          file: filePath,
+          context: `${context} itemListElement[${index}]`,
+          message: `Breadcrumb URL must start with https://hed.am/, got: ${listItem.item}`,
+        });
+        errorCount++;
+      }
+    });
+
+    // Validate breadcrumb structure based on file path
+    validateBreadcrumbStructure(items, filePath, context);
+  }
+}
+
+function validateBreadcrumbStructure(items, filePath, context) {
+  const names = items.map((item) => item.name);
+
+  // Determine expected structure based on file path
+  if (
+    filePath.includes("/blog/categories/") &&
+    !filePath.endsWith("/categories/index.html")
+  ) {
+    // Category pages: Home > Intelligence Briefs > Categories > [Category Name]
+    if (items.length !== 4) {
+      errors.push({
+        type: "invalid_breadcrumb_length",
+        file: filePath,
+        context,
+        message: `Category pages should have 4 breadcrumbs, got ${items.length}`,
+      });
+      errorCount++;
+    }
+    if (
+      names[0] !== "Home" ||
+      names[1] !== "Intelligence Briefs" ||
+      names[2] !== "Categories"
+    ) {
+      errors.push({
+        type: "invalid_breadcrumb_structure",
+        file: filePath,
+        context,
+        message: `Category page breadcrumbs should be: Home > Intelligence Briefs > Categories > [Category], got: ${names.join(" > ")}`,
+      });
+      errorCount++;
+    }
+  } else if (filePath.includes("/blog/categories/index.html")) {
+    // Categories index: Home > Intelligence Briefs > Categories
+    if (items.length !== 3) {
+      errors.push({
+        type: "invalid_breadcrumb_length",
+        file: filePath,
+        context,
+        message: `Categories index should have 3 breadcrumbs, got ${items.length}`,
+      });
+      errorCount++;
+    }
+    if (names[0] !== "Home" || names[1] !== "Intelligence Briefs") {
+      errors.push({
+        type: "invalid_breadcrumb_structure",
+        file: filePath,
+        context,
+        message: `Categories index breadcrumbs should be: Home > Intelligence Briefs > Categories, got: ${names.join(" > ")}`,
+      });
+      errorCount++;
+    }
+  } else if (
+    filePath.includes("/blog/") &&
+    filePath !== "public/blog/index.html" &&
+    !filePath.includes("/categories/")
+  ) {
+    // Article pages: Home > Intelligence Briefs > [Category] > [Article]
+    if (items.length !== 4) {
+      errors.push({
+        type: "invalid_breadcrumb_length",
+        file: filePath,
+        context,
+        message: `Article pages should have 4 breadcrumbs, got ${items.length}`,
+      });
+      errorCount++;
+    }
+    if (names[0] !== "Home" || names[1] !== "Intelligence Briefs") {
+      errors.push({
+        type: "invalid_breadcrumb_structure",
+        file: filePath,
+        context,
+        message: `Article breadcrumbs should start with: Home > Intelligence Briefs, got: ${names.slice(0, 2).join(" > ")}`,
+      });
+      errorCount++;
+    }
+  } else if (filePath === "public/blog/index.html") {
+    // Blog index: Home > Intelligence Briefs
+    if (items.length !== 2) {
+      errors.push({
+        type: "invalid_breadcrumb_length",
+        file: filePath,
+        context,
+        message: `Blog index should have 2 breadcrumbs, got ${items.length}`,
+      });
+      errorCount++;
+    }
+    if (names[0] !== "Home" || names[1] !== "Intelligence Briefs") {
+      errors.push({
+        type: "invalid_breadcrumb_structure",
+        file: filePath,
+        context,
+        message: `Blog index breadcrumbs should be: Home > Intelligence Briefs, got: ${names.join(" > ")}`,
+      });
+      errorCount++;
+    }
   }
 }
 
