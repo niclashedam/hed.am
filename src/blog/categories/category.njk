@@ -9,7 +9,7 @@ permalink: "/blog/categories/{{ category.slug }}/"
 eleventyComputed:
   title: "{{ category.title }}"
   description: "{{ category.description }}"
-  keywords: "{{ category.keywords }}"
+  keywords: "{{ category.keywords | join(', ') }}"
 ---
 {% include 'components/header.njk' %}
 
