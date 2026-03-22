@@ -4,11 +4,31 @@ title: "VPNs Are a Symptom, Not a Feature: Why the Internet Is Broken"
 opinion: true
 date: 2026-01-26
 keywords:
-  - vpn
-  - privacy
-  - surveillance
-  - geopolitics
+  - vpn privacy
+  - internet privacy
+  - vpn security
+  - online privacy
+  - digital privacy
+  - internet security
+  - privacy tools
+  - network security
   - internet architecture
+  - surveillance capitalism
+  - digital rights
+  - privacy protection
+  - internet governance
+  - network privacy
+  - geo restrictions
+  - geo blocking
+  - network security expert
+  - internet privacy expert
+  - vpn security analysis
+  - digital privacy expert copenhagen
+  - privacy by design expertise
+topics:
+  - "Privacy Technology"
+  - "Surveillance Society"
+  - "Digital Rights"
 category: Surveillance Society
 tldr:
   - VPNs solve real problems, but their existence signals deeper failures in trust, privacy, and internet governance.

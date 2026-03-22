@@ -4,22 +4,25 @@ title: "EU Chat Control: If Privacy Is Outlawed, only Outlaws Have Privacy"
 opinion: true
 date: 2025-09-15
 keywords:
-  - privacy
-  - digital rights
-  - end-to-end encryption
-  - chat control
-  - EU regulation
-  - surveillance
-  - client-side scanning
-  - child protection
-  - csam
-  - pre-crime
-  - cybersecurity policy
+  - eu chat control
+  - end to end encryption
+  - digital privacy rights
+  - client side scanning
   - mass surveillance
   - encryption policy
-  - european union
-  - civil liberties
-  - technology law
+  - european privacy law
+  - digital rights eu
+  - privacy legislation
+  - encrypted messaging
+  - surveillance regulation
+  - eu privacy policy
+  - digital civil liberties
+  - encryption debate
+  - privacy advocacy
+topics:
+  - "Digital Rights"
+  - "Surveillance Society"
+  - "Privacy Technology"
 category: Surveillance Society
 tldr:
   - Client-side scanning proposals shift private communication from targeted investigation to broad pre-emptive monitoring.

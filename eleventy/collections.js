@@ -1,4 +1,5 @@
 const striptags = require("striptags");
+const slugify = require("./slugify");
 
 module.exports = function (eleventyConfig, md) {
   eleventyConfig.addCollection("blog", async function (collectionApi) {
@@ -29,10 +30,38 @@ module.exports = function (eleventyConfig, md) {
       const related = posts
         .filter((p) => p.url !== post.url)
         .map((p) => {
-          const sharedKeywords = (post.data.keywords || []).filter((keyword) =>
-            (p.data.keywords || []).includes(keyword),
-          );
-          return { post: p, score: sharedKeywords.length };
+          let score = 0;
+
+          // 1. Category matching (high weight)
+          if (slugify(p.data.category) === slugify(post.data.category)) {
+            score += 10;
+          }
+
+          // 2. Topic overlap (semantic similarity)
+          const postTopics = post.data.topics || [];
+          const pTopics = p.data.topics || [];
+          const topicOverlap = postTopics.filter((topic) =>
+            pTopics.includes(topic),
+          ).length;
+          score += topicOverlap * 5;
+
+          // 3. Keyword overlap (reduced weight for technical terms)
+          const postKeywords = post.data.keywords || [];
+          const pKeywords = p.data.keywords || [];
+          const keywordOverlap = postKeywords.filter((keyword) =>
+            pKeywords.includes(keyword),
+          ).length;
+          score += keywordOverlap * 2;
+
+          // 4. Recency bonus (prefer newer content)
+          const daysDiff =
+            Math.abs(new Date(post.date) - new Date(p.date)) /
+            (1000 * 60 * 60 * 24);
+          if (daysDiff < 90) {
+            score += 1;
+          }
+
+          return { post: p, score };
         })
         .sort((a, b) => b.score - a.score)
         .slice(0, 2)
@@ -52,10 +81,8 @@ module.exports = function (eleventyConfig, md) {
       .getFilteredByGlob("src/blog/posts/*.md")
       .sort((a, b) => b.date - a.date);
 
-    // Create a map of valid categories with canonical names
-    const validCategories = new Map(
-      categories.map((cat) => [cat.slug, cat.name]),
-    );
+    // Create a map of valid categories with canonical names and SEO data
+    const validCategories = new Map(categories.map((cat) => [cat.slug, cat]));
 
     // Build category objects with posts
     const map = {};
@@ -76,15 +103,24 @@ module.exports = function (eleventyConfig, md) {
       if (!validCategories.has(slug)) {
         throw new Error(
           `Post "${post.data.title}" uses undefined category "${categoryName}". ` +
-            `Valid categories: ${Array.from(validCategories.values()).join(", ")}`,
+            `Valid categories: ${Array.from(validCategories.values())
+              .map((c) => c.name)
+              .join(", ")}`,
         );
       }
 
-      // Use canonical name from static list, not the post's frontmatter
-      const canonicalName = validCategories.get(slug);
+      // Get full category data from our definitions
+      const categoryData = validCategories.get(slug);
 
       if (!map[slug]) {
-        map[slug] = { name: canonicalName, slug, posts: [] };
+        map[slug] = {
+          name: categoryData.name,
+          title: categoryData.title,
+          description: categoryData.description,
+          keywords: categoryData.keywords,
+          slug,
+          posts: [],
+        };
       }
       map[slug].posts.push(post);
     }
