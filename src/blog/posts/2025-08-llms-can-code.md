@@ -3,21 +3,25 @@ layout: layouts/post.njk
 title: "LLMs Can Write Code, but Cannot Read Your Mind"
 date: 2025-08-26
 keywords:
-  - llm
-  - ai coding
-  - chatgpt
-  - copilot
-  - software engineering
-  - code generation
-  - programming ai
-  - developer tools
-  - code security
-  - context awareness
-  - software bugs
-  - prompt engineering
-  - machine learning
-  - artificial intelligence
-  - code review
+  - ai code generation
+  - llm security risks
+  - chatgpt security
+  - copilot security
+  - claude security
+  - ai coding safety
+  - machine learning code
+  - ai generated code
+  - llm coding risks
+  - ai software development
+  - secure coding practices
+  - ai development tools
+  - code security review
+  - artificial intelligence programming
+  - developer ai tools
+  - ai code quality
+topics:
+  - "AI Security"
+  - "System Architecture"
 category: Artificial Intelligence
 tldr:
   - LLMs can generate valid-looking code quickly, but they do not know your system constraints, threat model, or operational context unless you explicitly provide it.

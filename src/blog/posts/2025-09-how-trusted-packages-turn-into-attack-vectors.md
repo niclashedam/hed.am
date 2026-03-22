@@ -3,21 +3,24 @@ layout: layouts/post.njk
 title: "Malicious Compliance: How Trusted Packages Turn Into Attack Vectors"
 date: 2025-09-25
 keywords:
-  - software supply chain
   - supply chain security
+  - software supply chain attacks
+  - npm security
+  - dependency security
   - open source security
-  - npm
-  - package manager
-  - dependency management
+  - package manager security
   - malicious packages
-  - cybersecurity
   - software vulnerabilities
   - supply chain attacks
-  - trust in software
+  - dependency management
+  - software security
+  - third party risk
+  - vendor security
+  - software integrity
   - package auditing
-  - dependency risk
-  - software development
-  - open source
+topics:
+  - "Threat Analysis"
+  - "System Architecture"
 category: Attack Vectors
 tldr:
   - Dependency ecosystems accelerate software development but also expand trust to thousands of transitive components and maintainers you do not control.

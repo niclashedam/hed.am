@@ -7,8 +7,9 @@ pagination:
   alias: category
 permalink: "/blog/categories/{{ category.slug }}/"
 eleventyComputed:
-  title: "{{ category.name }} - Intelligence Briefs"
-  description: "Intelligence Briefs in the {{ category.name }} category."
+  title: "{{ category.title }}"
+  description: "{{ category.description }}"
+  keywords: "{{ category.keywords }}"
 ---
 {% include 'components/header.njk' %}
 
@@ -36,8 +37,7 @@ eleventyComputed:
       <div class="mb-8">
         <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">{{ category.name }}</h1>
         <p class="mt-3 text-sm text-gray-500 font-mono">
-          {{ category.posts | length }}
-          {%- if category.posts | length == 1 %} intelligence brief{%- else %} intelligence briefs{%- endif %}
+          {{ category.description }}
         </p>
       </div>
 

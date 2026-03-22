@@ -3,22 +3,24 @@ layout: layouts/post.njk
 title: "When CPUs Stopped Scaling: Why Hardware Got Complicated"
 date: 2025-09-08
 keywords:
+  - cpu performance
+  - computer architecture
+  - hardware optimization
+  - moores law
+  - dennard scaling
+  - system performance
   - cpu scaling
   - hardware evolution
-  - moore's law
-  - dennard scaling
+  - multi core processors
+  - performance optimization
   - computational storage
-  - multi-core processors
-  - gpu
-  - arm architecture
-  - data movement
-  - computer architecture
-  - performance optimisation
   - memory hierarchy
-  - software engineering
+  - system architecture
   - hardware bottlenecks
-  - technology trends
-  - delilah
+  - processing power
+  - computer performance
+topics:
+  - "System Architecture"
 category: Architecture
 tldr:
   - CPU performance stopped scaling through clock speed alone, forcing modern systems toward multi-core and specialised hardware.

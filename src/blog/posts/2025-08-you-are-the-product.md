@@ -4,21 +4,25 @@ title: "You Are the Product: Two Decades of Giving up Data Control"
 opinion: true
 date: 2025-08-18
 keywords:
-  - data privacy
   - surveillance capitalism
-  - big tech
-  - google
-  - meta
+  - data privacy
+  - big tech surveillance
+  - online privacy
   - data collection
-  - targeted advertising
-  - user profiling
-  - digital rights
-  - privacy tools
-  - gdpr
-  - online tracking
-  - behavioural data
+  - digital privacy rights
   - internet privacy
-  - personal data
+  - personal data protection
+  - google privacy
+  - meta privacy
+  - social media privacy
+  - targeted advertising
+  - behavioural tracking
+  - user profiling
+  - gdpr rights
+topics:
+  - "Surveillance Society"
+  - "Digital Rights"
+  - "Data Governance"
 category: Surveillance Society
 tldr:
   - Many modern digital services no longer just provide utility for end-users. They continuously collect behavioural data that can reveal health, finances, routines, and social relationships.

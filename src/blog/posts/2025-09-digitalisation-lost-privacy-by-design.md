@@ -4,21 +4,25 @@ title: "Digitalisation: Lost Privacy by Design"
 opninion: true
 date: 2025-09-02
 keywords:
-  - digitalisation
   - privacy by design
+  - digital privacy
   - data protection
-  - public records
-  - surveillance
-  - open data
+  - surveillance society
   - digital rights
+  - privacy engineering
+  - mass surveillance
   - data privacy
-  - government transparency
-  - cpr protection
-  - personal data
-  - registry data
-  - denmark
-  - eu privacy
-  - digital culture
+  - digital surveillance
+  - privacy legislation
+  - gdpr privacy
+  - data collection
+  - privacy policies
+  - digital transparency
+  - privacy erosion
+topics:
+  - "Privacy Technology"
+  - "Surveillance Society"
+  - "Digital Rights"
 category: Surveillance Society
 tldr:
   - Public records can serve legitimate transparency goals, but digitisation changes the risk profile from manual access to mass extraction and automated abuse.

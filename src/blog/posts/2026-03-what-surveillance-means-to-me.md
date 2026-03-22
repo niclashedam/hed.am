@@ -4,17 +4,24 @@ title: "What Surveillance Means to Me"
 opinion: true
 date: 2026-03-21
 keywords:
-  - privacy
-  - surveillance
-  - data collection
-  - balance
-  - security
-  - cctv
-  - public safety
-  - data retention
-  - face recognition
-  - warrant
-  - tracking
+  - surveillance analysis
+  - digital surveillance
+  - privacy balance
+  - surveillance society
+  - security vs privacy
+  - surveillance technology
+  - cctv privacy
+  - digital monitoring
+  - surveillance ethics
+  - privacy rights
+  - surveillance systems
+  - public safety surveillance
+  - surveillance policy
+  - privacy analysis
+  - surveillance debate
+topics:
+  - "Surveillance Society"
+  - "Digital Rights"
 category: Meta
 imageAlt: "Security cameras watching over a public space."
 image: /assets/images/blog/what-surveillance-means-to-me.jpg
