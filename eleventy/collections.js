@@ -1,4 +1,5 @@
 const striptags = require("striptags");
+const slugify = require("./slugify");
 
 module.exports = function (eleventyConfig, md) {
   eleventyConfig.addCollection("blog", async function (collectionApi) {
@@ -32,7 +33,7 @@ module.exports = function (eleventyConfig, md) {
           let score = 0;
 
           // 1. Category matching (high weight)
-          if (p.data.category === post.data.category) {
+          if (slugify(p.data.category) === slugify(post.data.category)) {
             score += 10;
           }
 
