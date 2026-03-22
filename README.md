@@ -15,25 +15,6 @@ Clone the repository and install dependencies:
 yarn install
 ```
 
-## Available scripts
-
-All project tasks are run through Yarn scripts:
-
-| Command               | Description                                                      |
-| --------------------- | ---------------------------------------------------------------- |
-| `yarn serve`          | Start a local development server with live reload.               |
-| `yarn build`          | Generate the static site into the `public/` directory.           |
-| `yarn format`         | Format source files using Prettier.                              |
-| `yarn clean`          | Remove generated files and start fresh.                          |
-| `yarn check`          | Run all quality checks.                                          |
-| `yarn check:format`   | Verify that files are formatted correctly.                       |
-| `yarn check:headings` | Verify that markdown headings are title case.                    |
-| `yarn check:spelling` | Build and spell-check generated HTML using cspell.               |
-| `yarn check:a11y`     | Build and audit generated HTML for accessibility using axe-core. |
-| `yarn check:jsonld`   | Build and validate JSON-LD structured data in generated HTML.    |
-| `yarn check:html`     | Build and validate HTML structure using html-validate.           |
-| `yarn check:links`    | Build and check for broken links.                                |
-
 ## Project structure
 
 ```

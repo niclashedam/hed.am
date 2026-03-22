@@ -1,10 +1,6 @@
 const striptags = require("striptags");
 
 module.exports = function (eleventyConfig, md) {
-  eleventyConfig.addNunjucksFilter("limit", (arr, limit) =>
-    arr.slice(0, limit),
-  );
-
   eleventyConfig.addCollection("blog", async function (collectionApi) {
     const wordsPerMinute = 200;
 
