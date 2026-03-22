@@ -16,7 +16,7 @@
     </span>
   </div>
 </footer>
-{# Use navigation breadcrumbs for pages that support it #}
+{# Use navigation breadcrumbs for pages that support it, but not for articles #}
 {% if eleventyNavigation and eleventyNavigation.key and type != 'article' %}
   {% set breadcrumbs = collections.all | eleventyNavigationBreadcrumb(page.url, { includeSelf: true }) %}
 {% endif %}
@@ -121,8 +121,8 @@
             }{% endif %}{% if date %},
             "datePublished": "{{ date | machineDate }}",
             "dateModified": "{{ ((updates | last).date if (updates and updates.length) else date) | machineDate }}"{% endif %}{% if keywords %},
-            "keywords": "{{ keywords | join(', ') }}"{% endif %}{% if categories %},
-            "articleSection": "{{ categories }}"{% endif %},
+            "keywords": "{{ keywords | join(', ') }}"{% endif %}{% if category %},
+            "articleSection": "{{ canonicalCategory }}"{% endif %},
           "wordCount": {{ wordCount }},
           "author": {
             "@id": "https://hed.am/#person"
@@ -178,42 +178,25 @@
               "position": 2,
               "name": "Intelligence Briefs",
               "item": "https://hed.am/blog/"
-            }, {
+            }{% if category %}, {
               "@type": "ListItem",
               "position": 3,
-              "name": "{{ categories }}",
-              "item": "https://hed.am/blog/categories/{{ categories | slugify }}/"
+              "name": "{{ canonicalCategory }}",
+              "item": "https://hed.am/blog/categories/{{ category | slugify }}/"
             }, {
               "@type": "ListItem",
               "position": 4,
               "name": "{{ title }}",
               "item": "https://hed.am{{ page.url }}"
-            }
-          ]
-        }
-      {% elif page.url == "/blog/categories/" %}, {
-          "@type": "BreadcrumbList",
-          "@id": "https://hed.am{{ page.url }}#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://hed.am/"
-            }, {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Intelligence Briefs",
-              "item": "https://hed.am/blog/"
-            }, {
+            }{% else %}, {
               "@type": "ListItem",
               "position": 3,
               "name": "{{ title }}",
               "item": "https://hed.am{{ page.url }}"
-            }
+            }{% endif %}
           ]
         }
-      {% elif page.url != "/" and page.url != "/blog/" and page.url != "/blog/categories/" and type != "article" %}, {
+      {% elif type == "category-page" %}, {
           "@type": "BreadcrumbList",
           "@id": "https://hed.am{{ page.url }}#breadcrumb",
           "itemListElement": [
@@ -235,7 +218,7 @@
             }, {
               "@type": "ListItem",
               "position": 4,
-              "name": "{{ title | replace(' - Intelligence Briefs', '') }}",
+              "name": "{{ category.name }}",
               "item": "https://hed.am{{ page.url }}"
             }
           ]

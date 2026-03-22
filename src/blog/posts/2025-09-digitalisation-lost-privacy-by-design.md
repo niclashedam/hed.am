@@ -19,7 +19,7 @@ keywords:
   - denmark
   - eu privacy
   - digital culture
-categories: Surveillance Society
+category: Surveillance Society
 tldr:
   - Public records can serve legitimate transparency goals, but digitisation changes the risk profile from manual access to mass extraction and automated abuse.
   - Convenience-driven systems like payment apps, business registers, and property records can together expose home addresses, financial status, and daily movements to anyone willing to query them.

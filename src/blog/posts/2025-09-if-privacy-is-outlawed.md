@@ -20,7 +20,7 @@ keywords:
   - european union
   - civil liberties
   - technology law
-categories: Surveillance Society
+category: Surveillance Society
 tldr:
   - Client-side scanning proposals shift private communication from targeted investigation to broad pre-emptive monitoring.
   - The technical burden lands on everyone, while determined offenders can still adapt by changing channels or adding encryption layers.

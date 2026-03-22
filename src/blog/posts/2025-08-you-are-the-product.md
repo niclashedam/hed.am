@@ -19,7 +19,7 @@ keywords:
   - behavioural data
   - internet privacy
   - personal data
-categories: Surveillance Society
+category: Surveillance Society
 tldr:
   - Many modern digital services no longer just provide utility for end-users. They continuously collect behavioural data that can reveal health, finances, routines, and social relationships.
   - Both advertisers and governments are significant consumers of this data; in 2024 alone, Google and Meta received nearly half a million legal data requests from U.S. agencies, the vast majority of which were fulfilled.

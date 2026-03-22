@@ -18,7 +18,7 @@ keywords:
   - dependency risk
   - software development
   - open source
-categories: Attack Vectors
+category: Attack Vectors
 tldr:
   - Dependency ecosystems accelerate software development but also expand trust to thousands of transitive components and maintainers you do not control.
   - Supply chain attacks exploit this trust path, often through legitimate update channels and maintainer accounts rather than obvious malware signatures.
