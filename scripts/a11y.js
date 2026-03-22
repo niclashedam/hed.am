@@ -33,7 +33,7 @@ async function runAxe(file) {
   const files = globSync("public/**/*.html");
   if (files.length === 0) {
     console.error(
-      'ERROR: No HTML files found in public/. Run "npm run build" first.',
+      'ERROR: No HTML files found in public/. Run "yarn build" first.',
     );
     process.exit(1);
   }

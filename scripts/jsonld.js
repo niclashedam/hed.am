@@ -375,7 +375,7 @@ async function main() {
 
   if (htmlFiles.length === 0) {
     console.error(
-      'ERROR: No HTML files found in public/. Run "npm run build" first.',
+      'ERROR: No HTML files found in public/. Run "yarn build" first.',
     );
     process.exit(1);
   }
