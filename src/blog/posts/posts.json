@@ -1,9 +1,0 @@
-{
-  "eleventyComputed": {
-    "eleventyNavigation": {
-      "key": "{{ page.url }}",
-      "parent": "/blog/",
-      "title": "{{ title }}"
-    }
-  }
-}

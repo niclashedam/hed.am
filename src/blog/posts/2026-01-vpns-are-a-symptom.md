@@ -9,7 +9,7 @@ keywords:
   - surveillance
   - geopolitics
   - internet architecture
-categories: Surveillance Society
+category: Surveillance Society
 tldr:
   - VPNs solve real problems, but their existence signals deeper failures in trust, privacy, and internet governance.
   - People use VPNs to compensate for insecure network assumptions, surveillance-heavy business models, and artificial access barriers.

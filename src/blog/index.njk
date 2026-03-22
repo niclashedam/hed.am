@@ -47,11 +47,11 @@ eleventyNavigation:
               src="{{ post.data.image | url }}"
               class="h-48 w-full object-cover">
             <div class="p-5">
-              {% if post.data.categories %}
+              {% if post.data.category %}
                 <a
-                  href="/blog/categories/{{ post.data.categories | slugify }}/"
+                  href="/blog/categories/{{ post.data.category | slugify }}/"
                   class="relative z-10 section-meta text-gold-600 hover:text-gold-500 transition-colors">
-                  {{ post.data.categories }}
+                  {{ post.data.canonicalCategory }}
                 </a>
               {% endif %}
               <h2 class="mt-2 text-base font-semibold text-gray-900 leading-snug group-hover:text-gold-700 transition-colors">
