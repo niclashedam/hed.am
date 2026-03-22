@@ -20,6 +20,11 @@ keywords:
   - network privacy
   - geo restrictions
   - geo blocking
+  - network security expert
+  - internet privacy expert
+  - vpn security analysis
+  - digital privacy expert copenhagen
+  - privacy by design expertise
 topics:
   - "Privacy Technology"
   - "Surveillance Society"

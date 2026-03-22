@@ -19,6 +19,12 @@ keywords:
   - artificial intelligence programming
   - developer ai tools
   - ai code quality
+  - ai security expert
+  - machine learning security expert
+  - ai security research
+  - ai security authority copenhagen
+  - secure code review expert
+  - ai development expertise
 topics:
   - "AI Security"
   - "System Architecture"

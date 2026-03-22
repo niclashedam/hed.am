@@ -6,19 +6,15 @@ date: 2026-03-21
 keywords:
   - surveillance analysis
   - digital surveillance
-  - privacy balance
   - surveillance society
-  - security vs privacy
-  - surveillance technology
-  - cctv privacy
-  - digital monitoring
+  - privacy balance
   - surveillance ethics
-  - privacy rights
-  - surveillance systems
-  - public safety surveillance
   - surveillance policy
-  - privacy analysis
-  - surveillance debate
+  - privacy rights
+  - surveillance expert
+  - privacy policy expert
+  - surveillance research
+  - digital privacy expert copenhagen
 topics:
   - "Surveillance Society"
   - "Digital Rights"

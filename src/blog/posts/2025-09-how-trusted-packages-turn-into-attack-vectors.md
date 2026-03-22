@@ -18,6 +18,12 @@ keywords:
   - vendor security
   - software integrity
   - package auditing
+  - supply chain security expert
+  - vendor security expert
+  - third party security analysis
+  - software supply chain expertise
+  - enterprise security architecture
+  - security architecture expert copenhagen
 topics:
   - "Threat Analysis"
   - "System Architecture"
