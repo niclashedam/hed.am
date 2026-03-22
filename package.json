@@ -36,5 +36,5 @@
     "format": "prettier . --write",
     "serve": "eleventy --serve"
   },
-  "packageManager": "yarn@4.10.0"
+  "packageManager": "yarn@4.13.0"
 }
