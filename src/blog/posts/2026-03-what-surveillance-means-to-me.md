@@ -15,7 +15,7 @@ keywords:
   - face recognition
   - warrant
   - tracking
-categories: Meta
+category: Meta
 imageAlt: "Security cameras watching over a public space."
 image: /assets/images/blog/what-surveillance-means-to-me.jpg
 permalink: "/blog/what-surveillance-means-to-me/"

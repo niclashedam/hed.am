@@ -1,13 +1,9 @@
 const striptags = require("striptags");
+const slugify = require("./slugify");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("striptags", (str) => striptags(str || ""));
-  eleventyConfig.addFilter("slugify", (str) =>
-    str
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-|-$/g, ""),
-  );
+  eleventyConfig.addFilter("slugify", slugify);
 
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return new Date(dateObj).toLocaleDateString("en-US", {

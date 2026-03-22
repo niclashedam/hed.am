@@ -49,25 +49,44 @@ module.exports = function (eleventyConfig, md) {
   });
 
   eleventyConfig.addCollection("categories", function (collectionApi) {
-    const slugify = (str) =>
-      str
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, "-")
-        .replace(/^-|-$/g, "");
+    const categories = require("../src/_data/categories");
+    const slugify = require("./slugify");
 
     const posts = collectionApi
       .getFilteredByGlob("src/blog/posts/*.md")
       .sort((a, b) => b.date - a.date);
 
+    // Create a map of valid categories with canonical names
+    const validCategories = new Map(
+      categories.map((cat) => [cat.slug, cat.name]),
+    );
+
+    // Build category objects with posts
     const map = {};
     for (const post of posts) {
-      const name = post.data.categories;
-      if (!name) continue;
-      const slug = slugify(name);
-      if (!map[slug]) map[slug] = { name, slug, posts: [] };
+      const categoryName = post.data.category;
+      if (!categoryName) continue;
+
+      const slug = slugify(categoryName);
+
+      // Validate that this category exists in our static list
+      if (!validCategories.has(slug)) {
+        throw new Error(
+          `Post "${post.data.title}" uses undefined category "${categoryName}". ` +
+            `Valid categories: ${Array.from(validCategories.values()).join(", ")}`,
+        );
+      }
+
+      // Use canonical name from static list, not the post's frontmatter
+      const canonicalName = validCategories.get(slug);
+
+      if (!map[slug]) {
+        map[slug] = { name: canonicalName, slug, posts: [] };
+      }
       map[slug].posts.push(post);
     }
 
+    // Only return categories that have posts
     return Object.values(map).sort((a, b) => a.name.localeCompare(b.name));
   });
 };

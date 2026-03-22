@@ -19,7 +19,7 @@ keywords:
   - hardware bottlenecks
   - technology trends
   - delilah
-categories: Architecture
+category: Architecture
 tldr:
   - CPU performance stopped scaling through clock speed alone, forcing modern systems toward multi-core and specialised hardware.
   - The dominant bottleneck is often data movement, not raw computation, which changes how high-performance systems must be designed.

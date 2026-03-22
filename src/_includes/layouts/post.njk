@@ -17,11 +17,11 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
         <li>
           <a href="/blog/" class="text-gold-600 hover:underline">Intelligence Briefs</a>
         </li>
-        {% if categories %}
+        {% if category %}
           <li class="text-gray-400">/</li>
           <li>
-            <a href="/blog/categories/{{ categories | slugify }}/" class="text-gold-600 hover:underline">
-              {{- categories -}}
+            <a href="/blog/categories/{{ category | slugify }}/" class="text-gold-600 hover:underline">
+              {{- canonicalCategory -}}
             </a>
           </li>
         {% endif %}
@@ -151,11 +151,11 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
               src="{{ post.data.image | url }}"
               class="h-36 w-full object-cover">
             <div class="p-4">
-              {% if post.data.categories %}
+              {% if post.data.category %}
                 <a
-                  href="/blog/categories/{{ post.data.categories | slugify }}/"
+                  href="/blog/categories/{{ post.data.category | slugify }}/"
                   class="relative z-10 section-meta text-gold-600 hover:text-gold-500 transition-colors">
-                  {{ post.data.categories }}
+                  {{ post.data.canonicalCategory }}
                 </a>
               {% endif %}
               <h3 class="mt-1.5 text-sm font-semibold text-gray-900 leading-snug group-hover:text-gold-700 transition-colors">
