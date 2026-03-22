@@ -22,19 +22,19 @@
     "title-case": "^4.3.2"
   },
   "scripts": {
-    "build": "npm run clean && eleventy",
+    "build": "yarn clean && eleventy",
     "check": "node ./scripts/check.js",
     "check:format": "prettier . --check",
-    "check:spelling": "npm run build && cspell --config cspell.json --no-progress \"public/**/*.html\"",
-    "check:a11y": "npm run build && node ./scripts/a11y.js",
-    "check:jsonld": "npm run build && node ./scripts/jsonld.js",
-    "check:html": "npm run build && html-validate \"public/**/*.html\"",
+    "check:spelling": "yarn build && cspell --config cspell.json --no-progress \"public/**/*.html\"",
+    "check:a11y": "yarn build && node ./scripts/a11y.js",
+    "check:jsonld": "yarn build && node ./scripts/jsonld.js",
+    "check:html": "yarn build && html-validate \"public/**/*.html\"",
     "check:headings": "node ./scripts/headings.js",
     "check:typography": "node ./scripts/typography.js",
-    "check:links": "npm run build && node ./scripts/links.js",
+    "check:links": "yarn build && node ./scripts/links.js",
     "clean": "rm -rf ./public && git checkout public",
     "format": "prettier . --write",
     "serve": "eleventy --serve"
   },
-  "packageManager": "yarn@4.10.0"
+  "packageManager": "yarn@4.13.0"
 }

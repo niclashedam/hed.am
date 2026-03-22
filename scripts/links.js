@@ -47,7 +47,7 @@ function main() {
 
   if (files.length === 0) {
     console.error(
-      `ERROR: No HTML files found in ${PUBLIC}/. Run "npm run build" first.`,
+      `ERROR: No HTML files found in ${PUBLIC}/. Run "yarn build" first.`,
     );
     process.exit(1);
   }
