@@ -2,6 +2,7 @@
 layout: layouts/post.njk
 title: "The Illusion of Delete"
 date: 2026-03-29
+description: "We demand systems that never lose data, load instantly, and comply with every law, then wonder why deletion fails. The delete button is not broken because companies are evil, but because we asked for the impossible."
 keywords:
   - is data really deleted
   - right to be forgotten GDPR

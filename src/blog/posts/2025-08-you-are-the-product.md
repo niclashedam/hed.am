@@ -3,6 +3,7 @@ layout: layouts/post.njk
 title: "You Are the Product: Two Decades of Giving up Data Control"
 opinion: true
 date: 2025-08-18
+description: "Twenty years of digital convenience built detailed profiles of our health, finances, and relationships. The data never disappears, instead it is shared with advertisers, law enforcement, and anyone willing to pay."
 keywords:
   - surveillance capitalism
   - data privacy

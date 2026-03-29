@@ -2,6 +2,7 @@
 layout: layouts/post.njk
 title: "Malicious Compliance: How Trusted Packages Turn Into Attack Vectors"
 date: 2025-09-25
+description: "Modern software depends on thousands of packages from strangers. When you run 'npm install,' you're executing code from maintainers you have never met. Supply chain attacks exploit this trust on a daily basis."
 keywords:
   - supply chain security
   - software supply chain attacks

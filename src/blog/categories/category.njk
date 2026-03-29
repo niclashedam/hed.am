@@ -59,7 +59,9 @@ eleventyComputed:
                 <time datetime="{{ post.date | machineDate }}">{{ post.date | readableDate }}</time>
                 &middot; {{ post.data.readingTime }} min read
               </p>
-              <div class="mt-2 line-clamp-3 text-sm text-gray-600 leading-relaxed">{{ post.data.excerpt | safe }}</div>
+              <div class="mt-2 text-sm text-gray-600 leading-relaxed hyphens-auto">
+                {{ post.data.description | safe }}
+              </div>
             </div>
           </article>
         {% endfor %}
