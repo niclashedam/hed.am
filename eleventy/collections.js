@@ -12,18 +12,10 @@ module.exports = function (eleventyConfig, md) {
     for (const post of posts) {
       const fm = await post.template.read();
       const raw = post.data.description || md.render(fm.content || "");
-      let excerpt = striptags(raw).replace(/\s+/g, " ").trim();
       let words = striptags(raw).trim().split(/\s+/).filter(Boolean).length;
 
       post.data.wordCount = words;
       post.data.readingTime = Math.ceil(words / wordsPerMinute);
-
-      if (excerpt.length > 150) {
-        const cutoff = excerpt.indexOf(" ", 150);
-        excerpt =
-          excerpt.slice(0, cutoff !== -1 ? cutoff : 150).trimEnd() + "...";
-      }
-      post.data.excerpt = excerpt;
     }
 
     for (const post of posts) {

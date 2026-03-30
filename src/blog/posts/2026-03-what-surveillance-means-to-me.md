@@ -3,6 +3,7 @@ layout: layouts/post.njk
 title: "What Surveillance Means to Me"
 opinion: true
 date: 2026-03-21
+description: "I am not against all surveillance. For example, CCTV recording crimes provides accountability and safety. What I oppose is mass tracking, profiling, and automated systems that judge us without transparency or consent."
 keywords:
   - surveillance analysis
   - digital surveillance

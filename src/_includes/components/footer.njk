@@ -84,7 +84,7 @@
           "@id": "https://hed.am{{ page.url }}#webpage",
           "url": "https://hed.am{{ page.url }}",
           "name": "{{ title }}",
-          "description": "{{ (description or excerpt or '') | striptags | trim }}",
+          "description": "{{ (description or '') | striptags | trim }}",
           "inLanguage": "{{ language or 'en' }}",
           "isPartOf": {
             "@id": "https://hed.am/#website"
@@ -102,7 +102,7 @@
           "@type": "BlogPosting",
           "@id": "https://hed.am{{ page.url }}#article",
           "headline": "{{ title }}",
-          "description": "{{ (description or excerpt or '') | striptags | trim }}",
+          "description": "{{ (description or '') | striptags | trim }}",
           "mainEntityOfPage": {
             "@id": "https://hed.am{{ page.url }}#webpage"
           },

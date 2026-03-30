@@ -3,6 +3,7 @@ layout: layouts/post.njk
 title: "Digitalisation: Lost Privacy by Design"
 opinion: true
 date: 2025-09-02
+description: "Digitalisation turns public records from manual access to mass extraction. Payment apps, business registers, and property records together expose your address, finances, and movements to anyone willing to query them."
 keywords:
   - privacy by design
   - digital privacy

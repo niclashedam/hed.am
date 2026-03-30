@@ -2,6 +2,7 @@
 layout: layouts/post.njk
 title: "LLMs Can Write Code, but Cannot Read Your Mind"
 date: 2025-08-26
+description: "LLMs generate valid code quickly, but without proper context they cannot distinguish between secure and insecure patterns. Capability without context is a threat to AI code quality, just like any external contribution requiring review."
 keywords:
   - ai code generation
   - llm security risks

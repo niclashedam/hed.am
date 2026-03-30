@@ -2,6 +2,7 @@
 layout: layouts/post.njk
 title: "When CPUs Stopped Scaling: Why Hardware Got Complicated"
 date: 2025-09-08
+description: "CPU clock speeds stopped scaling in 2005 when Dennard Scaling broke down. The real bottleneck? Moving data, not computing it. Modern systems need specialized hardware and smarter architectures to keep improving."
 keywords:
   - cpu performance
   - computer architecture

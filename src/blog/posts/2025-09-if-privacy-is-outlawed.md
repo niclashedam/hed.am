@@ -3,6 +3,7 @@ layout: layouts/post.njk
 title: "EU Chat Control: If Privacy Is Outlawed, only Outlaws Have Privacy"
 opinion: true
 date: 2025-09-15
+description: "The EU's Chat Control proposal requires scanning everyone's private messages before they are sent. Client-side scanning shifts communication from targeted investigation to pre-emptive monitoring of all citizens."
 keywords:
   - eu chat control
   - end to end encryption

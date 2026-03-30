@@ -5,9 +5,7 @@
 {% endif %}
 {% set seoDescription = excerpt or description %}
 <title>{{ seoTitle }}</title>
-{% if seoDescription %}
-  <meta name="description" content="{{ seoDescription }}">
-{% endif %}
+<meta name="description" content="{{ description }}">
 {% if author %}
   <meta name="author" content="{{ author }}">
 {% endif %}
@@ -25,9 +23,7 @@
 <meta property="og:site_name" content="hed.am">
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="{{ seoTitle }}">
-{% if seoDescription %}
-  <meta property="og:description" content="{{ seoDescription }}">
-{% endif %}
+<meta property="og:description" content="{{ description }}">
 <meta property="og:url" content="https://hed.am{{ page.url }}">
 {% if image %}
   <meta property="og:image" content="https://hed.am{{ image | url }}">
@@ -35,9 +31,7 @@
 {% endif %}
 <meta name="twitter:card" content="{{ 'summary_large_image' if image else 'summary' }}">
 <meta name="twitter:title" content="{{ seoTitle }}">
-{% if seoDescription %}
-  <meta name="twitter:description" content="{{ seoDescription }}">
-{% endif %}
+<meta name="twitter:description" content="{{ description }}">
 {% if image %}
   <meta name="twitter:image" content="https://hed.am{{ image | url }}">
 {% endif %}
