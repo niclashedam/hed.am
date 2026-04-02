@@ -1753,10 +1753,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"axe-core@npm:^4.11.1":
-  version: 4.11.1
-  resolution: "axe-core@npm:4.11.1"
-  checksum: 10c0/1e6997454b61c7c9a4d740f395952835dcf87f2c04fd81577217d68634d197d602c224f9e8f17b22815db4c117a2519980cfc8911fc0027c54a6d8ebca47c6a7
+"axe-core@npm:^4.11.2":
+  version: 4.11.2
+  resolution: "axe-core@npm:4.11.2"
+  checksum: 10c0/606ec10fce83d918a09b571309899bd396ff32485e7513444419e85ab3944f59f3ab46387a6f6b15c796dba9c5dc41007646b00f971f8f27fcc80ba92539ab25
   languageName: node
   linkType: hard
 
@@ -4137,7 +4137,7 @@ __metadata:
     "@shopify/prettier-plugin-liquid": "npm:^1.10.2"
     "@tailwindcss/cli": "npm:^4.2.2"
     "@tailwindcss/typography": "npm:^0.5.19"
-    axe-core: "npm:^4.11.1"
+    axe-core: "npm:^4.11.2"
     cspell: "npm:^9.7.0"
     html-minifier-terser: "npm:^7.2.0"
     html-validate: "npm:^10.11.2"
