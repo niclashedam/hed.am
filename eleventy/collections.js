@@ -11,7 +11,7 @@ module.exports = function (eleventyConfig, md) {
 
     for (const post of posts) {
       const fm = await post.template.read();
-      const raw = post.data.description || md.render(fm.content || "");
+      const raw = md.render(fm.content || "");
       let words = striptags(raw).trim().split(/\s+/).filter(Boolean).length;
 
       post.data.wordCount = words;
