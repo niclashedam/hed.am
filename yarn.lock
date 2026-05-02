@@ -178,7 +178,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@asamuzakjp/css-color@npm:^5.1.5":
+"@asamuzakjp/css-color@npm:^5.1.11":
   version: 5.1.11
   resolution: "@asamuzakjp/css-color@npm:5.1.11"
   dependencies:
@@ -191,7 +191,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@asamuzakjp/dom-selector@npm:^7.0.6":
+"@asamuzakjp/dom-selector@npm:^7.1.1":
   version: 7.1.1
   resolution: "@asamuzakjp/dom-selector@npm:7.1.1"
   dependencies:
@@ -857,15 +857,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@csstools/css-syntax-patches-for-csstree@npm:^1.1.1":
-  version: 1.1.1
-  resolution: "@csstools/css-syntax-patches-for-csstree@npm:1.1.1"
+"@csstools/css-syntax-patches-for-csstree@npm:^1.1.3":
+  version: 1.1.3
+  resolution: "@csstools/css-syntax-patches-for-csstree@npm:1.1.3"
   peerDependencies:
     css-tree: ^3.2.1
   peerDependenciesMeta:
     css-tree:
       optional: true
-  checksum: 10c0/947f82e9e8af0512f1d6600f68da1bbe8d15112fa73435169608a68dcf20262ae517c799202c86a6c3bc889d0e9fab724ad5661a3aa98432390f8f9765b86ddc
+  checksum: 10c0/3b8a686710a46bb460f9d560d52ce0de315828e6d452002b692013e95fbf53669d7a71e28c9b6b1333fa9f37f058fad93e5db3b8516444907713cb9aad299ce1
   languageName: node
   linkType: hard
 
@@ -947,12 +947,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@html-validate/stylish@npm:^5.0.0":
-  version: 5.0.0
-  resolution: "@html-validate/stylish@npm:5.0.0"
-  dependencies:
-    kleur: "npm:^4.0.0"
-  checksum: 10c0/8bc4130733fe760f52f45de8bcd2e2992129d953b6a0f2225f54890cc5825f0eb548db9f8a4cfe39ae4589ecf3a358c539ac47ac5665b61963039f83ad2956f4
+"@html-validate/stylish@npm:^5.2.0":
+  version: 5.2.0
+  resolution: "@html-validate/stylish@npm:5.2.0"
+  checksum: 10c0/45522e4c7013926e394fb3a37d57f551eb852101079e15566282ee422062554764d0aed202eacd0b4bcea7a432b91c929fa384d2b369ec098eefef8f0d747b72
   languageName: node
   linkType: hard
 
@@ -1421,14 +1419,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@sidvind/better-ajv-errors@npm:4.0.1":
-  version: 4.0.1
-  resolution: "@sidvind/better-ajv-errors@npm:4.0.1"
+"@sidvind/better-ajv-errors@npm:5.0.0":
+  version: 5.0.0
+  resolution: "@sidvind/better-ajv-errors@npm:5.0.0"
   dependencies:
     kleur: "npm:^4.1.0"
   peerDependencies:
     ajv: ^7.0.0 || ^8.0.0
-  checksum: 10c0/aac325ec6e5beb19998214b99bcfc71db91696fef7ccebfbf20acfa916165bcc5b5680edcf30184523869d3bd3776aa7320545ad5ef18eeb66d8740402518713
+  checksum: 10c0/ef2559d0a6809f2da820159f818b6bc19c5ff18f577b41eb0762eb30dd3b6ddae31dda0d61963498840b0b0482b106a1f21b05183c730c20a619174cc48b6ba8
   languageName: node
   linkType: hard
 
@@ -2452,6 +2450,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"entities@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "entities@npm:8.0.0"
+  checksum: 10c0/938e631664c19451823344a351aeeafd74fae2d5fa51e4d5b6ff635afaefd4bacf0f609989888c04c42733f46ffdac15211608267ebb02488005891a4793e94d
+  languageName: node
+  linkType: hard
+
 "env-paths@npm:^2.2.0":
   version: 2.2.1
   resolution: "env-paths@npm:2.2.1"
@@ -2783,12 +2788,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"html-validate@npm:^10.11.2":
-  version: 10.11.2
-  resolution: "html-validate@npm:10.11.2"
+"html-validate@npm:^10.13.1":
+  version: 10.13.1
+  resolution: "html-validate@npm:10.13.1"
   dependencies:
-    "@html-validate/stylish": "npm:^5.0.0"
-    "@sidvind/better-ajv-errors": "npm:4.0.1"
+    "@html-validate/stylish": "npm:^5.2.0"
+    "@sidvind/better-ajv-errors": "npm:5.0.0"
     ajv: "npm:^8.0.0"
     glob: "npm:^13.0.0"
     kleur: "npm:^4.1.0"
@@ -2796,11 +2801,14 @@ __metadata:
     prompts: "npm:^2.0.0"
     semver: "npm:^7.0.0"
   peerDependencies:
+    "@jest/globals": ^28.1.3 || ^29.0.3 || ^30.0.0
     jest: ^28.1.3 || ^29.0.3 || ^30.0.0
     jest-diff: ^28.1.3 || ^29.0.3 || ^30.0.0
     jest-snapshot: ^28.1.3 || ^29.0.3 || ^30.0.0
     vitest: ^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.1
   peerDependenciesMeta:
+    "@jest/globals":
+      optional: true
     jest:
       optional: true
     jest-diff:
@@ -2811,7 +2819,7 @@ __metadata:
       optional: true
   bin:
     html-validate: bin/html-validate.mjs
-  checksum: 10c0/35236ebd4789c667f79270531fab5e310b6ed7e0b3c1fbccb86a867b42fc1acd4fc84334a0cc9e6095bcb83175416cbe3c4589766dfe4d56f8bb55012d6455fa
+  checksum: 10c0/0691e2c2b633043753392aa0201a7a3638ad358a5ea9ae7c840ffea3a96be0711eb64d3912d7f828bfc99e8ee35188258d810fb00fde961ae1775f3f39d49fe2
   languageName: node
   linkType: hard
 
@@ -3119,26 +3127,26 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdom@npm:^29.0.2":
-  version: 29.0.2
-  resolution: "jsdom@npm:29.0.2"
+"jsdom@npm:^29.1.1":
+  version: 29.1.1
+  resolution: "jsdom@npm:29.1.1"
   dependencies:
-    "@asamuzakjp/css-color": "npm:^5.1.5"
-    "@asamuzakjp/dom-selector": "npm:^7.0.6"
+    "@asamuzakjp/css-color": "npm:^5.1.11"
+    "@asamuzakjp/dom-selector": "npm:^7.1.1"
     "@bramus/specificity": "npm:^2.4.2"
-    "@csstools/css-syntax-patches-for-csstree": "npm:^1.1.1"
+    "@csstools/css-syntax-patches-for-csstree": "npm:^1.1.3"
     "@exodus/bytes": "npm:^1.15.0"
     css-tree: "npm:^3.2.1"
     data-urls: "npm:^7.0.0"
     decimal.js: "npm:^10.6.0"
     html-encoding-sniffer: "npm:^6.0.0"
     is-potential-custom-element-name: "npm:^1.0.1"
-    lru-cache: "npm:^11.2.7"
-    parse5: "npm:^8.0.0"
+    lru-cache: "npm:^11.3.5"
+    parse5: "npm:^8.0.1"
     saxes: "npm:^6.0.0"
     symbol-tree: "npm:^3.2.4"
     tough-cookie: "npm:^6.0.1"
-    undici: "npm:^7.24.5"
+    undici: "npm:^7.25.0"
     w3c-xmlserializer: "npm:^5.0.0"
     webidl-conversions: "npm:^8.0.1"
     whatwg-mimetype: "npm:^5.0.0"
@@ -3149,7 +3157,7 @@ __metadata:
   peerDependenciesMeta:
     canvas:
       optional: true
-  checksum: 10c0/a325324117932de83d13f00c74ff91a5f6b4bbbf11f45e7e31189fea06d007f764aac286dad80f643430c81b618b9fb20eac1ef03f120cec4c68df271e7547e2
+  checksum: 10c0/20e2174b09d9d06393cb48e1392b7a1cb7191d6656a6f7b3b8fbf9853b4ab0ef60b4a42c2c55f71b55ca5da50ffa75bcdc6986210963182e7993c6f9cd4f499b
   languageName: node
   linkType: hard
 
@@ -3193,7 +3201,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"kleur@npm:^4.0.0, kleur@npm:^4.1.0, kleur@npm:^4.1.5":
+"kleur@npm:^4.1.0, kleur@npm:^4.1.5":
   version: 4.1.5
   resolution: "kleur@npm:4.1.5"
   checksum: 10c0/e9de6cb49657b6fa70ba2d1448fd3d691a5c4370d8f7bbf1c2f64c24d461270f2117e1b0afe8cb3114f13bbd8e51de158c2a224953960331904e636a5e4c0f2a
@@ -3388,10 +3396,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lru-cache@npm:^11.2.7":
-  version: 11.2.7
-  resolution: "lru-cache@npm:11.2.7"
-  checksum: 10c0/549cdb59488baa617135fc12159cafb1a97f91079f35093bb3bcad72e849fc64ace636d244212c181dfdf1a99bbfa90757ff303f98561958ee4d0f885d9bd5f7
+"lru-cache@npm:^11.3.5":
+  version: 11.3.5
+  resolution: "lru-cache@npm:11.3.5"
+  checksum: 10c0/5b54ef7b88afb4bd25b7a778f1b2b1cde32d9770913e530da34ab203cf0442413bcaa6e372800cbab9562557a4480e4d8bf32e3a368bb5a91b12218eca085c66
   languageName: node
   linkType: hard
 
@@ -3863,12 +3871,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"parse5@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "parse5@npm:8.0.0"
+"parse5@npm:^8.0.1":
+  version: 8.0.1
+  resolution: "parse5@npm:8.0.1"
   dependencies:
-    entities: "npm:^6.0.0"
-  checksum: 10c0/8279892dcd77b2f2229707f60eb039e303adf0288812b2a8fd5acf506a4d432da833c6c5d07a6554bef722c2367a81ef4a1f7e9336564379a7dba3e798bf16b3
+    entities: "npm:^8.0.0"
+  checksum: 10c0/c3c1c5aab55f6e4be5245599790e56e64be7764a4a0edd7f98db4fe3bb380f63add752fa047dff0496446c25f4104f0c7c1967723de640bde92306a7bb67ed2f
   languageName: node
   linkType: hard
 
@@ -4140,8 +4148,8 @@ __metadata:
     axe-core: "npm:^4.11.3"
     cspell: "npm:^9.7.0"
     html-minifier-terser: "npm:^7.2.0"
-    html-validate: "npm:^10.11.2"
-    jsdom: "npm:^29.0.2"
+    html-validate: "npm:^10.13.1"
+    jsdom: "npm:^29.1.1"
     jsonld: "npm:^9.0.0"
     markdown-it-container: "npm:^4.0.0"
     markdown-it-footnote: "npm:^4.0.0"
@@ -4663,10 +4671,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"undici@npm:^7.24.5":
-  version: 7.24.5
-  resolution: "undici@npm:7.24.5"
-  checksum: 10c0/2a836f1f6ab078fde3eeb4cc8fd5b34eeaf52cfbdf16a9bab61b7223f43f7847bcd2125d1da7c4e3f5996c528bf9f7940015d39909bab80cfbd71b855470cf21
+"undici@npm:^7.25.0":
+  version: 7.25.0
+  resolution: "undici@npm:7.25.0"
+  checksum: 10c0/02a0b45dc14eb91bc488948750232450fe52f27a6b08086d6ac6736bb47908d600fe3a96d346f12eab24729c782e5c2f693bc8e8eca6696d4e4c09b1ed4cb4ec
   languageName: node
   linkType: hard
 
