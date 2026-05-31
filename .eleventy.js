@@ -29,6 +29,12 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(eleventyImageTransformPlugin, {
     transformOnRequest: false,
     formats: ["webp", "jpeg"],
+    widths: [400, 800, 1200, null],
+    defaultAttributes: {
+      loading: "lazy",
+      decoding: "async",
+      sizes: "(min-width: 1024px) 400px, 100vw",
+    },
     outputDir: "./public/",
     urlPath: "/",
     filenameFormat(id, src, width, format, options) {

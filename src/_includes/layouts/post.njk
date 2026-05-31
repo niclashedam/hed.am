@@ -32,9 +32,12 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
       <header class="mb-4 lg:mb-6 not-prose">
         <figure>
           <img
-            width="672"
+            eleventy:widths="672,1344"
             src="{{ image | url }}"
             alt="{{ imageAlt }}"
+            loading="eager"
+            decoding="auto"
+            sizes="(min-width: 672px) 672px, 100vw"
             class="rounded-lg">
         </figure>
         <h1
@@ -44,11 +47,13 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
         <address class="flex items-center my-6 not-italic">
           <div class="h-16 w-16 flex-none overflow-hidden rounded-full mr-4">
             <img
-              width="64"
-              height="64"
+              eleventy:widths="64,128"
               class="block h-full w-full object-cover"
               src="{{ authorPic | url }}"
-              alt="{{ author }}">
+              alt="{{ author }}"
+              loading="eager"
+              decoding="auto"
+              sizes="64px">
           </div>
           <div class="text-gray-900">
             <a href="/" rel="author" class="text-lg font-bold">{{ author }}</a>
@@ -146,9 +151,10 @@ authorDescription: "Niclas Hedam holds a PhD in Computer Science from the IT Uni
         {% for post in relatedPosts %}
           <article class="relative group overflow-hidden rounded-lg border border-parchment-dark bg-white hover:shadow-md transition-shadow">
             <img
-              width="400"
+              eleventy:widths="320,640"
               alt="{{ post.data.title }}"
               src="{{ post.data.image | url }}"
+              sizes="(min-width: 672px) 320px, 100vw"
               class="h-48 w-full object-cover">
             <div class="p-5">
               {% if post.data.category %}

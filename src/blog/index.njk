@@ -52,9 +52,10 @@ keywords:
         {% for post in collections.blog %}
           <article class="relative group overflow-hidden rounded-lg border border-parchment-dark bg-white hover:shadow-md transition-shadow">
             <img
-              width="400"
+              eleventy:widths="400,800"
               alt="{{ post.data.title }}"
               src="{{ post.data.image | url }}"
+              sizes="(min-width: 1024px) 400px, 100vw"
               class="h-48 w-full object-cover">
             <div class="p-5">
               {% if post.data.category %}
